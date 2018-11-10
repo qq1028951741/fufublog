@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>燃情岁月</title>
+  
+  <subtitle>嘿嘿嘿</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://yoursite.com/"/>
+  <updated>2018-11-10T03:16:57.949Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name>fufua</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>我是一个栗子</title>
+    <link href="http://yoursite.com/2018/11/10/%E6%88%91%E6%98%AF%E4%B8%80%E4%B8%AA%E6%A0%97%E5%AD%90/"/>
+    <id>http://yoursite.com/2018/11/10/我是一个栗子/</id>
+    <published>2018-11-10T02:18:13.000Z</published>
+    <updated>2018-11-10T03:16:57.949Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;网站:This is an &lt;a href=&quot;http://example.com/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;example link&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;excerpt in=&quot;&quot; index=&quot;&quot; |=&quot;&quot; 首页摘要=&quot;&quot;&gt;&lt;br&gt;
+    
+    </summary>
+    
+      <category term="栗子" scheme="http://yoursite.com/categories/%E6%A0%97%E5%AD%90/"/>
+    
+    
+      <category term="hexo" scheme="http://yoursite.com/tags/hexo/"/>
+    
+  </entry>
+  
+</feed>

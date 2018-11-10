@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[我是一个栗子]]></title>
+    <url>%2F2018%2F11%2F10%2F%E6%88%91%E6%98%AF%E4%B8%80%E4%B8%AA%E6%A0%97%E5%AD%90%2F</url>
+    <content type="text"><![CDATA[网站:This is an example link.]]></content>
+      <categories>
+        <category>栗子</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+</search>
