@@ -1,0 +1,1392 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=6.5.0" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.5.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.5.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.5.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.5.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '6.5.0',
+    sidebar: {"position":"right","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="keywords" content="hexo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="美化hexo-blog">
+<meta property="og:url" content="http://yoursite.com/2018/11/10/hexo5/index.html">
+<meta property="og:site_name" content="燃情岁月">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://yoursite.com/images/footer.jpg">
+<meta property="og:image" content="http://yoursite.com/images/文章版权和标签.jpg">
+<meta property="og:image" content="file:///C:/Users/zhouyongfu/AppData/LocalLow/2345Pinyin/emoji/2018011201/2764.png">
+<meta property="og:updated_time" content="2018-11-12T09:40:00.636Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="美化hexo-blog">
+<meta name="twitter:image" content="http://yoursite.com/images/footer.jpg">
+
+
+
+  <link rel="alternate" href="/atom.xml" title="燃情岁月" type="application/atom+xml">
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/11/10/hexo5/">
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>美化hexo-blog | 燃情岁月</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">燃情岁月</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">嘿嘿嘿</p>
+      
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-主页">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>主页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-目录">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>目录</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-标签">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tags" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-关于我">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/about" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于我</a>
+
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
+        </li>
+      
+    </ul>
+  
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/10/hexo5/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="fufua">
+      <meta itemprop="description" content="fufublog">
+      <meta itemprop="image" content="/images/header.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="燃情岁月">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">美化hexo-blog
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-11-10 10:18:13" itemprop="dateCreated datePublished" datetime="2018-11-10T10:18:13+08:00">2018-11-10</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-11-12 17:40:00" itemprop="dateModified" datetime="2018-11-12T17:40:00+08:00">2018-11-12</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/hexo-blog/" itemprop="url" rel="index"><span itemprop="name">hexo-blog</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/11/10/hexo5/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018/11/10/hexo5/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2018/11/10/hexo5/" class="leancloud_visitors" data-flag-title="美化hexo-blog">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数：</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><excerpt in="" index="" |="" 首页摘要=""><a id="more"></a><the rest="" of="" contents="" |="" 余下全文=""></the></excerpt></p>
+<h3 id="屏蔽blog网页底部强力驱动"><a href="#屏蔽blog网页底部强力驱动" class="headerlink" title="屏蔽blog网页底部强力驱动"></a>屏蔽blog网页底部强力驱动</h3><p>主题配置文件配置如下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">copyright:</span><br><span class="line">powered:</span><br><span class="line">  # Hexo link (Powered by Hexo).</span><br><span class="line">  enable: false</span><br><span class="line">  # Version info of Hexo after Hexo link (vX.X.X).</span><br><span class="line">  version: false</span><br><span class="line"></span><br><span class="line">theme:</span><br><span class="line">  # Theme &amp; scheme info link (Theme - NexT.scheme).</span><br><span class="line">  enable: false</span><br><span class="line">  # Version info of NexT after scheme info (vX.X.X).</span><br><span class="line">  version: false</span><br></pre></td></tr></table></figure>
+<h3 id="更改底部footer图标"><a href="#更改底部footer图标" class="headerlink" title="更改底部footer图标"></a>更改底部footer图标</h3><ul>
+<li><p>找到喜欢的图标</p>
+<p>https:/<a href="http://www.thinkcmf.com/font/font_awesome/icons.html" target="_blank" rel="noopener">www.thinkcmf.com/font/font_awesome/icons.html</a></p>
+</li>
+<li><p>主题配置文件修改</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">footer:</span><br><span class="line">  icon:</span><br><span class="line">    name: star-o</span><br></pre></td></tr></table></figure>
+<p>每个图标都有对应的class，如下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;i class=&quot;fa fa-star-o&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;</span><br></pre></td></tr></table></figure>
+<p>我们取class fa fa-后面的名字填写在主题配置文件相应位置</p>
+</li>
+<li><p>让图标跳动起来</p>
+<ul>
+<li><p>查看</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">.</span><br><span class="line">    ├── source        </span><br><span class="line">    ├── themes        #主题</span><br><span class="line">    |   ├── next   #主题名</span><br><span class="line">    |   	├── layout  </span><br><span class="line">    |   		├── _partials</span><br></pre></td></tr></table></figure>
+<p>下的footer.swig 文件的 <code>&lt;span class=&quot;with-love&quot; id=&quot;animate&quot;&gt;</code> </p>
+</li>
+<li><p>在一下位置修改custom.styl </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">.</span><br><span class="line">    ├── source        </span><br><span class="line">    ├── themes        #主题</span><br><span class="line">    |   ├── next   #主题名</span><br><span class="line">    |   	├── source  </span><br><span class="line">    |   		├── css  </span><br><span class="line">    |   			├── _custom</span><br></pre></td></tr></table></figure>
+<p>新增</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">// 自定义页脚跳动样式</span><br><span class="line">@keyframes heartAnimate &#123;</span><br><span class="line">    0%,100%&#123;transform:scale(1);&#125;</span><br><span class="line">    10%,30%&#123;transform:scale(0.9);&#125;</span><br><span class="line">    20%,40%,60%,80%&#123;transform:scale(1.1);&#125;</span><br><span class="line">    50%,70%&#123;transform:scale(1.1);&#125;</span><br><span class="line">&#125;</span><br><span class="line">#animate &#123;</span><br><span class="line">    animation: heartAnimate 1.33s ease-in-out infinite;</span><br><span class="line">&#125;</span><br><span class="line">.with-love &#123;</span><br><span class="line">    color: rgb(255, 113, 168);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><code>#animate</code>  取自 第二小点的id</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="增加底部访客统计功能"><a href="#增加底部访客统计功能" class="headerlink" title="增加底部访客统计功能"></a>增加底部访客统计功能</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">.</span><br><span class="line">    ├── source        </span><br><span class="line">    ├── themes        #主题</span><br><span class="line">    |   ├── next   #主题名</span><br><span class="line">    |   	├── layout  </span><br><span class="line">    |   		├── _partials</span><br></pre></td></tr></table></figure>
+<p>在_partials目录下找到footer.swig文件，在文件最上面加上</p>
+<p><code>&lt;script async src=&quot;https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js&quot;&gt;&lt;/script&gt;</code></p>
+<p>在powered-by前加上</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;powered-by&quot;&gt;</span><br><span class="line">&lt;i class=&quot;fa fa-smile-o&quot;&gt;&lt;/i&gt;&lt;span id=&quot;busuanzi_container_site_uv&quot;&gt;</span><br><span class="line">  欢迎光临，您是第 &lt;span id=&quot;busuanzi_value_site_uv&quot;&gt;&lt;/span&gt; 位访客</span><br><span class="line">&lt;/span&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;span class=&quot;post-meta-divider&quot;&gt;|&lt;/span&gt;</span><br><span class="line">&lt;div class=&quot;powered-by&quot;&gt;</span><br><span class="line">&lt;i class=&quot;fa fa-hand-o-right&quot;&gt;&lt;/i&gt;&lt;span id=&quot;busuanzi_container_site_pv&quot;&gt;</span><br><span class="line">    本站总访问量 &lt;span id=&quot;busuanzi_value_site_pv&quot;&gt;&lt;/span&gt; 次</span><br><span class="line">&lt;/span&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<p>效果图</p>
+<p><img src="/images/footer.jpg" alt="&quot;图片描述&quot;"></p>
+<h3 id="添加文章版权声明"><a href="#添加文章版权声明" class="headerlink" title="添加文章版权声明"></a>添加文章版权声明</h3><ul>
+<li><p>在目录</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">.</span><br><span class="line">    ├── source        </span><br><span class="line">    ├── themes        #主题</span><br><span class="line">    |   ├── next   #主题名</span><br><span class="line">    |   	├── layout  </span><br><span class="line">    |   		├── _macro</span><br></pre></td></tr></table></figure>
+<p>下新增文件my-copyright.swig </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">&#123;% if page.copyright %&#125;</span><br><span class="line">&lt;div class=&quot;my_post_copyright&quot;&gt;</span><br><span class="line">  &lt;script src=&quot;//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">  </span><br><span class="line">  &lt;!-- JS库 sweetalert 可修改路径 --&gt;</span><br><span class="line">  &lt;script type=&quot;text/javascript&quot; src=&quot;http://jslibs.wuxubj.cn/sweetalert_mini/jquery-1.7.1.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">  &lt;script src=&quot;http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">  &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.mini.css&quot;&gt;</span><br><span class="line"></span><br><span class="line">  &lt;p&gt;&lt;span&gt;本文标题:&lt;/span&gt;&#123;&#123; page.title &#125;&#125;&lt;/a&gt;&lt;/p&gt;</span><br><span class="line">  &lt;p&gt;&lt;span&gt;文章作者:&lt;/span&gt;&#123;&#123; theme.author &#125;&#125;&lt;/a&gt;&lt;/p&gt;</span><br><span class="line">  &lt;p&gt;&lt;span&gt;发布时间:&lt;/span&gt;&#123;&#123; page.date.format(&quot;YYYY年MM月DD日 - HH:mm:ss&quot;) &#125;&#125;&lt;/p&gt;</span><br><span class="line">  &lt;p&gt;&lt;span&gt;最后更新:&lt;/span&gt;&#123;&#123; page.updated.format(&quot;YYYY年MM月DD日 - HH:mm:ss&quot;) &#125;&#125;&lt;/p&gt;</span><br><span class="line">  &lt;p&gt;&lt;span&gt;原始链接:&lt;/span&gt;&lt;a href=&quot;&#123;&#123; url_for(page.path) &#125;&#125;&quot; title=&quot;&#123;&#123; page.title &#125;&#125;&quot;&gt;&#123;&#123; page.permalink &#125;&#125;&lt;/a&gt;</span><br><span class="line">    &lt;span class=&quot;copy-path&quot;  title=&quot;点击复制文章链接&quot;&gt;&lt;i class=&quot;fa fa-clipboard&quot; data-clipboard-text=&quot;&#123;&#123; page.permalink &#125;&#125;&quot;  aria-label=&quot;复制成功！&quot;&gt;&lt;/i&gt;&lt;/span&gt;</span><br><span class="line">  &lt;/p&gt;</span><br><span class="line">  &lt;p&gt;&lt;span&gt;许可协议:&lt;/span&gt;&lt;i class=&quot;fa fa-creative-commons&quot;&gt;&lt;/i&gt; &lt;a rel=&quot;license&quot; href=&quot;https://creativecommons.org/licenses/by-nc-nd/4.0/&quot; target=&quot;_blank&quot; title=&quot;Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)&quot;&gt;署名-非商业性使用-禁止演绎 4.0 国际&lt;/a&gt; 转载请保留原文链接及作者。&lt;/p&gt;  </span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;script&gt; </span><br><span class="line">    var clipboard = new Clipboard(&apos;.fa-clipboard&apos;);</span><br><span class="line">    clipboard.on(&apos;success&apos;, $(function()&#123;</span><br><span class="line">      $(&quot;.fa-clipboard&quot;).click(function()&#123;</span><br><span class="line">        swal(&#123;   </span><br><span class="line">          title: &quot;&quot;,   </span><br><span class="line">          text: &apos;复制成功&apos;,   </span><br><span class="line">          html: false,</span><br><span class="line">          timer: 500,   </span><br><span class="line">          showConfirmButton: false</span><br><span class="line">        &#125;);</span><br><span class="line">      &#125;);</span><br><span class="line">    &#125;));  </span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&#123;% endif %&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在目录</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">.</span><br><span class="line">    ├── source        </span><br><span class="line">    ├── themes        #主题</span><br><span class="line">    |   ├── next   #主题名</span><br><span class="line">    |   	├── source  </span><br><span class="line">    |   		├── css </span><br><span class="line">    |   			├── _common </span><br><span class="line">    |   				├── components </span><br><span class="line">    |   					├── post</span><br></pre></td></tr></table></figure>
+<p>新增文件my-post-copyright.styl </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">.my_post_copyright &#123;</span><br><span class="line">  width: 85%;</span><br><span class="line">  max-width: 45em;</span><br><span class="line">  margin: 2.8em auto 0;</span><br><span class="line">  padding: 0.5em 1.0em;</span><br><span class="line">  border: 1px solid #d3d3d3;</span><br><span class="line">  font-size: 0.93rem;</span><br><span class="line">  line-height: 1.6em;</span><br><span class="line">  word-break: break-all;</span><br><span class="line">  background: rgba(255,255,255,0.4);</span><br><span class="line">&#125;</span><br><span class="line">.my_post_copyright p&#123;margin:0;&#125;</span><br><span class="line">.my_post_copyright span &#123;</span><br><span class="line">  display: inline-block;</span><br><span class="line">  width: 5.2em;</span><br><span class="line">  color: #333333; // title color</span><br><span class="line">  font-weight: bold;</span><br><span class="line">&#125;</span><br><span class="line">.my_post_copyright .raw &#123;</span><br><span class="line">  margin-left: 1em;</span><br><span class="line">  width: 5em;</span><br><span class="line">&#125;</span><br><span class="line">.my_post_copyright a &#123;</span><br><span class="line">  color: #808080;</span><br><span class="line">  border-bottom:0;</span><br><span class="line">&#125;</span><br><span class="line">.my_post_copyright a:hover &#123;</span><br><span class="line">  color: #0593d3; // link color</span><br><span class="line">  text-decoration: underline;</span><br><span class="line">&#125;</span><br><span class="line">.my_post_copyright:hover .fa-clipboard &#123;</span><br><span class="line">  color: #000;</span><br><span class="line">&#125;</span><br><span class="line">.my_post_copyright .post-url:hover &#123;</span><br><span class="line">  font-weight: normal;</span><br><span class="line">&#125;</span><br><span class="line">.my_post_copyright .copy-path &#123;</span><br><span class="line">  margin-left: 1em;</span><br><span class="line">  width: 1em;</span><br><span class="line">  +mobile()&#123;display:none;&#125;</span><br><span class="line">&#125;</span><br><span class="line">.my_post_copyright .copy-path:hover &#123;</span><br><span class="line">  color: #808080;</span><br><span class="line">  cursor: pointer;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>修改</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">.</span><br><span class="line">    ├── source        </span><br><span class="line">    ├── themes        #主题</span><br><span class="line">    |   ├── next   #主题名</span><br><span class="line">    |   	├── layout  </span><br><span class="line">    |   		├── _macro</span><br></pre></td></tr></table></figure>
+<p>下的post.swig ，end post body后添加</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">   &#123;#####################&#125;</span><br><span class="line">   &#123;### END POST BODY ###&#125;</span><br><span class="line">   &#123;#####################&#125;</span><br><span class="line">&lt;div&gt;</span><br><span class="line">     &#123;% if not is_index %&#125;</span><br><span class="line">       &#123;% include &apos;my-copyright.swig&apos; %&#125;</span><br><span class="line">     &#123;% endif %&#125;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">.</span><br><span class="line">    ├── source        </span><br><span class="line">    ├── themes        #主题</span><br><span class="line">    |   ├── next   #主题名</span><br><span class="line">    |   	├── source  </span><br><span class="line">    |   		├── css </span><br><span class="line">    |   			├── _common </span><br><span class="line">    |   				├── components </span><br><span class="line">    |   					├── post</span><br></pre></td></tr></table></figure>
+<p>里的post.styl 文件尾添加</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@import &quot;my-post-copyright&quot;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>我一般新建文章是在</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.</span><br><span class="line">    ├── source       </span><br><span class="line">    ├── 	_posts</span><br></pre></td></tr></table></figure>
+<p>下的.md文件直接添加版权声明开启，栗子</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: 我是一个栗子</span><br><span class="line">date: 2018-11-10 10:18:13</span><br><span class="line">categories:</span><br><span class="line">- 栗子</span><br><span class="line">tags:</span><br><span class="line">- hexo</span><br><span class="line">copyright: true #新增,开启</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="修改标签图标"><a href="#修改标签图标" class="headerlink" title="修改标签图标"></a>修改标签图标</h3><ul>
+<li><p>目录</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">.</span><br><span class="line">    ├── source        </span><br><span class="line">    ├── themes        #主题</span><br><span class="line">    |   ├── next   #主题名</span><br><span class="line">    |   	├── layout  </span><br><span class="line">    |   		├── _macro</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>把post.swig 中的 rel=”tag”&gt;#  的#替换成 <i class="fa fa-bicycle"></i> ，图标可以上文章前面的网址找，替换完后要重启server</p>
+</li>
+</ul>
+<h3 id="文章末尾添加文章结束提示"><a href="#文章末尾添加文章结束提示" class="headerlink" title="文章末尾添加文章结束提示"></a>文章末尾添加文章结束提示</h3><ul>
+<li><p>目录</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">.</span><br><span class="line">    ├── source        </span><br><span class="line">    ├── themes        #主题</span><br><span class="line">    |   ├── next   #主题名</span><br><span class="line">    |   	├── layout  </span><br><span class="line">    |   		├── _macro</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>新建<code>passage-end-tag.swig</code> 文件 ，内容</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;div&gt;</span><br><span class="line">    &#123;% if not is_index %&#125;</span><br><span class="line">        &lt;div style=&quot;text-align:center;color: #ccc;font-size:14px;&quot;&gt;-------------&lt;i class=&quot;fa fa-pencil&quot;&gt;&lt;/i&gt;  this is end, thank you for reading  &lt;i class=&quot;fa fa-pencil&quot;&gt;&lt;/i&gt;-------------&lt;/div&gt;</span><br><span class="line">    &#123;% endif %&#125;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>修改同目录下<code>post.swig</code>文件 ，放在end post body后面，我这边放在版权声明后面</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&#123;#####################&#125;</span><br><span class="line">   &#123;### END POST BODY ###&#125;</span><br><span class="line">   &#123;#####################&#125;</span><br><span class="line">&lt;div&gt;</span><br><span class="line">     &#123;% if not is_index %&#125;</span><br><span class="line">       &#123;% include &apos;my-copyright.swig&apos; %&#125;</span><br><span class="line">     &#123;% endif %&#125;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;div&gt;</span><br><span class="line">	&#123;% if not is_index %&#125;</span><br><span class="line">		&#123;% include &apos;passage-end-tag.swig&apos; %&#125;</span><br><span class="line">	&#123;% endif %&#125;</span><br><span class="line">   &lt;/div&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>效果图</p>
+<p><img src="/images/文章版权和标签.jpg" alt="&quot;图片描述&quot;"></p>
+<h3 id="点击出现-效果"><a href="#点击出现-效果" class="headerlink" title="点击出现 效果"></a>点击出现<img src="file:///C:\Users\zhouyongfu\AppData\LocalLow\2345Pinyin\emoji\2018011201\2764.png" alt="img"> 效果</h3><ul>
+<li><p>目录</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">.</span><br><span class="line">    ├── source        </span><br><span class="line">    ├── themes        #主题</span><br><span class="line">    |   ├── next   #主题名</span><br><span class="line">    |   	├── source  </span><br><span class="line">    |   		├── js </span><br><span class="line">    |   			├── src</span><br></pre></td></tr></table></figure>
+<p>新建love.js，内容</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line">(function(window,document,undefined)&#123;</span><br><span class="line">var hearts = [];</span><br><span class="line">window.requestAnimationFrame = (function()&#123;</span><br><span class="line">return window.requestAnimationFrame ||</span><br><span class="line">window.webkitRequestAnimationFrame ||</span><br><span class="line">window.mozRequestAnimationFrame ||</span><br><span class="line">window.oRequestAnimationFrame ||</span><br><span class="line">window.msRequestAnimationFrame ||</span><br><span class="line">function (callback)&#123;</span><br><span class="line">setTimeout(callback,1000/60);</span><br><span class="line">&#125;</span><br><span class="line">&#125;)();</span><br><span class="line">init();</span><br><span class="line">function init()&#123;</span><br><span class="line">css(&quot;.heart&#123;width: 10px;height: 10px;position: fixed;background: #f00;transform: rotate(45deg);-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);&#125;.heart:after,.heart:before&#123;content: &apos;&apos;;width: inherit;height: inherit;background: inherit;border-radius: 50%;-webkit-border-radius: 50%;-moz-border-radius: 50%;position: absolute;&#125;.heart:after&#123;top: -5px;&#125;.heart:before&#123;left: -5px;&#125;&quot;);</span><br><span class="line">attachEvent();</span><br><span class="line">gameloop();</span><br><span class="line">&#125;</span><br><span class="line">function gameloop()&#123;</span><br><span class="line">for(var i=0;i&lt;hearts.length;i++)&#123;</span><br><span class="line">if(hearts[i].alpha &lt;=0)&#123;</span><br><span class="line">document.body.removeChild(hearts[i].el);</span><br><span class="line">hearts.splice(i,1);</span><br><span class="line">continue;</span><br><span class="line">&#125;</span><br><span class="line">hearts[i].y--;</span><br><span class="line">hearts[i].scale += 0.004;</span><br><span class="line">hearts[i].alpha -= 0.013;</span><br><span class="line">hearts[i].el.style.cssText = &quot;left:&quot;+hearts[i].x+&quot;px;top:&quot;+hearts[i].y+&quot;px;opacity:&quot;+hearts[i].alpha+&quot;;transform:scale(&quot;+hearts[i].scale+&quot;,&quot;+hearts[i].scale+&quot;) rotate(45deg);background:&quot;+hearts[i].color;</span><br><span class="line">&#125;</span><br><span class="line">requestAnimationFrame(gameloop);</span><br><span class="line">&#125;</span><br><span class="line">function attachEvent()&#123;</span><br><span class="line">var old = typeof window.onclick===&quot;function&quot; &amp;&amp; window.onclick;</span><br><span class="line">window.onclick = function(event)&#123;</span><br><span class="line">old &amp;&amp; old();</span><br><span class="line">createHeart(event);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">function createHeart(event)&#123;</span><br><span class="line">var d = document.createElement(&quot;div&quot;);</span><br><span class="line">d.className = &quot;heart&quot;;</span><br><span class="line">hearts.push(&#123;</span><br><span class="line">el : d,</span><br><span class="line">x : event.clientX - 5,</span><br><span class="line">y : event.clientY - 5,</span><br><span class="line">scale : 1,</span><br><span class="line">alpha : 1,</span><br><span class="line">color : randomColor()</span><br><span class="line">&#125;);</span><br><span class="line">document.body.appendChild(d);</span><br><span class="line">&#125;</span><br><span class="line">function css(css)&#123;</span><br><span class="line">var style = document.createElement(&quot;style&quot;);</span><br><span class="line">style.type=&quot;text/css&quot;;</span><br><span class="line">try&#123;</span><br><span class="line">style.appendChild(document.createTextNode(css));</span><br><span class="line">&#125;catch(ex)&#123;</span><br><span class="line">style.styleSheet.cssText = css;</span><br><span class="line">&#125;</span><br><span class="line">document.getElementsByTagName(&apos;head&apos;)[0].appendChild(style);</span><br><span class="line">&#125;</span><br><span class="line">function randomColor()&#123;</span><br><span class="line">return &quot;rgb(&quot;+(~~(Math.random()*255))+&quot;,&quot;+(~~(Math.random()*255))+&quot;,&quot;+(~~(Math.random()*255))+&quot;)&quot;;</span><br><span class="line">&#125;</span><br><span class="line">&#125;)(window,document);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>目录</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">.</span><br><span class="line">    ├── source        </span><br><span class="line">    ├── themes        #主题</span><br><span class="line">    |   ├── next   #主题名</span><br><span class="line">    |   	├── layout</span><br></pre></td></tr></table></figure>
+<p><code>_layout.swig</code>文件末尾添加一下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 页面点击小红心 --&gt;</span><br><span class="line">&lt;script type=&quot;text/javascript&quot; src=&quot;/js/src/love.js&quot;&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>### </p>
+
+      
+    </div>
+
+    
+    
+    
+    
+	<div>
+      
+        
+<div class="my_post_copyright">
+  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+  
+  <!-- JS库 sweetalert 可修改路径 -->
+  <script type="text/javascript" src="http://jslibs.wuxubj.cn/sweetalert_mini/jquery-1.7.1.min.js"></script>
+  <script src="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.mini.css">
+
+  <p><span>本文标题:</span>美化hexo-blog</p>
+  <p><span>文章作者:</span>fufua</p>
+  <p><span>发布时间:</span>2018年11月10日 - 10:18:13</p>
+  <p><span>最后更新:</span>2018年11月12日 - 17:40:00</p>
+  <p><span>原始链接:</span><a href="/2018/11/10/hexo5/" title="美化hexo-blog">http://yoursite.com/2018/11/10/hexo5/</a>
+    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://yoursite.com/2018/11/10/hexo5/" aria-label="复制成功！"></i></span>
+  </p>
+  <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
+</div>
+<script> 
+    var clipboard = new Clipboard('.fa-clipboard');
+    clipboard.on('success', $(function(){
+      $(".fa-clipboard").click(function(){
+        swal({   
+          title: "",   
+          text: '复制成功',   
+          html: false,
+          timer: 500,   
+          showConfirmButton: false
+        });
+      });
+    }));  
+</script>
+
+      
+	</div>
+	<div>
+		
+			<div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">  this is end, thank you for reading  <i class="fa fa-pencil"></i></div>
+    
+</div>
+		
+    </div>
+    
+
+    
+       
+    
+    
+
+    
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/hexo/" rel="tag"><i class="fa fa-bicycle"></i> hexo</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/11/10/我是一个栗子/" rel="prev" title="我是一个栗子">
+                我是一个栗子 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/header.jpg" alt="fufua">
+            
+              <p class="site-author-name" itemprop="name">fufua</p>
+              <p class="site-description motion-element" itemprop="description">fufublog</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives">
+                
+                    <span class="site-state-item-count">6</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">3</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#屏蔽blog网页底部强力驱动"><span class="nav-number">1.</span> <span class="nav-text">屏蔽blog网页底部强力驱动</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#更改底部footer图标"><span class="nav-number">2.</span> <span class="nav-text">更改底部footer图标</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#增加底部访客统计功能"><span class="nav-number">3.</span> <span class="nav-text">增加底部访客统计功能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#添加文章版权声明"><span class="nav-number">4.</span> <span class="nav-text">添加文章版权声明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改标签图标"><span class="nav-number">5.</span> <span class="nav-text">修改标签图标</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文章末尾添加文章结束提示"><span class="nav-number">6.</span> <span class="nav-text">文章末尾添加文章结束提示</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#点击出现-效果"><span class="nav-number">7.</span> <span class="nav-text">点击出现 效果</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-star-o"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">fufua</span>
+
+  
+
+  
+</div>
+<div class="powered-by">
+<i class="fa fa-smile-o"></i><span id="busuanzi_container_site_uv">
+  欢迎光临，您是第 <span id="busuanzi_value_site_uv"></span> 位访客
+</span>
+</div>
+<span class="post-meta-divider">|</span>
+<div class="powered-by">
+<i class="fa fa-hand-o-right"></i><span id="busuanzi_container_site_pv">
+    本站总访问量 <span id="busuanzi_value_site_pv"></span> 次
+</span>
+</div>
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+	
+    
+
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.5.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.5.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.5.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.5.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.5.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  
+  
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(function (item) {
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'WCI8YC78BPKShk61t0fVCQng-gzGzoHsz',
+        appKey: '2xS0DrNChYqO0nfJXL4iHUhd',
+        placeholder: '友善发言的人运气不会太差~  --小黄即',
+        avatar:'mm',
+        meta:guest,
+        pageSize:'10' || 10,
+        visitor: true
+    });
+  </script>
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"right","width":100,"height":100},"mobile":{"show":true},"log":false});</script></body>
+</html>
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/love.js"></script>
