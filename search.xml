@@ -14,7 +14,7 @@
   <entry>
     <title><![CDATA[如何快速利用hexo搭建blog？]]></title>
     <url>%2F2018%2F11%2F10%2Fhexo1%2F</url>
-    <content type="text"><![CDATA[如何快速利用hexo搭建blog？安装需要的工具 安装nodejs，最新版本自带npm，然后cmd，查看node -v，若有相应版本，则安装成功。 npm默认的源的下载速度可能很慢，建议使用淘宝镜像替换。 npm config set registry &quot;https://registry.npm.taobao.org&quot; 安装git 安装hexo 新建hexo文件夹 空白处右键git bash here 键入npm install hexo -g #-g表示全局安装, npm默认为当前项目安装 查看hexo version，有相应信息，则安装成功 让hexo跑起来~ 在hexo文件夹右键git bash here 执行hexo init，执行完生成如下目录结构 1234567891011.├── .deploy #需要部署的文件├── node_modules #Hexo插件├── public #生成的静态网页文件├── scaffolds #模板├── source #博客正文和其他源文件, 404 favicon CNAME 等都应该放在这里| ├── _drafts #草稿| └── _posts #文章├── themes #主题├── _config.yml #全局配置文件└── package.json 执行npm install安装hexo所需模块 执行hexo generate生成静态文件 执行hexo s本地部署 访问http://localhost:4000/ Congratulations~~~ 12人生两苦：想要却不得，拥有却失去。 --褚禄山 珍惜当下,与君共勉~]]></content>
+    <content type="text"><![CDATA[如何快速利用hexo搭建blog？安装需要的工具 安装nodejs，最新版本自带npm，然后cmd，查看node -v，若有相应版本，则安装成功。 npm默认的源的下载速度可能很慢，建议使用淘宝镜像替换。 npm config set registry &quot;https://registry.npm.taobao.org&quot; 安装git 安装hexo 新建hexo文件夹 空白处右键git bash here 键入npm install hexo -g #-g表示全局安装, npm默认为当前项目安装 查看hexo version，有相应信息，则安装成功 让hexo跑起来~ 在hexo文件夹右键git bash here 执行hexo init，执行完生成如下目录结构 1234567891011.├── .deploy #需要部署的文件├── node_modules #Hexo插件├── public #生成的静态网页文件├── scaffolds #模板├── source #博客正文和其他源文件, 404 favicon CNAME 等都应该放在这里| ├── _drafts #草稿| └── _posts #文章├── themes #主题├── _config.yml #全局配置文件└── package.json 执行npm install安装hexo所需模块 执行hexo generate生成静态文件 执行hexo s本地部署 访问http://localhost:4000/ Congratulations~~~ 人生两苦：想要却不得，拥有却失去。 –褚禄山 珍惜当下,与君共勉~]]></content>
       <categories>
         <category>hexo-blog</category>
       </categories>
