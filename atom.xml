@@ -37,4 +37,84 @@
     
   </entry>
   
+  <entry>
+    <title>如何快速利用hexo搭建blog？</title>
+    <link href="http://yoursite.com/2018/11/10/hexo1/"/>
+    <id>http://yoursite.com/2018/11/10/hexo1/</id>
+    <published>2018-11-10T02:18:13.000Z</published>
+    <updated>2018-11-10T09:08:49.754Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;excerpt in=&quot;&quot; index=&quot;&quot; |=&quot;&quot; 首页摘要=&quot;&quot;&gt;
+    
+    </summary>
+    
+      <category term="hexo-blog" scheme="http://yoursite.com/categories/hexo-blog/"/>
+    
+    
+      <category term="hexo" scheme="http://yoursite.com/tags/hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>让hexo-blog更像一个blog</title>
+    <link href="http://yoursite.com/2018/11/10/hexo2/"/>
+    <id>http://yoursite.com/2018/11/10/hexo2/</id>
+    <published>2018-11-10T02:18:13.000Z</published>
+    <updated>2018-11-10T08:50:29.234Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;excerpt in=&quot;&quot; index=&quot;&quot; |=&quot;&quot; 首页摘要=&quot;&quot;&gt;
+    
+    </summary>
+    
+      <category term="hexo-blog" scheme="http://yoursite.com/categories/hexo-blog/"/>
+    
+    
+      <category term="hexo" scheme="http://yoursite.com/tags/hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>将hexo-blog部署到github</title>
+    <link href="http://yoursite.com/2018/11/10/hexo3/"/>
+    <id>http://yoursite.com/2018/11/10/hexo3/</id>
+    <published>2018-11-10T02:18:13.000Z</published>
+    <updated>2018-11-10T09:15:59.394Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;excerpt in=&quot;&quot; index=&quot;&quot; |=&quot;&quot; 首页摘要=&quot;&quot;&gt;
+    
+    </summary>
+    
+      <category term="hexo-blog" scheme="http://yoursite.com/categories/hexo-blog/"/>
+    
+    
+      <category term="hexo" scheme="http://yoursite.com/tags/hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>为hexo-blog增加评论功能</title>
+    <link href="http://yoursite.com/2018/11/10/hexo4/"/>
+    <id>http://yoursite.com/2018/11/10/hexo4/</id>
+    <published>2018-11-10T02:18:13.000Z</published>
+    <updated>2018-11-10T09:41:54.137Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;excerpt in=&quot;&quot; index=&quot;&quot; |=&quot;&quot; 首页摘要=&quot;&quot;&gt;
+    
+    </summary>
+    
+      <category term="hexo-blog" scheme="http://yoursite.com/categories/hexo-blog/"/>
+    
+    
+      <category term="hexo" scheme="http://yoursite.com/tags/hexo/"/>
+    
+  </entry>
+  
 </feed>
