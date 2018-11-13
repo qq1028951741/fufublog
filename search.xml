@@ -12,20 +12,22 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[让hexo-blog更像一个blog]]></title>
-    <url>%2F2018%2F11%2F10%2Fhexo2%2F</url>
-    <content type="text"><![CDATA[让hexo-blog更像一个blog hexo自带的blog样本可能不太满足我们对一个blog的追求，所以我们可以对站点配置和主题配置文件进行相应修改 我们先给hexo-选择一个主题可以从https://github.com/hexojs/hexo/wiki/Themes 选择一个喜欢的主题，到对应github复制地址，git clone到hexo文件夹 git clone git@github.com:litten/hexo-theme-yilia.git themes/yilia 配置文件位置12345678910111213.├── .deploy #需要部署的文件├── node_modules #Hexo插件├── public #生成的静态网页文件├── scaffolds #模板├── source #博客正文和其他源文件, 404 favicon CNAME 等都应该放在这里| ├── _drafts #草稿| └── _posts #文章├── themes #主题| ├── 主题名 #主题名| ├── _config.yml 我是主题配置文件├── _config.yml #全局配置文件 我是站点配置文件└── package.json 以上站点配置文件和主题配置文件位置 配置文件配置 站点配置文件 改博客title，描述，汉化，时区，主题 12345678910111213# Site blog信息设置title: 燃情岁月subtitle: 嘿嘿嘿description: fufublogkeywords:author: fufualanguage: zh-CNtimezone: Asia/Shanghai #广州貌似没有 用上海了# Extensions 主题设置## Plugins: https://hexo.io/plugins/## Themes: https://hexo.io/themes/theme: next 主题配置文件 这里主要改了主题风格和侧边栏显示位置、菜单改成了中文 1234567891011121314151617181920# Schemes 这里是四种主题风格选择#scheme: Muse#scheme: Mist#scheme: Piscesscheme: Gemini#侧边栏位置设置sidebar: # Sidebar Position, available value: left | right (only for Pisces | Gemini). #position: left position: right#菜单设置 menu: 主页: / || home #archives: /archives 目录: /categories || th 标签: /tags || tags #commonweal: /404.html 关于我: /about || user# Enable/Disable menu icons / item badges.# ||后面是图标指向 为菜单加点料 hexo文件夹中右击git bash here 依次键入hexo new page tags、hexo new page categories、hexo new page about 12345678910111213. ├── source #博客正文和其他源文件, 404 favicon CNAME 等都应该放在这里 | ├── _posts #文章 | ├── about #关于我 | ├── categories #目录 | ├── index.md #markdown文件 | ├── images #图片 | └── tags #标签 ├── themes #主题 | ├── 主题名 #主题名 | ├── _config.yml 我是主题配置文件 ├── _config.yml #全局配置文件 我是站点配置文件 └── package.json 以categories为例，修改index.md，type一定要有 123456---title: 目录date: 2018-11-10 09:57:57type: &quot;categories&quot;comments: false--- 这是about的index.md 123456---title: 关于我date: 2018-11-10 09:59:15comments: false---我就是我，不一样的烟火~ 关于新增一篇文章这边有两种方法 git bash，键入hexo new 我是一个栗子 或直接在_posts新建.md文件 修改.md文件，栗子 12345678910---title: 我是一个栗子date: 2018-11-10 10:18:13categories:- 栗子tags:- hexo---&lt;Excerpt in index | 首页摘要&gt; &lt;!-- more --&gt;&lt;The rest of contents | 余下全文&gt; 下面你想怎么markdown就怎么markdown more是为了在首页可以不显示整篇文章 来个blog头像 主题配置文件配置 123avatar: #这个是主题source下的image文件夹 url: /images/header.jpg 效果图 人生两苦：想要却不得，拥有却失去。 –褚禄山 珍惜当下,与君共勉~]]></content>
+    <title><![CDATA[我是一个栗子]]></title>
+    <url>%2F2018%2F11%2F10%2F%E6%88%91%E6%98%AF%E4%B8%80%E4%B8%AA%E6%A0%97%E5%AD%90%2F</url>
+    <content type="text"><![CDATA[网站:This is an example link.]]></content>
       <categories>
-        <category>hexo-blog</category>
+        <category>栗子</category>
       </categories>
       <tags>
         <tag>hexo</tag>
+        <tag>栗子</tag>
+        <tag>我也是一个栗子</tag>
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[为hexo-blog增加评论功能]]></title>
-    <url>%2F2018%2F11%2F10%2Fhexo4%2F</url>
-    <content type="text"><![CDATA[为hexo-blog增加评论功能 如果一个博客活着不是为了相互交流，那么我们开始吧，评论功能主要用LeanCloud+Valine集成的。 先注册LeanCloud网址：https://leancloud.cn/ LeanCloud操作 创建应用 进入设置，安全中心选项设置安全域名 存储选项中创建Class，相当于一个放评论的数据库表 进入设置，应用key选项，记下appid和appkey Valine这边hexo相关主题已经有相应配置 具体参考 在hexo中的使用https://valine.js.org/hexo.html 所以只需修改我们hexo中主题的配置文件 123456789101112valine: enable: true appid: appkey: notify: false # mail notifier , https://github.com/xCss/Valine/wiki verify: false # Verification code placeholder: 友善发言的人运气不会太差~ --小黄即 avatar: mm # gravatar style 头像设置看上面那个网址 #avatar: wavatar guest_info: nick,mail,link # custom comment header pageSize: 10 # pagination size visitor: true 部署git bash 键入 hexo d -g ,访问 http://你的用户名.github.io/ 效果图 人生两苦：想要却不得，拥有却失去。 –褚禄山 珍惜当下,与君共勉~]]></content>
+    <title><![CDATA[让hexo-blog更像一个blog]]></title>
+    <url>%2F2018%2F11%2F10%2Fhexo2%2F</url>
+    <content type="text"><![CDATA[让hexo-blog更像一个blog hexo自带的blog样本可能不太满足我们对一个blog的追求，所以我们可以对站点配置和主题配置文件进行相应修改 我们先给hexo-选择一个主题可以从https://github.com/hexojs/hexo/wiki/Themes 选择一个喜欢的主题，到对应github复制地址，git clone到hexo文件夹 git clone git@github.com:litten/hexo-theme-yilia.git themes/yilia 配置文件位置12345678910111213.├── .deploy #需要部署的文件├── node_modules #Hexo插件├── public #生成的静态网页文件├── scaffolds #模板├── source #博客正文和其他源文件, 404 favicon CNAME 等都应该放在这里| ├── _drafts #草稿| └── _posts #文章├── themes #主题| ├── 主题名 #主题名| ├── _config.yml 我是主题配置文件├── _config.yml #全局配置文件 我是站点配置文件└── package.json 以上站点配置文件和主题配置文件位置 配置文件配置 站点配置文件 改博客title，描述，汉化，时区，主题 12345678910111213# Site blog信息设置title: 燃情岁月subtitle: 嘿嘿嘿description: fufublogkeywords:author: fufualanguage: zh-CNtimezone: Asia/Shanghai #广州貌似没有 用上海了# Extensions 主题设置## Plugins: https://hexo.io/plugins/## Themes: https://hexo.io/themes/theme: next 主题配置文件 这里主要改了主题风格和侧边栏显示位置、菜单改成了中文 1234567891011121314151617181920# Schemes 这里是四种主题风格选择#scheme: Muse#scheme: Mist#scheme: Piscesscheme: Gemini#侧边栏位置设置sidebar: # Sidebar Position, available value: left | right (only for Pisces | Gemini). #position: left position: right#菜单设置 menu: 主页: / || home #archives: /archives 目录: /categories || th 标签: /tags || tags #commonweal: /404.html 关于我: /about || user# Enable/Disable menu icons / item badges.# ||后面是图标指向 为菜单加点料 hexo文件夹中右击git bash here 依次键入hexo new page tags、hexo new page categories、hexo new page about 12345678910111213. ├── source #博客正文和其他源文件, 404 favicon CNAME 等都应该放在这里 | ├── _posts #文章 | ├── about #关于我 | ├── categories #目录 | ├── index.md #markdown文件 | ├── images #图片 | └── tags #标签 ├── themes #主题 | ├── 主题名 #主题名 | ├── _config.yml 我是主题配置文件 ├── _config.yml #全局配置文件 我是站点配置文件 └── package.json 以categories为例，修改index.md，type一定要有 123456---title: 目录date: 2018-11-10 09:57:57type: &quot;categories&quot;comments: false--- 这是about的index.md 123456---title: 关于我date: 2018-11-10 09:59:15comments: false---我就是我，不一样的烟火~ 关于新增一篇文章这边有两种方法 git bash，键入hexo new 我是一个栗子 或直接在_posts新建.md文件 修改.md文件，栗子 12345678910---title: 我是一个栗子date: 2018-11-10 10:18:13categories:- 栗子tags:- hexo---&lt;Excerpt in index | 首页摘要&gt; &lt;!-- more --&gt;&lt;The rest of contents | 余下全文&gt; 下面你想怎么markdown就怎么markdown more是为了在首页可以不显示整篇文章 来个blog头像 主题配置文件配置 123avatar: #这个是主题source下的image文件夹 url: /images/header.jpg 效果图 人生两苦：想要却不得，拥有却失去。 –褚禄山 珍惜当下,与君共勉~]]></content>
       <categories>
         <category>hexo-blog</category>
       </categories>
@@ -45,16 +47,14 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[我是一个栗子]]></title>
-    <url>%2F2018%2F11%2F10%2F%E6%88%91%E6%98%AF%E4%B8%80%E4%B8%AA%E6%A0%97%E5%AD%90%2F</url>
-    <content type="text"><![CDATA[网站:This is an example link.]]></content>
+    <title><![CDATA[为hexo-blog增加评论功能]]></title>
+    <url>%2F2018%2F11%2F10%2Fhexo4%2F</url>
+    <content type="text"><![CDATA[为hexo-blog增加评论功能 如果一个博客活着不是为了相互交流，那么我们开始吧，评论功能主要用LeanCloud+Valine集成的。 先注册LeanCloud网址：https://leancloud.cn/ LeanCloud操作 创建应用 进入设置，安全中心选项设置安全域名 存储选项中创建Class，相当于一个放评论的数据库表 进入设置，应用key选项，记下appid和appkey Valine这边hexo相关主题已经有相应配置 具体参考 在hexo中的使用https://valine.js.org/hexo.html 所以只需修改我们hexo中主题的配置文件 123456789101112valine: enable: true appid: appkey: notify: false # mail notifier , https://github.com/xCss/Valine/wiki verify: false # Verification code placeholder: 友善发言的人运气不会太差~ --小黄即 avatar: mm # gravatar style 头像设置看上面那个网址 #avatar: wavatar guest_info: nick,mail,link # custom comment header pageSize: 10 # pagination size visitor: true 部署git bash 键入 hexo d -g ,访问 http://你的用户名.github.io/ 效果图 人生两苦：想要却不得，拥有却失去。 –褚禄山 珍惜当下,与君共勉~]]></content>
       <categories>
-        <category>栗子</category>
+        <category>hexo-blog</category>
       </categories>
       <tags>
         <tag>hexo</tag>
-        <tag>栗子</tag>
-        <tag>我也是一个栗子</tag>
       </tags>
   </entry>
   <entry>
