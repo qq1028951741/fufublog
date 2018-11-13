@@ -1911,7 +1911,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ff6f0f;
+  background: #b86eaa;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3194,6 +3194,12 @@ ul.breadcrumb li+li:last-child {
   .pagination {
     margin: 8px 0 0;
   }
+}
+body {
+  background-image: url("/images/background.jpg");
+  background-attachment: fixed;
+  background-repeat: repeat;
+  background-size: contain;
 }
 #animate {
   animation: heartAnimate 1.33s ease-in-out infinite;
