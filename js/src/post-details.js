@@ -102,3 +102,31 @@ $(document).ready(function() {
       : NexT.utils.displaySidebar();
   }
 });
+
+//----点击 图片放大js----------------
+function createImgEventFullScreen() {
+  var imgs = $(".post-body").find("img");
+  console.log(imgs);
+  for(var i = 0;i < imgs.length;i++) {
+    // $(imgs[i]).click(createCover(imgs[i]));
+    imgs[i].onclick= function(e) {
+      var src = e.srcElement.currentSrc;
+      createCover(src)
+    }
+  }
+
+  function createCover (src) {
+    console.log(src);
+    var cover = $("<div id='fullScreenCover' class='zhou-cover-img-container'><img class='zhou-cover-img' src='"+src+"'/></div>");
+    $("#fullScreenCover").remove();
+    $("body").append(cover);
+    $("body").addClass("zhou-no-scroll");
+    $("#fullScreenCover").click(function(){
+      $("#fullScreenCover").remove();
+      $("body").removeClass("zhou-no-scroll");
+    })
+  }
+}
+setTimeout(function(){
+  createImgEventFullScreen();
+},1000)

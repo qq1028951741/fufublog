@@ -117,7 +117,7 @@
 <meta property="og:image" content="http://yoursite.com/images/footer.jpg">
 <meta property="og:image" content="http://yoursite.com/images/文章版权和标签.jpg">
 <meta property="og:image" content="http://yoursite.com/images/美化效果图.jpg">
-<meta property="og:updated_time" content="2018-11-13T03:47:29.812Z">
+<meta property="og:updated_time" content="2018-11-13T07:13:51.889Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="美化hexo-blog">
 <meta name="twitter:image" content="http://yoursite.com/images/footer.jpg">
@@ -430,7 +430,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-11-13 11:47:29" itemprop="dateModified" datetime="2018-11-13T11:47:29+08:00">2018-11-13</time>
+                <time title="修改时间：2018-11-13 15:13:51" itemprop="dateModified" datetime="2018-11-13T15:13:51+08:00">2018-11-13</time>
               
             
           </span>
@@ -657,6 +657,22 @@
 <li><p>接下来我是在原本的访客记录位置下添加 <code>&lt;div id=&quot;days&quot;&gt;&lt;/div&gt;</code> </p>
 </li>
 </ul>
+<h3 id="添加文章图片点击放大功能"><a href="#添加文章图片点击放大功能" class="headerlink" title="添加文章图片点击放大功能"></a>添加文章图片点击放大功能</h3><ul>
+<li><p>目录</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">.</span><br><span class="line">    ├── source        </span><br><span class="line">    ├── themes        #主题</span><br><span class="line">    |   ├── next   #主题名</span><br><span class="line">    |   	├── source  </span><br><span class="line">    |   		├── js </span><br><span class="line">    |   			├── src</span><br></pre></td></tr></table></figure>
+<p>中文件post-details.js最后面添加</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">//----点击 图片放大js----------------</span><br><span class="line">function createImgEventFullScreen() &#123;</span><br><span class="line">  var imgs = $(&quot;.post-body&quot;).find(&quot;img&quot;);</span><br><span class="line">  console.log(imgs);</span><br><span class="line">  for(var i = 0;i &lt; imgs.length;i++) &#123;</span><br><span class="line">    // $(imgs[i]).click(createCover(imgs[i]));</span><br><span class="line">    imgs[i].onclick= function(e) &#123;</span><br><span class="line">      var src = e.srcElement.currentSrc;</span><br><span class="line">      createCover(src)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  function createCover (src) &#123;</span><br><span class="line">    console.log(src);</span><br><span class="line">    var cover = $(&quot;&lt;div id=&apos;fullScreenCover&apos; class=&apos;zhou-cover-img-container&apos;&gt;&lt;img class=&apos;zhou-cover-img&apos; src=&apos;&quot;+src+&quot;&apos;/&gt;&lt;/div&gt;&quot;);</span><br><span class="line">    $(&quot;#fullScreenCover&quot;).remove();</span><br><span class="line">    $(&quot;body&quot;).append(cover);</span><br><span class="line">    $(&quot;body&quot;).addClass(&quot;zhou-no-scroll&quot;);</span><br><span class="line">    $(&quot;#fullScreenCover&quot;).click(function()&#123;</span><br><span class="line">      $(&quot;#fullScreenCover&quot;).remove();</span><br><span class="line">      $(&quot;body&quot;).removeClass(&quot;zhou-no-scroll&quot;);</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">setTimeout(function()&#123;</span><br><span class="line">  createImgEventFullScreen();</span><br><span class="line">&#125;,1000)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>目录</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">.</span><br><span class="line">    ├── source        </span><br><span class="line">    ├── themes        #主题</span><br><span class="line">    |   ├── next   #主题名</span><br><span class="line">    |   	├── source  </span><br><span class="line">    |   		├── css </span><br><span class="line">    |   			├── _custom</span><br></pre></td></tr></table></figure>
+<p>中文件custom.styl最后添加</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">.zhou-cover-img-container&#123;</span><br><span class="line"> position: fixed;</span><br><span class="line"> top: 10%;</span><br><span class="line"> left: 10%;</span><br><span class="line"> width: 80%;</span><br><span class="line"> height: 80%;</span><br><span class="line"> z-index: 10002;</span><br><span class="line"> text-align: center;</span><br><span class="line"> background-color: #000;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.zhou-cover-img&#123;</span><br><span class="line"> left: 0;</span><br><span class="line"> height: 100%;</span><br><span class="line"> width: 100%;</span><br><span class="line"> position: absolute;</span><br><span class="line"> top: 0;</span><br><span class="line"> bottom: 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>目录</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">.</span><br><span class="line">    ├── source        </span><br><span class="line">    ├── node_modules        </span><br><span class="line">    |   ├── hexo-blog-encrypt   </span><br><span class="line">    |   	├── lib</span><br></pre></td></tr></table></figure>
+<p>中修改blog-encrypt.js ，在 <code>$(&#39;#encrypt-blog&#39;).html(content);</code> 后面加上 <code>createImgEventFullScreen();</code> </p>
+</li>
+</ul>
 <h3 id="…-blog美化先到这里吧，感觉有点被榨干了，虽然说还有些高阶优化，后面再补充吧，以上。"><a href="#…-blog美化先到这里吧，感觉有点被榨干了，虽然说还有些高阶优化，后面再补充吧，以上。" class="headerlink" title="….blog美化先到这里吧，感觉有点被榨干了，虽然说还有些高阶优化，后面再补充吧，以上。"></a>….blog美化先到这里吧，感觉有点被榨干了，虽然说还有些高阶优化，后面再补充吧，以上。</h3><h3 id="效果图"><a href="#效果图" class="headerlink" title="效果图"></a>效果图</h3><p><img src="/images/美化效果图.jpg" alt="&quot;图片描述&quot;"></p>
 <p>更多效果请移步，blog：<a href="https://qq1028951741.github.io/" target="_blank" rel="noopener">https://qq1028951741.github.io/</a></p>
 <hr>
@@ -685,7 +701,7 @@
   <p><span>本文标题:</span>美化hexo-blog</p>
   <p><span>文章作者:</span>fufua</p>
   <p><span>发布时间:</span>2018年11月10日 - 10:18:13</p>
-  <p><span>最后更新:</span>2018年11月13日 - 11:47:29</p>
+  <p><span>最后更新:</span>2018年11月13日 - 15:13:51</p>
   <p><span>原始链接:</span><a href="/2018/11/10/hexo5/" title="美化hexo-blog">http://yoursite.com/2018/11/10/hexo5/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://yoursite.com/2018/11/10/hexo5/" aria-label="复制成功！"></i></span>
   </p>
@@ -742,14 +758,18 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2018/11/10/hexo2/" rel="next" title="让hexo-blog更像一个blog">
+                <i class="fa fa-chevron-left"></i> 让hexo-blog更像一个blog
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/11/10/我是一个栗子/" rel="prev" title="我是一个栗子">
-                我是一个栗子 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/11/10/hexo3/" rel="prev" title="将hexo-blog部署到github">
+                将hexo-blog部署到github <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -902,7 +922,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#屏蔽blog网页底部强力驱动"><span class="nav-number">1.</span> <span class="nav-text">屏蔽blog网页底部强力驱动</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#更改底部footer图标"><span class="nav-number">2.</span> <span class="nav-text">更改底部footer图标</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#增加底部访客统计功能"><span class="nav-number">3.</span> <span class="nav-text">增加底部访客统计功能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#添加文章版权声明"><span class="nav-number">4.</span> <span class="nav-text">添加文章版权声明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改标签图标"><span class="nav-number">5.</span> <span class="nav-text">修改标签图标</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文章末尾添加文章结束提示"><span class="nav-number">6.</span> <span class="nav-text">文章末尾添加文章结束提示</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#鼠标点击出现爱心效果"><span class="nav-number">7.</span> <span class="nav-text">鼠标点击出现爱心效果</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#为blog设置一只小可爱"><span class="nav-number">8.</span> <span class="nav-text">为blog设置一只小可爱</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置网站图标"><span class="nav-number">9.</span> <span class="nav-text">设置网站图标</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置背景图片"><span class="nav-number">10.</span> <span class="nav-text">设置背景图片</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置可交互背景"><span class="nav-number">11.</span> <span class="nav-text">设置可交互背景</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#添加github图标链接"><span class="nav-number">12.</span> <span class="nav-text">添加github图标链接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置圆形动态头像"><span class="nav-number">13.</span> <span class="nav-text">设置圆形动态头像</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置代码块样式"><span class="nav-number">14.</span> <span class="nav-text">设置代码块样式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#网页底部添加blog运行时长"><span class="nav-number">15.</span> <span class="nav-text">网页底部添加blog运行时长</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#…-blog美化先到这里吧，感觉有点被榨干了，虽然说还有些高阶优化，后面再补充吧，以上。"><span class="nav-number">16.</span> <span class="nav-text">….blog美化先到这里吧，感觉有点被榨干了，虽然说还有些高阶优化，后面再补充吧，以上。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#效果图"><span class="nav-number">17.</span> <span class="nav-text">效果图</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#屏蔽blog网页底部强力驱动"><span class="nav-number">1.</span> <span class="nav-text">屏蔽blog网页底部强力驱动</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#更改底部footer图标"><span class="nav-number">2.</span> <span class="nav-text">更改底部footer图标</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#增加底部访客统计功能"><span class="nav-number">3.</span> <span class="nav-text">增加底部访客统计功能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#添加文章版权声明"><span class="nav-number">4.</span> <span class="nav-text">添加文章版权声明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改标签图标"><span class="nav-number">5.</span> <span class="nav-text">修改标签图标</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文章末尾添加文章结束提示"><span class="nav-number">6.</span> <span class="nav-text">文章末尾添加文章结束提示</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#鼠标点击出现爱心效果"><span class="nav-number">7.</span> <span class="nav-text">鼠标点击出现爱心效果</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#为blog设置一只小可爱"><span class="nav-number">8.</span> <span class="nav-text">为blog设置一只小可爱</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置网站图标"><span class="nav-number">9.</span> <span class="nav-text">设置网站图标</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置背景图片"><span class="nav-number">10.</span> <span class="nav-text">设置背景图片</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置可交互背景"><span class="nav-number">11.</span> <span class="nav-text">设置可交互背景</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#添加github图标链接"><span class="nav-number">12.</span> <span class="nav-text">添加github图标链接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置圆形动态头像"><span class="nav-number">13.</span> <span class="nav-text">设置圆形动态头像</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置代码块样式"><span class="nav-number">14.</span> <span class="nav-text">设置代码块样式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#网页底部添加blog运行时长"><span class="nav-number">15.</span> <span class="nav-text">网页底部添加blog运行时长</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#添加文章图片点击放大功能"><span class="nav-number">16.</span> <span class="nav-text">添加文章图片点击放大功能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#…-blog美化先到这里吧，感觉有点被榨干了，虽然说还有些高阶优化，后面再补充吧，以上。"><span class="nav-number">17.</span> <span class="nav-text">….blog美化先到这里吧，感觉有点被榨干了，虽然说还有些高阶优化，后面再补充吧，以上。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#效果图"><span class="nav-number">18.</span> <span class="nav-text">效果图</span></a></li></ol></div>
             
 
           </div>
