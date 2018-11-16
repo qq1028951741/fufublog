@@ -1,6 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[http请求工具类]]></title>
+    <url>%2F2018%2F11%2F16%2Fhttp%E8%AF%B7%E6%B1%82%E5%B7%A5%E5%85%B7%E7%B1%BB%2F</url>
+    <content type="text"><![CDATA[http请求工具类 这个一个能自己配置请求url、请求方法、请求的媒体类型信息、请求的参数的http工具类 HttpUtil类1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556package com.fufu.httprequest.tools;import java.io.BufferedReader;import java.io.DataOutputStream;import java.io.InputStreamReader;import java.net.HttpURLConnection;import java.net.URL;import java.util.List;import java.util.Map;public class HttpUtil &#123; public static String httpRequest(String generalUrl,String requestMethod, String contentType, String params) throws Exception &#123; String encoding = &quot;UTF-8&quot;; if (generalUrl.contains(&quot;nlp&quot;)) &#123; encoding = &quot;GBK&quot;; &#125; URL url = new URL(generalUrl); // 打开和URL之间的连接 HttpURLConnection connection = (HttpURLConnection) url.openConnection(); connection.setRequestMethod(requestMethod); // 设置通用的请求属性 connection.setRequestProperty(&quot;Content-Type&quot;, contentType); connection.setRequestProperty(&quot;Connection&quot;, &quot;Keep-Alive&quot;); connection.setUseCaches(false); connection.setDoOutput(true); connection.setDoInput(true); // 得到请求的输出流对象 DataOutputStream out = new DataOutputStream(connection.getOutputStream()); out.write(params.getBytes(encoding)); out.flush(); out.close(); // 建立实际的连接 connection.connect(); // 获取所有响应头字段 Map&lt;String, List&lt;String&gt;&gt; headers = connection.getHeaderFields(); // 遍历所有的响应头字段// for (String key : headers.keySet()) &#123;// System.err.println(key + &quot;---&gt;&quot; + headers.get(key));// &#125; // 定义 BufferedReader输入流来读取URL的响应 BufferedReader in = null; in = new BufferedReader( new InputStreamReader(connection.getInputStream(), encoding)); String result = &quot;&quot;; String getLine; while ((getLine = in.readLine()) != null) &#123; result += getLine; &#125; in.close();// System.err.println(&quot;result:&quot; + result); return result; &#125;&#125; test方法12345678910111213141516171819202122232425package com.fufu.httprequest;import com.fufu.httprequest.tools.HttpUtil;import net.sf.json.JSONObject;import org.junit.Test;import org.junit.runner.RunWith;import org.springframework.boot.test.context.SpringBootTest;import org.springframework.test.context.junit4.SpringRunner;@RunWith(SpringRunner.class)@SpringBootTestpublic class HttprequestApplicationTests &#123; @Test public void contextLoads() &#123; try &#123; String result = HttpUtil.httpRequest(&quot;http://localhost:8080/robotservice/visitorRecord/qryVisitedUnit&quot;,&quot;POST&quot;,&quot;application/x-www-form-urlencoded&quot;,&quot;telNum=1555&quot;); JSONObject jobj = JSONObject.fromObject(result); System.out.println(jobj.toString()); &#125; catch (Exception e) &#123; e.printStackTrace(); &#125; &#125;&#125; 人生两苦：想要却不得，拥有却失去。 –褚禄山 珍惜当下,与君共勉~]]></content>
+      <categories>
+        <category>开发日常记录</category>
+      </categories>
+      <tags>
+        <tag>http</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[java 中 byte[\]、File、InputStream 互相转换]]></title>
+    <url>%2F2018%2F11%2F16%2Fjava%20%E4%B8%AD%20byte%5B%5D%E3%80%81File%E3%80%81InputStream%20%E4%BA%92%E7%9B%B8%E8%BD%AC%E6%8D%A2%2F</url>
+    <content type="text"><![CDATA[java 中 byte[]、File、InputStream 互相转换 将File、FileInputStream 转换为byte数组： 1234567File file = new File(&quot;test.txt&quot;);InputStream input = new FileInputStream(file);byte[] byt = new byte[input.available()];input.read(byt); 将byte数组转换为InputStream： 123byte[] byt = new byte[1024];InputStream input = new ByteArrayInputStream(byt); 将byte数组转换为File : 1234567File file = new File(&apos;&apos;);OutputStream output = new FileOutputStream(file);BufferedOutputStream bufferedOutput = new BufferedOutputStream(output);bufferedOutput.write(byt); 人生两苦：想要却不得，拥有却失去。 –褚禄山 珍惜当下,与君共勉~]]></content>
+      <categories>
+        <category>开发日常记录</category>
+      </categories>
+      <tags>
+        <tag>byte</tag>
+        <tag>File</tag>
+        <tag>InputStream</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[图片base64编码转MultipartFile]]></title>
+    <url>%2F2018%2F11%2F15%2F%E5%9B%BE%E7%89%87base64%E7%BC%96%E7%A0%81%E8%BD%ACMultipartFile%2F</url>
+    <content type="text"><![CDATA[图片base64编码转MultipartFiletips:图片base64编码传到后端还需要经过url编码，否则会出现+号丢失新建BASE64DecodedMultipartFile类实现MultipartFile123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960package com.*.tools;import org.springframework.web.multipart.MultipartFile;import java.io.*;public class BASE64DecodedMultipartFile implements MultipartFile &#123; private final byte[] imgContent; private final String header; public BASE64DecodedMultipartFile(byte[] imgContent, String header) &#123; this.imgContent = imgContent; this.header = header.split(&quot;;&quot;)[0]; &#125; @Override public String getName() &#123; // TODO - implementation depends on your requirements return System.currentTimeMillis() + Math.random() + &quot;.&quot; + header.split(&quot;/&quot;)[1]; &#125; @Override public String getOriginalFilename() &#123; // TODO - implementation depends on your requirements return System.currentTimeMillis() + (int)Math.random() * 10000 + &quot;.&quot; + header.split(&quot;/&quot;)[1]; &#125; @Override public String getContentType() &#123; // TODO - implementation depends on your requirements return header.split(&quot;:&quot;)[1]; &#125; @Override public boolean isEmpty() &#123; return imgContent == null || imgContent.length == 0; &#125; @Override public long getSize() &#123; return imgContent.length; &#125; @Override public byte[] getBytes() throws IOException &#123; return imgContent; &#125; @Override public InputStream getInputStream() throws IOException &#123; return new ByteArrayInputStream(imgContent); &#125; @Override public void transferTo(File dest) throws IOException, IllegalStateException &#123; new FileOutputStream(dest).write(imgContent); &#125;&#125; 新建tools.java，在里面里添加123456789101112131415161718 //base64转Multipartpublic static MultipartFile base64ToMultipart(String base64) &#123; try &#123; String[] baseStrs = base64.split(&quot;,&quot;); BASE64Decoder decoder = new BASE64Decoder(); byte[] b = new byte[0]; b = decoder.decodeBuffer(baseStrs[1]); for(int i = 0; i &lt; b.length; ++i) &#123; if (b[i] &lt; 0) &#123; b[i] += 256; &#125; &#125; return new BASE64DecodedMultipartFile(b, baseStrs[0]); &#125; catch (IOException e) &#123; e.printStackTrace(); return null; &#125;&#125; 代码调用1MultipartFile file = tools.base64ToMultipart(&quot;你的图片base64编码，这之前要先urldecode&quot;); 人生两苦：想要却不得，拥有却失去。 –褚禄山 珍惜当下,与君共勉~]]></content>
+      <categories>
+        <category>开发日常记录</category>
+      </categories>
+      <tags>
+        <tag>编码</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[如何快速利用hexo搭建blog？]]></title>
     <url>%2F2018%2F11%2F10%2Fhexo1%2F</url>
     <content type="text"><![CDATA[如何快速利用hexo搭建blog？安装需要的工具 安装nodejs，最新版本自带npm，然后cmd，查看node -v，若有相应版本，则安装成功。 npm默认的源的下载速度可能很慢，建议使用淘宝镜像替换。 npm config set registry &quot;https://registry.npm.taobao.org&quot; 安装git 安装hexo 新建hexo文件夹 空白处右键git bash here 键入npm install hexo -g #-g表示全局安装, npm默认为当前项目安装 查看hexo version，有相应信息，则安装成功 让hexo跑起来~ 在hexo文件夹右键git bash here 执行hexo init，执行完生成如下目录结构 1234567891011.├── .deploy #需要部署的文件├── node_modules #Hexo插件├── public #生成的静态网页文件├── scaffolds #模板├── source #博客正文和其他源文件, 404 favicon CNAME 等都应该放在这里| ├── _drafts #草稿| └── _posts #文章├── themes #主题├── _config.yml #全局配置文件└── package.json 执行npm install安装hexo所需模块 执行hexo generate生成静态文件 执行hexo s本地部署 访问http://localhost:4000/ Congratulations~~~ 人生两苦：想要却不得，拥有却失去。 –褚禄山 珍惜当下,与君共勉~]]></content>

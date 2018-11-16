@@ -110,17 +110,15 @@
 
 
 
-  <meta name="keywords" content="hexo">
+  <meta name="keywords" content="http">
 <meta property="og:type" content="article">
-<meta property="og:title" content="如何快速利用hexo搭建blog？">
-<meta property="og:url" content="https://qq1028951741.github.io/2018/11/10/hexo1/index.html">
+<meta property="og:title" content="http请求工具类">
+<meta property="og:url" content="https://qq1028951741.github.io/2018/11/16/http请求工具类/index.html">
 <meta property="og:site_name" content="燃情岁月">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://qq1028951741.github.io/images/firstDeploy.jpg">
-<meta property="og:updated_time" content="2018-11-12T09:13:06.579Z">
+<meta property="og:updated_time" content="2018-11-16T02:13:03.550Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="如何快速利用hexo搭建blog？">
-<meta name="twitter:image" content="https://qq1028951741.github.io/images/firstDeploy.jpg">
+<meta name="twitter:title" content="http请求工具类">
 
 
 
@@ -129,7 +127,7 @@
 
 
 
-  <link rel="canonical" href="https://qq1028951741.github.io/2018/11/10/hexo1/">
+  <link rel="canonical" href="https://qq1028951741.github.io/2018/11/16/http请求工具类/">
 
 
 
@@ -139,7 +137,7 @@
   };
 </script>
 
-  <title>如何快速利用hexo搭建blog？ | 燃情岁月</title>
+  <title>http请求工具类 | 燃情岁月</title>
   
 
 
@@ -371,7 +369,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://qq1028951741.github.io/2018/11/10/hexo1/">
+    <link itemprop="mainEntityOfPage" href="https://qq1028951741.github.io/2018/11/16/http请求工具类/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="fufua">
@@ -388,7 +386,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">如何快速利用hexo搭建blog？
+          <h1 class="post-title" itemprop="name headline">http请求工具类
               
             
           </h1>
@@ -413,24 +411,12 @@
                 
               
 
-              <time title="创建时间：2018-11-10 10:18:13" itemprop="dateCreated datePublished" datetime="2018-11-10T10:18:13+08:00">2018-11-10</time>
+              <time title="创建时间：2018-11-16 10:18:13 / 修改时间：10:13:03" itemprop="dateCreated datePublished" datetime="2018-11-16T10:18:13+08:00">2018-11-16</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2018-11-12 17:13:06" itemprop="dateModified" datetime="2018-11-12T17:13:06+08:00">2018-11-12</time>
               
             
           </span>
@@ -447,7 +433,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/hexo-blog/" itemprop="url" rel="index"><span itemprop="name">hexo-blog</span></a></span>
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/开发日常记录/" itemprop="url" rel="index"><span itemprop="name">开发日常记录</span></a></span>
 
                 
                 
@@ -462,8 +448,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/11/10/hexo1/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018/11/10/hexo1/" itemprop="commentCount"></span>
+                <a href="/2018/11/16/http请求工具类/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018/11/16/http请求工具类/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -471,7 +457,7 @@
 
           
           
-             <span id="/2018/11/10/hexo1/" class="leancloud_visitors" data-flag-title="如何快速利用hexo搭建blog？">
+             <span id="/2018/11/16/http请求工具类/" class="leancloud_visitors" data-flag-title="http请求工具类">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -502,44 +488,11 @@
 
       
         <p><excerpt in="" index="" |="" 首页摘要=""><a id="more"></a><the rest="" of="" contents="" |="" 余下全文=""></the></excerpt></p>
-<h2 id="如何快速利用hexo搭建blog？"><a href="#如何快速利用hexo搭建blog？" class="headerlink" title="如何快速利用hexo搭建blog？"></a>如何快速利用hexo搭建blog？</h2><h3 id="安装需要的工具"><a href="#安装需要的工具" class="headerlink" title="安装需要的工具"></a>安装需要的工具</h3><ul>
-<li><p>安装nodejs，最新版本自带npm，然后cmd，查看node -v，若有相应版本，则安装成功。</p>
-<ul>
-<li><p>npm默认的源的下载速度可能很慢，建议使用淘宝镜像替换。</p>
-<p><code>npm config set registry &quot;https://registry.npm.taobao.org&quot;</code></p>
-</li>
-</ul>
-</li>
-<li><p>安装git</p>
-</li>
-</ul>
-<h3 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h3><ul>
-<li><p>新建hexo文件夹</p>
-</li>
-<li><p>空白处右键git bash here</p>
-</li>
-<li><p>键入npm install hexo -g  #-g表示全局安装, npm默认为当前项目安装</p>
-</li>
-<li><p>查看hexo version，有相应信息，则安装成功</p>
-</li>
-</ul>
-<h3 id="让hexo跑起来"><a href="#让hexo跑起来" class="headerlink" title="让hexo跑起来~"></a>让hexo跑起来~</h3><ul>
-<li><p>在hexo文件夹右键git bash here</p>
-</li>
-<li><p>执行hexo init，执行完生成如下目录结构</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">.</span><br><span class="line">├── .deploy       #需要部署的文件</span><br><span class="line">├── node_modules  #Hexo插件</span><br><span class="line">├── public        #生成的静态网页文件</span><br><span class="line">├── scaffolds     #模板</span><br><span class="line">├── source        #博客正文和其他源文件, 404 favicon CNAME 等都应该放在这里</span><br><span class="line">|   ├── _drafts   #草稿</span><br><span class="line">|   └── _posts    #文章</span><br><span class="line">├── themes        #主题</span><br><span class="line">├── _config.yml   #全局配置文件</span><br><span class="line">└── package.json</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>执行npm install安装hexo所需模块</p>
-</li>
-<li><p>执行hexo generate生成静态文件</p>
-</li>
-<li><p>执行hexo s本地部署</p>
-</li>
-<li><p>访问<a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a></p>
-</li>
-</ul>
-<p><img src="/images/firstDeploy.jpg" alt="&quot;图片描述&quot;"></p>
-<p><font color="blue" style="font-size:30px">Congratulations~~~</font></p>
+<h2 id="http请求工具类"><a href="#http请求工具类" class="headerlink" title="http请求工具类"></a>http请求工具类</h2><blockquote>
+<p>这个一个能自己配置请求url、请求方法、请求的媒体类型信息、请求的参数的http工具类</p>
+</blockquote>
+<h3 id="HttpUtil类"><a href="#HttpUtil类" class="headerlink" title="HttpUtil类"></a>HttpUtil类</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line">package com.fufu.httprequest.tools;</span><br><span class="line"></span><br><span class="line">import java.io.BufferedReader;</span><br><span class="line">import java.io.DataOutputStream;</span><br><span class="line">import java.io.InputStreamReader;</span><br><span class="line">import java.net.HttpURLConnection;</span><br><span class="line">import java.net.URL;</span><br><span class="line">import java.util.List;</span><br><span class="line">import java.util.Map;</span><br><span class="line"></span><br><span class="line">public class HttpUtil &#123;</span><br><span class="line">    public static String httpRequest(String generalUrl,String requestMethod, String contentType, String params)</span><br><span class="line">            throws Exception &#123;</span><br><span class="line">        String encoding = &quot;UTF-8&quot;;</span><br><span class="line">        if (generalUrl.contains(&quot;nlp&quot;)) &#123;</span><br><span class="line">            encoding = &quot;GBK&quot;;</span><br><span class="line">        &#125;</span><br><span class="line">        URL url = new URL(generalUrl);</span><br><span class="line">        // 打开和URL之间的连接</span><br><span class="line">        HttpURLConnection connection = (HttpURLConnection) url.openConnection();</span><br><span class="line">        connection.setRequestMethod(requestMethod);</span><br><span class="line">        // 设置通用的请求属性</span><br><span class="line">        connection.setRequestProperty(&quot;Content-Type&quot;, contentType);</span><br><span class="line">        connection.setRequestProperty(&quot;Connection&quot;, &quot;Keep-Alive&quot;);</span><br><span class="line">        connection.setUseCaches(false);</span><br><span class="line">        connection.setDoOutput(true);</span><br><span class="line">        connection.setDoInput(true);</span><br><span class="line"></span><br><span class="line">        // 得到请求的输出流对象</span><br><span class="line">        DataOutputStream out = new DataOutputStream(connection.getOutputStream());</span><br><span class="line">        out.write(params.getBytes(encoding));</span><br><span class="line">        out.flush();</span><br><span class="line">        out.close();</span><br><span class="line"></span><br><span class="line">        // 建立实际的连接</span><br><span class="line">        connection.connect();</span><br><span class="line">        // 获取所有响应头字段</span><br><span class="line">        Map&lt;String, List&lt;String&gt;&gt; headers = connection.getHeaderFields();</span><br><span class="line">        // 遍历所有的响应头字段</span><br><span class="line">//        for (String key : headers.keySet()) &#123;</span><br><span class="line">//            System.err.println(key + &quot;---&gt;&quot; + headers.get(key));</span><br><span class="line">//        &#125;</span><br><span class="line">        // 定义 BufferedReader输入流来读取URL的响应</span><br><span class="line">        BufferedReader in = null;</span><br><span class="line">        in = new BufferedReader(</span><br><span class="line">                new InputStreamReader(connection.getInputStream(), encoding));</span><br><span class="line">        String result = &quot;&quot;;</span><br><span class="line">        String getLine;</span><br><span class="line">        while ((getLine = in.readLine()) != null) &#123;</span><br><span class="line">            result += getLine;</span><br><span class="line">        &#125;</span><br><span class="line">        in.close();</span><br><span class="line">//        System.err.println(&quot;result:&quot; + result);</span><br><span class="line">        return result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="test方法"><a href="#test方法" class="headerlink" title="test方法"></a>test方法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">package com.fufu.httprequest;</span><br><span class="line"></span><br><span class="line">import com.fufu.httprequest.tools.HttpUtil;</span><br><span class="line">import net.sf.json.JSONObject;</span><br><span class="line">import org.junit.Test;</span><br><span class="line">import org.junit.runner.RunWith;</span><br><span class="line">import org.springframework.boot.test.context.SpringBootTest;</span><br><span class="line">import org.springframework.test.context.junit4.SpringRunner;</span><br><span class="line"></span><br><span class="line">@RunWith(SpringRunner.class)</span><br><span class="line">@SpringBootTest</span><br><span class="line">public class HttprequestApplicationTests &#123;</span><br><span class="line"></span><br><span class="line">    @Test</span><br><span class="line">    public void contextLoads() &#123;</span><br><span class="line">        try &#123;</span><br><span class="line">            String result = HttpUtil.httpRequest(&quot;http://localhost:8080/robotservice/visitorRecord/qryVisitedUnit&quot;,&quot;POST&quot;,&quot;application/x-www-form-urlencoded&quot;,&quot;telNum=1555&quot;);</span><br><span class="line">            JSONObject jobj = JSONObject.fromObject(result);</span><br><span class="line">            System.out.println(jobj.toString());</span><br><span class="line">        &#125; catch (Exception e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <hr>
 <blockquote class="blockquote-center"><p>人生两苦：想要却不得，拥有却失去。  –褚禄山<br>            珍惜当下,与君共勉~</p>
 </blockquote>
@@ -563,12 +516,12 @@
   <script src="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.min.js"></script>
   <link rel="stylesheet" type="text/css" href="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.mini.css">
 
-  <p><span>本文标题:</span>如何快速利用hexo搭建blog？</p>
+  <p><span>本文标题:</span>http请求工具类</p>
   <p><span>文章作者:</span>fufua</p>
-  <p><span>发布时间:</span>2018年11月10日 - 10:18:13</p>
-  <p><span>最后更新:</span>2018年11月12日 - 17:13:06</p>
-  <p><span>原始链接:</span><a href="/2018/11/10/hexo1/" title="如何快速利用hexo搭建blog？">https://qq1028951741.github.io/2018/11/10/hexo1/</a>
-    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://qq1028951741.github.io/2018/11/10/hexo1/" aria-label="复制成功！"></i></span>
+  <p><span>发布时间:</span>2018年11月16日 - 10:18:13</p>
+  <p><span>最后更新:</span>2018年11月16日 - 10:13:03</p>
+  <p><span>原始链接:</span><a href="/2018/11/16/http请求工具类/" title="http请求工具类">https://qq1028951741.github.io/2018/11/16/http请求工具类/</a>
+    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://qq1028951741.github.io/2018/11/16/http请求工具类/" aria-label="复制成功！"></i></span>
   </p>
   <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
 </div>
@@ -610,7 +563,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/hexo/" rel="tag"><i class="fa fa-bicycle"></i> hexo</a>
+            <a href="/tags/http/" rel="tag"><i class="fa fa-bicycle"></i> http</a>
           
         </div>
       
@@ -623,8 +576,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/11/10/我是一个栗子/" rel="next" title="我是一个栗子">
-                <i class="fa fa-chevron-left"></i> 我是一个栗子
+              <a href="/2018/11/16/java 中 byte[]、File、InputStream 互相转换/" rel="next" title="java 中 byte[\]、File、InputStream 互相转换">
+                <i class="fa fa-chevron-left"></i> java 中 byte[\]、File、InputStream 互相转换
               </a>
             
           </div>
@@ -632,10 +585,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/11/15/图片base64编码转MultipartFile/" rel="prev" title="图片base64编码转MultipartFile">
-                图片base64编码转MultipartFile <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -799,7 +748,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#如何快速利用hexo搭建blog？"><span class="nav-number">1.</span> <span class="nav-text">如何快速利用hexo搭建blog？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装需要的工具"><span class="nav-number">1.1.</span> <span class="nav-text">安装需要的工具</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装hexo"><span class="nav-number">1.2.</span> <span class="nav-text">安装hexo</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#让hexo跑起来"><span class="nav-number">1.3.</span> <span class="nav-text">让hexo跑起来~</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#http请求工具类"><span class="nav-number">1.</span> <span class="nav-text">http请求工具类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#HttpUtil类"><span class="nav-number">1.1.</span> <span class="nav-text">HttpUtil类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#test方法"><span class="nav-number">1.2.</span> <span class="nav-text">test方法</span></a></li></ol></li></ol></div>
             
 
           </div>
