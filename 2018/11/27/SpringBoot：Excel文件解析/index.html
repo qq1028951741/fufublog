@@ -1,0 +1,1353 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+  <meta name="baidu-site-verification" content="kr5FROQX6N">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=6.5.0" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.5.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/Caduceus_32px_578397_easyicon.net.ico?v=6.5.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.5.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.5.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '6.5.0',
+    sidebar: {"position":"right","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="keywords" content="SpringBoot">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SpringBoot：Excel文件解析">
+<meta property="og:url" content="https://qq1028951741.github.io/2018/11/27/SpringBoot：Excel文件解析/index.html">
+<meta property="og:site_name" content="燃情岁月">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://qq1028951741.github.io/images/exceltobean效果图.jpg">
+<meta property="og:updated_time" content="2018-11-27T06:11:25.170Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="SpringBoot：Excel文件解析">
+<meta name="twitter:image" content="https://qq1028951741.github.io/images/exceltobean效果图.jpg">
+
+
+
+  <link rel="alternate" href="/atom.xml" title="燃情岁月" type="application/atom+xml">
+
+
+
+
+  <link rel="canonical" href="https://qq1028951741.github.io/2018/11/27/SpringBoot：Excel文件解析/">
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>SpringBoot：Excel文件解析 | 燃情岁月</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail">
+    <div class="headband"></div>
+    <a href="https://github.com/search?utf8=%E2%9C%93&q=qq1028951741&type=Repositories" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#fff; color:#151513; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+	<header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">燃情岁月</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">嘿嘿嘿</p>
+      
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-主页">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>主页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-目录">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>目录</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-标签">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tags" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-关于">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/about" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
+        </li>
+      
+    </ul>
+  
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://qq1028951741.github.io/2018/11/27/SpringBoot：Excel文件解析/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="fufua">
+      <meta itemprop="description" content="fufublog">
+      <meta itemprop="image" content="/images/header.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="燃情岁月">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">SpringBoot：Excel文件解析
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-11-27 11:18:13 / 修改时间：14:11:25" itemprop="dateCreated datePublished" datetime="2018-11-27T11:18:13+08:00">2018-11-27</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/SpringBoot整合系列/" itemprop="url" rel="index"><span itemprop="name">SpringBoot整合系列</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/11/27/SpringBoot：Excel文件解析/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018/11/27/SpringBoot：Excel文件解析/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2018/11/27/SpringBoot：Excel文件解析/" class="leancloud_visitors" data-flag-title="SpringBoot：Excel文件解析">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数：</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><excerpt in="" index="" |="" 首页摘要=""><a id="more"></a><the rest="" of="" contents="" |="" 余下全文=""></the></excerpt></p>
+<h2 id="SpringBoot：上传Excel文件并转换成javabean保存到数据库"><a href="#SpringBoot：上传Excel文件并转换成javabean保存到数据库" class="headerlink" title="SpringBoot：上传Excel文件并转换成javabean保存到数据库"></a>SpringBoot：上传Excel文件并转换成javabean保存到数据库</h2><h3 id="pom-xml引入"><a href="#pom-xml引入" class="headerlink" title="pom.xml引入"></a>pom.xml引入</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 提供API给Java程式对Microsoft Office格式档案读和写的功能 --&gt;</span><br><span class="line">   &lt;dependency&gt;</span><br><span class="line">       &lt;groupId&gt;org.apache.poi&lt;/groupId&gt;</span><br><span class="line">       &lt;artifactId&gt;poi&lt;/artifactId&gt;</span><br><span class="line">       &lt;version&gt;3.13&lt;/version&gt;</span><br><span class="line">   &lt;/dependency&gt;</span><br><span class="line">   &lt;dependency&gt;</span><br><span class="line">       &lt;groupId&gt;org.apache.poi&lt;/groupId&gt;</span><br><span class="line">       &lt;artifactId&gt;poi-ooxml&lt;/artifactId&gt;</span><br><span class="line">       &lt;version&gt;3.13&lt;/version&gt;</span><br><span class="line">   &lt;/dependency&gt;</span><br><span class="line"></span><br><span class="line">   &lt;!-- 上传文件需要的依赖 --&gt;</span><br><span class="line">   &lt;dependency&gt;</span><br><span class="line">       &lt;groupId&gt;commons-io&lt;/groupId&gt;</span><br><span class="line">       &lt;artifactId&gt;commons-io&lt;/artifactId&gt;</span><br><span class="line">       &lt;version&gt;1.4&lt;/version&gt;</span><br><span class="line">   &lt;/dependency&gt;</span><br><span class="line">   &lt;dependency&gt;</span><br><span class="line">       &lt;groupId&gt;commons-fileupload&lt;/groupId&gt;</span><br><span class="line">       &lt;artifactId&gt;commons-fileupload&lt;/artifactId&gt;</span><br><span class="line">       &lt;version&gt;1.3.1&lt;/version&gt;</span><br><span class="line">   &lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="新增工具类"><a href="#新增工具类" class="headerlink" title="新增工具类"></a>新增工具类</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line">package com.fufu.config.excel;</span><br><span class="line"></span><br><span class="line">import java.lang.annotation.ElementType;</span><br><span class="line">import java.lang.annotation.Retention;</span><br><span class="line">import java.lang.annotation.RetentionPolicy;</span><br><span class="line">import java.lang.annotation.Target;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * Excel注解，用以生成Excel表格文件</span><br><span class="line"> */</span><br><span class="line">@Retention(RetentionPolicy.RUNTIME)</span><br><span class="line">@Target(&#123;ElementType.FIELD, ElementType.TYPE&#125;)</span><br><span class="line">public @interface Excel &#123;</span><br><span class="line">	</span><br><span class="line">	/**</span><br><span class="line">	 * 列名</span><br><span class="line">	 * @return</span><br><span class="line">	 */</span><br><span class="line">	String name() default &quot;&quot;;</span><br><span class="line">	</span><br><span class="line">	/**</span><br><span class="line">	 * 宽度</span><br><span class="line">	 * @return</span><br><span class="line">	 */</span><br><span class="line">	int width() default 20;</span><br><span class="line"></span><br><span class="line">	/**</span><br><span class="line">	 * 忽略该字段</span><br><span class="line">	 * @return</span><br><span class="line">	 */</span><br><span class="line">	boolean skip() default false;</span><br><span class="line">	</span><br><span class="line">	/**</span><br><span class="line">	 * 日期格式 默认yyyy-MM-dd HH:mm:ss</span><br><span class="line">	 * @return</span><br><span class="line">	 */</span><br><span class="line">	String dateFormat() default &quot;yyyy-MM-dd HH:mm:ss&quot;;</span><br><span class="line">	</span><br><span class="line">	/**</span><br><span class="line">	 * 浮点数的精度</span><br><span class="line">	 * @return</span><br><span class="line">	 */</span><br><span class="line">	int precision() default -1;</span><br><span class="line">	</span><br><span class="line">	/**</span><br><span class="line">	 * 四舍五入</span><br><span class="line">	 * @return</span><br><span class="line">	 */</span><br><span class="line">	boolean round() default true;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">package com.fufu.config.excel;</span><br><span class="line"></span><br><span class="line">import java.util.HashMap;</span><br><span class="line">import java.util.Map;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * Excel导入导出数据定义转换&lt;br&gt;</span><br><span class="line"> * 举例:&lt;br&gt;</span><br><span class="line"> * 数据导出， &#123;lock,&#123;0:正常，1:锁定&#125;&#125;&lt;br&gt;</span><br><span class="line"> * 数据导入,&#123;lock,&#123;正常:0，锁定:1&#125;&#125;</span><br><span class="line"> */</span><br><span class="line">public class ExcelDataFormatter &#123;</span><br><span class="line">	/**</span><br><span class="line">	 * K:&#123;V1:V2&#125;</span><br><span class="line">	 */</span><br><span class="line">	private Map&lt;String,Map&lt;String,String&gt;&gt; formatter=new HashMap&lt;String, Map&lt;String,String&gt;&gt;();</span><br><span class="line">	</span><br><span class="line">	public void set(String key, Map&lt;String,String&gt; map)&#123;</span><br><span class="line">		formatter.put(key, map);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	public Map&lt;String,String&gt; get(String key)&#123;</span><br><span class="line">		return formatter.get(key);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br></pre></td><td class="code"><pre><span class="line">package com.fufu.config.excel;</span><br><span class="line"></span><br><span class="line">import org.apache.poi.hssf.usermodel.HSSFDateUtil;</span><br><span class="line">import org.apache.poi.ss.usermodel.*;</span><br><span class="line">import org.apache.poi.xssf.usermodel.XSSFCell;</span><br><span class="line">import org.apache.poi.xssf.usermodel.XSSFWorkbook;</span><br><span class="line">import java.io.InputStream;</span><br><span class="line">import java.lang.reflect.Field;</span><br><span class="line">import java.math.BigDecimal;</span><br><span class="line">import java.text.NumberFormat;</span><br><span class="line">import java.text.SimpleDateFormat;</span><br><span class="line">import java.util.*;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * Excel内容转化成Bean</span><br><span class="line"> */</span><br><span class="line">public class ExcelToBean &#123;</span><br><span class="line">	</span><br><span class="line">	private static int etimes = 0;</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line">	/**</span><br><span class="line">	 * 从文件读取数据，最好是所有的单元格都是文本格式，日期格式要求yyyy-MM-dd HH:mm:ss,布尔类型0：真，1：假</span><br><span class="line">	 * </span><br><span class="line">	 * @param edf</span><br><span class="line">	 *            数据格式化</span><br><span class="line">	 * </span><br><span class="line">	 * @param file</span><br><span class="line">	 *            Excel文件，支持xlsx后缀，xls的没写，基本一样</span><br><span class="line">	 * @return</span><br><span class="line">	 * @throws Exception</span><br><span class="line">	 */</span><br><span class="line">	@SuppressWarnings(&quot;unchecked&quot;)</span><br><span class="line">	public static &lt;E&gt; List&lt;E&gt; readFromFile(ExcelDataFormatter edf, InputStream is, Class&lt;?&gt; clazz) throws Exception &#123;</span><br><span class="line">		Field[] fields = ReflectionUtils.getClassFieldsAndSuperClassFields(clazz);</span><br><span class="line"></span><br><span class="line">		Map&lt;String, String&gt; textToKey = new HashMap&lt;String, String&gt;();</span><br><span class="line"></span><br><span class="line">		Excel _excel = null;</span><br><span class="line">		for (Field field : fields) &#123;</span><br><span class="line">			_excel = field.getAnnotation(Excel.class);</span><br><span class="line">			if (_excel == null || _excel.skip() == true) &#123;</span><br><span class="line">				continue;</span><br><span class="line">			&#125;</span><br><span class="line">			textToKey.put(_excel.name(), field.getName());</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		Workbook wb = new XSSFWorkbook(is);</span><br><span class="line"></span><br><span class="line">		Sheet sheet = wb.getSheetAt(0);</span><br><span class="line">		Row title = sheet.getRow(0);</span><br><span class="line">		// 标题数组，后面用到，根据索引去标题名称，通过标题名称去字段名称用到 textToKey</span><br><span class="line">		String[] titles = new String[title.getPhysicalNumberOfCells()];</span><br><span class="line">		for (int i = 0; i &lt; title.getPhysicalNumberOfCells(); i++) &#123;</span><br><span class="line">			titles[i] = title.getCell(i).getStringCellValue();</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		List&lt;E&gt; list = new ArrayList&lt;E&gt;();</span><br><span class="line"></span><br><span class="line">		E e = null;</span><br><span class="line"></span><br><span class="line">		int rowIndex = 0;</span><br><span class="line">		int columnCount = titles.length;</span><br><span class="line">		Cell cell = null;</span><br><span class="line">		Row row = null;</span><br><span class="line"></span><br><span class="line">		for (Iterator&lt;Row&gt; it = sheet.rowIterator(); it.hasNext();) &#123;</span><br><span class="line"></span><br><span class="line">			row = it.next();</span><br><span class="line">			if (rowIndex++ == 0) &#123;</span><br><span class="line">				continue;</span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line">			if (row == null) &#123;</span><br><span class="line">				break;</span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line">			e = (E)clazz.newInstance();</span><br><span class="line"></span><br><span class="line">			for (int i = 0; i &lt; columnCount; i++) &#123;</span><br><span class="line">				cell = row.getCell(i);</span><br><span class="line">				etimes = 0;</span><br><span class="line">				readCellContent(textToKey.get(titles[i]), fields, cell, e, edf);</span><br><span class="line">			&#125;</span><br><span class="line">			list.add(e);</span><br><span class="line">		&#125;</span><br><span class="line">		return list;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	/**</span><br><span class="line">	 * 从单元格读取数据，根据不同的数据类型，使用不同的方式读取&lt;br&gt;</span><br><span class="line">	 * 有时候POI自作聪明，经常和我们期待的数据格式不一样，会报异常，&lt;br&gt;</span><br><span class="line">	 * 我们这里采取强硬的方式&lt;br&gt;</span><br><span class="line">	 * 使用各种方法，知道尝试到读到数据为止，然后根据Bean的数据类型，进行相应的转换&lt;br&gt;</span><br><span class="line">	 * 如果尝试完了（总共7次），还是不能得到数据，那么抛个异常出来，没办法了</span><br><span class="line">	 * </span><br><span class="line">	 * @param key</span><br><span class="line">	 *            当前单元格对应的Bean字段</span><br><span class="line">	 * @param fields</span><br><span class="line">	 *            Bean所有的字段数组</span><br><span class="line">	 * @param cell</span><br><span class="line">	 *            单元格对象</span><br><span class="line">	 * @param obj</span><br><span class="line">	 * @throws Exception</span><br><span class="line">	 */</span><br><span class="line">	public static void readCellContent(String key, Field[] fields, Cell cell, Object obj, ExcelDataFormatter edf) throws Exception &#123;</span><br><span class="line"></span><br><span class="line">		Object o = null;</span><br><span class="line">		try &#123;</span><br><span class="line">			switch (cell.getCellType()) &#123;</span><br><span class="line">			case XSSFCell.CELL_TYPE_BOOLEAN:</span><br><span class="line">				o = cell.getBooleanCellValue();</span><br><span class="line">				break;</span><br><span class="line">			case XSSFCell.CELL_TYPE_NUMERIC:</span><br><span class="line">				o = cell.getNumericCellValue();</span><br><span class="line">				NumberFormat nf = NumberFormat.getInstance();</span><br><span class="line">				String s = nf.format(o);</span><br><span class="line">				if (s.indexOf(&quot;,&quot;) &gt;= 0) &#123;</span><br><span class="line">					s = s.replace(&quot;,&quot;, &quot;&quot;);</span><br><span class="line">				&#125;</span><br><span class="line">				o = s;</span><br><span class="line">				if (HSSFDateUtil.isCellDateFormatted(cell)) &#123;</span><br><span class="line">					o = DateUtil.getJavaDate(cell.getNumericCellValue());</span><br><span class="line">				&#125;</span><br><span class="line">				break;</span><br><span class="line">			case XSSFCell.CELL_TYPE_STRING:</span><br><span class="line">				o = cell.getStringCellValue();</span><br><span class="line">				break;</span><br><span class="line">			case XSSFCell.CELL_TYPE_ERROR:</span><br><span class="line">				o = cell.getErrorCellValue();</span><br><span class="line">				break;</span><br><span class="line">			case XSSFCell.CELL_TYPE_BLANK:</span><br><span class="line">				o = null;</span><br><span class="line">				break;</span><br><span class="line">			case XSSFCell.CELL_TYPE_FORMULA:</span><br><span class="line">				o = cell.getCellFormula();</span><br><span class="line">				break;</span><br><span class="line">			default:</span><br><span class="line">				o = null;</span><br><span class="line">				break;</span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line">			if (o == null)</span><br><span class="line">				return;</span><br><span class="line"></span><br><span class="line">			for (Field field : fields) &#123;</span><br><span class="line">				field.setAccessible(true);</span><br><span class="line">				if (field.getName().equals(key)) &#123;</span><br><span class="line">					Boolean bool = true;</span><br><span class="line">					Map&lt;String, String&gt; map = null;</span><br><span class="line">					if (edf == null) &#123;</span><br><span class="line">						bool = false;</span><br><span class="line">					&#125; else &#123;</span><br><span class="line">						map = edf.get(field.getName());</span><br><span class="line">						if (map == null) &#123;</span><br><span class="line">							bool = false;</span><br><span class="line">						&#125;</span><br><span class="line">					&#125;</span><br><span class="line"></span><br><span class="line">					if (field.getType().equals(Date.class)) &#123;</span><br><span class="line">						if (o.getClass().equals(Date.class)) &#123;</span><br><span class="line">							field.set(obj, o);</span><br><span class="line">						&#125; else &#123;</span><br><span class="line">							SimpleDateFormat sdf = new SimpleDateFormat(&quot;yyyy-MM-dd HH:mm:ss&quot;);</span><br><span class="line">							field.set(obj, sdf.parse(o.toString()));</span><br><span class="line">						&#125;</span><br><span class="line">					&#125; else if (field.getType().equals(String.class)) &#123;</span><br><span class="line">						if (o.getClass().equals(String.class)) &#123;</span><br><span class="line">							field.set(obj, o);</span><br><span class="line">						&#125; else &#123;</span><br><span class="line">							field.set(obj, o.toString());</span><br><span class="line">						&#125;</span><br><span class="line">					&#125; else if (field.getType().equals(Long.class)) &#123;</span><br><span class="line">						if (o.getClass().equals(Long.class)) &#123;</span><br><span class="line">							field.set(obj, o);</span><br><span class="line">						&#125; else &#123;</span><br><span class="line">							field.set(obj, Long.parseLong(o.toString()));</span><br><span class="line">						&#125;</span><br><span class="line">					&#125; else if (field.getType().equals(Integer.class)) &#123;</span><br><span class="line">						if (o.getClass().equals(Integer.class)) &#123;</span><br><span class="line">							field.set(obj, o);</span><br><span class="line">						&#125; else &#123;</span><br><span class="line">							// 检查是否需要转换</span><br><span class="line">							if (bool) &#123;</span><br><span class="line">								field.set(obj, map.get(o.toString()) != null ? Integer.parseInt(map.get(o.toString())) : Integer.parseInt(o.toString()));</span><br><span class="line">							&#125; else &#123;</span><br><span class="line">								if(!o.getClass().equals(Double.class))</span><br><span class="line">									field.set(obj, Integer.parseInt(o.toString()));</span><br><span class="line">								else</span><br><span class="line">									field.set(obj,  Integer.parseInt(new java.text.DecimalFormat(&quot;0&quot;).format(o)));</span><br><span class="line">							&#125;</span><br><span class="line"></span><br><span class="line">						&#125;</span><br><span class="line">					&#125; else if (field.getType().equals(BigDecimal.class)) &#123;</span><br><span class="line">						if (o.getClass().equals(BigDecimal.class)) &#123;</span><br><span class="line">							field.set(obj, o);</span><br><span class="line">						&#125; else &#123;</span><br><span class="line">							field.set(obj, BigDecimal.valueOf(Double.parseDouble(o.toString())));</span><br><span class="line">						&#125;</span><br><span class="line">					&#125; else if (field.getType().equals(Boolean.class)) &#123;</span><br><span class="line">						if (o.getClass().equals(Boolean.class)) &#123;</span><br><span class="line">							field.set(obj, o);</span><br><span class="line">						&#125; else &#123;</span><br><span class="line">							// 检查是否需要转换</span><br><span class="line">							if (bool) &#123;</span><br><span class="line">								field.set(obj, map.get(o.toString()) != null ? Boolean.parseBoolean(map.get(o.toString())) : Boolean.parseBoolean(o.toString()));</span><br><span class="line">							&#125; else &#123;</span><br><span class="line">								field.set(obj, Boolean.parseBoolean(o.toString()));</span><br><span class="line">							&#125;</span><br><span class="line">						&#125;</span><br><span class="line">					&#125; else if (field.getType().equals(Float.class)) &#123;</span><br><span class="line">						if (o.getClass().equals(Float.class)) &#123;</span><br><span class="line">							field.set(obj, o);</span><br><span class="line">						&#125; else &#123;</span><br><span class="line">							field.set(obj, Float.parseFloat(o.toString()));</span><br><span class="line">						&#125;</span><br><span class="line">					&#125; else if (field.getType().equals(Double.class)) &#123;</span><br><span class="line">						if (o.getClass().equals(Double.class)) &#123;</span><br><span class="line">							field.set(obj, o);</span><br><span class="line">						&#125; else &#123;</span><br><span class="line">							field.set(obj, Double.parseDouble(o.toString()));</span><br><span class="line">						&#125;</span><br><span class="line"></span><br><span class="line">					&#125;</span><br><span class="line"></span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line">		&#125; catch (Exception ex) &#123;</span><br><span class="line">			ex.printStackTrace();</span><br><span class="line">			// 如果还是读到的数据格式还是不对，只能放弃了</span><br><span class="line">			if (etimes &gt; 7) &#123;</span><br><span class="line">				throw ex;</span><br><span class="line">			&#125;</span><br><span class="line">			etimes++;</span><br><span class="line">			if (o == null) &#123;</span><br><span class="line">				readCellContent(key, fields, cell, obj, edf);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br><span class="line">283</span><br><span class="line">284</span><br><span class="line">285</span><br><span class="line">286</span><br><span class="line">287</span><br><span class="line">288</span><br><span class="line">289</span><br><span class="line">290</span><br><span class="line">291</span><br><span class="line">292</span><br><span class="line">293</span><br><span class="line">294</span><br><span class="line">295</span><br><span class="line">296</span><br><span class="line">297</span><br><span class="line">298</span><br><span class="line">299</span><br><span class="line">300</span><br><span class="line">301</span><br><span class="line">302</span><br><span class="line">303</span><br><span class="line">304</span><br><span class="line">305</span><br><span class="line">306</span><br><span class="line">307</span><br><span class="line">308</span><br><span class="line">309</span><br><span class="line">310</span><br><span class="line">311</span><br><span class="line">312</span><br><span class="line">313</span><br><span class="line">314</span><br><span class="line">315</span><br><span class="line">316</span><br><span class="line">317</span><br><span class="line">318</span><br><span class="line">319</span><br><span class="line">320</span><br><span class="line">321</span><br><span class="line">322</span><br><span class="line">323</span><br><span class="line">324</span><br><span class="line">325</span><br><span class="line">326</span><br><span class="line">327</span><br><span class="line">328</span><br><span class="line">329</span><br><span class="line">330</span><br><span class="line">331</span><br><span class="line">332</span><br><span class="line">333</span><br><span class="line">334</span><br><span class="line">335</span><br><span class="line">336</span><br><span class="line">337</span><br><span class="line">338</span><br><span class="line">339</span><br><span class="line">340</span><br><span class="line">341</span><br><span class="line">342</span><br><span class="line">343</span><br><span class="line">344</span><br></pre></td><td class="code"><pre><span class="line">package com.fufu.config.excel;</span><br><span class="line"></span><br><span class="line">import org.apache.commons.lang3.StringUtils;</span><br><span class="line">import org.apache.commons.lang3.Validate;</span><br><span class="line">import org.slf4j.Logger;</span><br><span class="line">import org.slf4j.LoggerFactory;</span><br><span class="line"></span><br><span class="line">import java.lang.reflect.*;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * 反射工具类.</span><br><span class="line"> * </span><br><span class="line"> * 提供调用getter/setter方法, 访问私有变量, 调用私有方法, 获取泛型类型Class, 被AOP过的真实类等工具函数.</span><br><span class="line"> * </span><br><span class="line"> * @author lwh</span><br><span class="line"> */</span><br><span class="line">public class ReflectionUtils &#123;</span><br><span class="line">	private static final String SETTER_PREFIX = &quot;set&quot;;</span><br><span class="line"></span><br><span class="line">	private static final String GETTER_PREFIX = &quot;get&quot;;</span><br><span class="line"></span><br><span class="line">	private static final String CGLIB_CLASS_SEPARATOR = &quot;$$&quot;;</span><br><span class="line"></span><br><span class="line">	private static Logger logger = LoggerFactory.getLogger(ReflectionUtils.class);</span><br><span class="line"></span><br><span class="line">	/**</span><br><span class="line">	 * 调用Getter方法</span><br><span class="line">	 * @param obj 对象</span><br><span class="line">	 * @param propertyName 属性名称</span><br><span class="line">	 * @return obj</span><br><span class="line">	 */</span><br><span class="line">	public static Object invokeGetter(Object obj, String propertyName) &#123;</span><br><span class="line">		String getterMethodName = GETTER_PREFIX + StringUtils.capitalize(propertyName);</span><br><span class="line">		return invokeMethod(obj, getterMethodName, new Class[] &#123;&#125;, new Object[] &#123;&#125;);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	/**</span><br><span class="line">	 * 调用Setter方法, 仅匹配方法名</span><br><span class="line">	 * @param obj 对象</span><br><span class="line">	 * @param propertyName 属性名称</span><br><span class="line">	 * @param value 新值</span><br><span class="line">	 */</span><br><span class="line">	public static void invokeSetter(Object obj, String propertyName, Object value) &#123;</span><br><span class="line">		String setterMethodName = SETTER_PREFIX + StringUtils.capitalize(propertyName);</span><br><span class="line">		invokeMethodByName(obj, setterMethodName, new Object[] &#123; value &#125;);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	/**</span><br><span class="line">	 * 获取所有的成员变量,包括父类</span><br><span class="line">	 * </span><br><span class="line">	 * @param clazz</span><br><span class="line">	 * @return 属性集合</span><br><span class="line">	 * @throws Exception</span><br><span class="line">	 */</span><br><span class="line">	public static &lt;T&gt; Field[] getClassFieldsAndSuperClassFields(Class&lt;T&gt; clazz) throws Exception &#123;</span><br><span class="line"></span><br><span class="line">		Field[] fields = clazz.getDeclaredFields();</span><br><span class="line"></span><br><span class="line">		if (clazz.getSuperclass() == null) &#123;</span><br><span class="line">			throw new Exception(clazz.getName() + &quot;没有父类&quot;);</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		Field[] superFields = clazz.getSuperclass().getDeclaredFields();</span><br><span class="line"></span><br><span class="line">		Field[] allFields = new Field[fields.length + superFields.length];</span><br><span class="line"></span><br><span class="line">		for (int i = 0; i &lt; fields.length; i++) &#123;</span><br><span class="line">			allFields[i] = fields[i];</span><br><span class="line">		&#125;</span><br><span class="line">		for (int i = 0; i &lt; superFields.length; i++) &#123;</span><br><span class="line">			allFields[fields.length + i] = superFields[i];</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		return allFields;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	/**</span><br><span class="line">	 * 直接读取对象属性值, 无视private/protected修饰符, 不经过getter函数</span><br><span class="line">	 * @param obj 对象</span><br><span class="line">	 * @param fieldName 属性名称</span><br><span class="line">	 * @return</span><br><span class="line">	 */</span><br><span class="line">	public static Object getFieldValue(final Object obj, final String fieldName) &#123;</span><br><span class="line">		Field field = getAccessibleField(obj, fieldName);</span><br><span class="line"></span><br><span class="line">		if (field == null) &#123;</span><br><span class="line">			throw new IllegalArgumentException(&quot;Could not find field [&quot; + fieldName + &quot;] on target [&quot; + obj + &quot;]&quot;);</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		Object result = null;</span><br><span class="line">		try &#123;</span><br><span class="line">			result = field.get(obj);</span><br><span class="line">		&#125; catch (IllegalAccessException e) &#123;</span><br><span class="line">			logger.error(&quot;不可能抛出的异常&#123;&#125;&quot;, e.getMessage());</span><br><span class="line">		&#125;</span><br><span class="line">		return result;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	/**</span><br><span class="line">	 * 直接设置对象属性值, 无视private/protected修饰符, 不经过setter函数</span><br><span class="line">	 * @param obj 对象</span><br><span class="line">	 * @param fieldName 属性名称</span><br><span class="line">	 * @param value 新值</span><br><span class="line">	 */</span><br><span class="line">	public static void setFieldValue(final Object obj, final String fieldName, final Object value) &#123;</span><br><span class="line">		Field field = getAccessibleField(obj, fieldName);</span><br><span class="line"></span><br><span class="line">		if (field == null) &#123;</span><br><span class="line">			throw new IllegalArgumentException(&quot;Could not find field [&quot; + fieldName + &quot;] on target [&quot; + obj + &quot;]&quot;);</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		try &#123;</span><br><span class="line">			field.set(obj, value);</span><br><span class="line">		&#125; catch (IllegalAccessException e) &#123;</span><br><span class="line">			logger.error(&quot;不可能抛出的异常:&#123;&#125;&quot;, e.getMessage());</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	/**</span><br><span class="line">	 * 直接调用对象方法, 无视private/protected修饰符.</span><br><span class="line">	 * 用于一次性调用的情况，否则应使用getAccessibleMethod()函数获得Method后反复调用.</span><br><span class="line">	 * 同时匹配方法名+参数类型，</span><br><span class="line">	 * @param obj 对象</span><br><span class="line">	 * @param methodName 方法名称</span><br><span class="line">	 * @param parameterTypes 参数类型</span><br><span class="line">	 * @param args 参数</span><br><span class="line">	 * @return obj</span><br><span class="line">	 */</span><br><span class="line">	public static Object invokeMethod(final Object obj, final String methodName, final Class&lt;?&gt;[] parameterTypes,</span><br><span class="line">                                      final Object[] args) &#123;</span><br><span class="line">		Method method = getAccessibleMethod(obj, methodName, parameterTypes);</span><br><span class="line">		if (method == null) &#123;</span><br><span class="line">			throw new IllegalArgumentException(&quot;Could not find method [&quot; + methodName + &quot;] on target [&quot; + obj + &quot;]&quot;);</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		try &#123;</span><br><span class="line">			return method.invoke(obj, args);</span><br><span class="line">		&#125; catch (Exception e) &#123;</span><br><span class="line">			throw convertReflectionExceptionToUnchecked(e);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	/**</span><br><span class="line">	 * 直接调用对象方法, 无视private/protected修饰符，</span><br><span class="line">	 * 用于一次性调用的情况，否则应使用getAccessibleMethodByName()函数获得Method后反复调用.</span><br><span class="line">	 * 只匹配函数名，如果有多个同名函数调用第一个。</span><br><span class="line">	 * @param obj 对象</span><br><span class="line">	 * @param methodName 方法名称</span><br><span class="line">	 * @param args 参数</span><br><span class="line">	 * @return</span><br><span class="line">	 */</span><br><span class="line">	public static Object invokeMethodByName(final Object obj, final String methodName, final Object[] args) &#123;</span><br><span class="line">		Method method = getAccessibleMethodByName(obj, methodName);</span><br><span class="line">		if (method == null) &#123;</span><br><span class="line">			throw new IllegalArgumentException(&quot;Could not find method [&quot; + methodName + &quot;] on target [&quot; + obj + &quot;]&quot;);</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		try &#123;</span><br><span class="line">			return method.invoke(obj, args);</span><br><span class="line">		&#125; catch (Exception e) &#123;</span><br><span class="line">			throw convertReflectionExceptionToUnchecked(e);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	/**</span><br><span class="line">	 * 循环向上转型, 获取对象的DeclaredField, 并强制设置为可访问.</span><br><span class="line">	 * </span><br><span class="line">	 * 如向上转型到Object仍无法找到, 返回null.</span><br><span class="line">	 * @param obj 对象</span><br><span class="line">	 * @param fieldName 属性名称</span><br><span class="line">	 * @return 属性</span><br><span class="line">	 */</span><br><span class="line">	public static Field getAccessibleField(final Object obj, final String fieldName) &#123;</span><br><span class="line">		Validate.notNull(obj, &quot;object can&apos;t be null&quot;);</span><br><span class="line">		Validate.notBlank(fieldName, &quot;fieldName can&apos;t be blank&quot;);</span><br><span class="line">		for (Class&lt;?&gt; superClass = obj.getClass(); superClass != Object.class; superClass = superClass.getSuperclass()) &#123;</span><br><span class="line">			try &#123;</span><br><span class="line">				Field field = superClass.getDeclaredField(fieldName);</span><br><span class="line">				makeAccessible(field);</span><br><span class="line">				return field;</span><br><span class="line">			&#125; catch (NoSuchFieldException e) &#123;// NOSONAR</span><br><span class="line">				// Field不在当前类定义,继续向上转型</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		return null;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	/**</span><br><span class="line">	 * 循环向上转型, 获取对象的DeclaredMethod,并强制设置为可访问.</span><br><span class="line">	 * 如向上转型到Object仍无法找到, 返回null.</span><br><span class="line">	 * 匹配函数名+参数类型。</span><br><span class="line">	 * </span><br><span class="line">	 * 用于方法需要被多次调用的情况. 先使用本函数先取得Method,然后调用Method.invoke(Object obj, Object... args)</span><br><span class="line">	 * @param obj 对象</span><br><span class="line">	 * @param methodName 方法名称</span><br><span class="line">	 * @param parameterTypes 参数类型</span><br><span class="line">	 * @return 方法</span><br><span class="line">	 */</span><br><span class="line">	public static Method getAccessibleMethod(final Object obj, final String methodName,</span><br><span class="line">                                             final Class&lt;?&gt;... parameterTypes) &#123;</span><br><span class="line">		Validate.notNull(obj, &quot;object can&apos;t be null&quot;);</span><br><span class="line">		Validate.notBlank(methodName, &quot;methodName can&apos;t be blank&quot;);</span><br><span class="line"></span><br><span class="line">		for (Class&lt;?&gt; searchType = obj.getClass(); searchType != Object.class; searchType = searchType.getSuperclass()) &#123;</span><br><span class="line">			try &#123;</span><br><span class="line">				Method method = searchType.getDeclaredMethod(methodName, parameterTypes);</span><br><span class="line">				makeAccessible(method);</span><br><span class="line">				return method;</span><br><span class="line">			&#125; catch (NoSuchMethodException e) &#123;</span><br><span class="line">				// Method不在当前类定义,继续向上转型</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		return null;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	/**</span><br><span class="line">	 * 循环向上转型, 获取对象的DeclaredMethod,并强制设置为可访问.</span><br><span class="line">	 * 如向上转型到Object仍无法找到, 返回null.</span><br><span class="line">	 * 只匹配函数名。</span><br><span class="line">	 * </span><br><span class="line">	 * 用于方法需要被多次调用的情况. 先使用本函数先取得Method,然后调用Method.invoke(Object obj, Object... args)</span><br><span class="line">	 * @param obj 对象</span><br><span class="line">	 * @param methodName 方法名称</span><br><span class="line">	 * @return 方法</span><br><span class="line">	 */</span><br><span class="line">	public static Method getAccessibleMethodByName(final Object obj, final String methodName) &#123;</span><br><span class="line">		Validate.notNull(obj, &quot;object can&apos;t be null&quot;);</span><br><span class="line">		Validate.notBlank(methodName, &quot;methodName can&apos;t be blank&quot;);</span><br><span class="line"></span><br><span class="line">		for (Class&lt;?&gt; searchType = obj.getClass(); searchType != Object.class; searchType = searchType.getSuperclass()) &#123;</span><br><span class="line">			Method[] methods = searchType.getDeclaredMethods();</span><br><span class="line">			for (Method method : methods) &#123;</span><br><span class="line">				if (method.getName().equals(methodName)) &#123;</span><br><span class="line">					makeAccessible(method);</span><br><span class="line">					return method;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		return null;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	/**</span><br><span class="line">	 * 改变private/protected的方法为public，尽量不调用实际改动的语句，避免JDK的SecurityManager抱怨。</span><br><span class="line">	 * @param method 对象方法</span><br><span class="line">	 */</span><br><span class="line">	public static void makeAccessible(Method method) &#123;</span><br><span class="line">		if ((!Modifier.isPublic(method.getModifiers()) || !Modifier.isPublic(method.getDeclaringClass().getModifiers()))</span><br><span class="line">				&amp;&amp; !method.isAccessible()) &#123;</span><br><span class="line">			method.setAccessible(true);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	/**</span><br><span class="line">	 * 改变private/protected的成员变量为public，尽量不调用实际改动的语句，避免JDK的SecurityManager抱怨。</span><br><span class="line">	 * @param field 对象属性</span><br><span class="line">	 */</span><br><span class="line">	public static void makeAccessible(Field field) &#123;</span><br><span class="line">		if ((!Modifier.isPublic(field.getModifiers()) || !Modifier.isPublic(field.getDeclaringClass().getModifiers()) || Modifier</span><br><span class="line">				.isFinal(field.getModifiers())) &amp;&amp; !field.isAccessible()) &#123;</span><br><span class="line">			field.setAccessible(true);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	/**</span><br><span class="line">	 * 通过反射, 获得Class定义中声明的泛型参数的类型, 注意泛型必须定义在父类处</span><br><span class="line">	 * 如无法找到, 返回Object.class.</span><br><span class="line">	 * eg.</span><br><span class="line">	 * public UserDao extends HibernateDao&lt;User&gt;</span><br><span class="line">	 * </span><br><span class="line">	 * @param clazz The class to introspect</span><br><span class="line">	 * @return the first generic declaration, or Object.class if cannot be determined</span><br><span class="line">	 */</span><br><span class="line">	public static &lt;T&gt; Class&lt;T&gt; getClassGenricType(final Class clazz) &#123;</span><br><span class="line">		return getClassGenricType(clazz, 0);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	/**</span><br><span class="line">	 * 通过反射, 获得Class定义中声明的父类的泛型参数的类型.</span><br><span class="line">	 * 如无法找到, 返回Object.class.</span><br><span class="line">	 * </span><br><span class="line">	 * 如public UserDao extends HibernateDao&lt;User,Long&gt;</span><br><span class="line">	 * </span><br><span class="line">	 * @param clazz clazz The class to introspect</span><br><span class="line">	 * @param index the Index of the generic ddeclaration,start from 0.</span><br><span class="line">	 * @return the index generic declaration, or Object.class if cannot be determined</span><br><span class="line">	 */</span><br><span class="line">	public static Class getClassGenricType(final Class clazz, final int index) &#123;</span><br><span class="line"></span><br><span class="line">		Type genType = clazz.getGenericSuperclass();</span><br><span class="line"></span><br><span class="line">		if (!(genType instanceof ParameterizedType)) &#123;</span><br><span class="line">			logger.warn(clazz.getSimpleName() + &quot;&apos;s superclass not ParameterizedType&quot;);</span><br><span class="line">			return Object.class;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		Type[] params = ((ParameterizedType) genType).getActualTypeArguments();</span><br><span class="line"></span><br><span class="line">		if ((index &gt;= params.length) || (index &lt; 0)) &#123;</span><br><span class="line">			logger.warn(&quot;Index: &quot; + index + &quot;, Size of &quot; + clazz.getSimpleName() + &quot;&apos;s Parameterized Type: &quot;</span><br><span class="line">					+ params.length);</span><br><span class="line">			return Object.class;</span><br><span class="line">		&#125;</span><br><span class="line">		if (!(params[index] instanceof Class)) &#123;</span><br><span class="line">			logger.warn(clazz.getSimpleName() + &quot; not set the actual class on superclass generic parameter&quot;);</span><br><span class="line">			return Object.class;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		return (Class) params[index];</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	/**</span><br><span class="line">	 * 获取父类</span><br><span class="line">	 * @param instance 对象实例</span><br><span class="line">	 * @return 父类</span><br><span class="line">	 */</span><br><span class="line">	public static Class&lt;?&gt; getUserClass(Object instance) &#123;</span><br><span class="line">		Class clazz = instance.getClass();</span><br><span class="line">		if ((clazz != null) &amp;&amp; clazz.getName().contains(CGLIB_CLASS_SEPARATOR)) &#123;</span><br><span class="line">			Class&lt;?&gt; superClass = clazz.getSuperclass();</span><br><span class="line">			if ((superClass != null) &amp;&amp; !Object.class.equals(superClass)) &#123;</span><br><span class="line">				return superClass;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		return clazz;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	/**</span><br><span class="line">	 * 将反射时的checked exception转换为unchecked exception</span><br><span class="line">	 * @param e exception</span><br><span class="line">	 * @return unchecked exception</span><br><span class="line">	 */</span><br><span class="line">	public static RuntimeException convertReflectionExceptionToUnchecked(Exception e) &#123;</span><br><span class="line">		if ((e instanceof IllegalAccessException) || (e instanceof IllegalArgumentException)</span><br><span class="line">				|| (e instanceof NoSuchMethodException)) &#123;</span><br><span class="line">			return new IllegalArgumentException(e);</span><br><span class="line">		&#125; else if (e instanceof InvocationTargetException) &#123;</span><br><span class="line">			return new RuntimeException(((InvocationTargetException) e).getTargetException());</span><br><span class="line">		&#125; else if (e instanceof RuntimeException) &#123;</span><br><span class="line">			return (RuntimeException) e;</span><br><span class="line">		&#125;</span><br><span class="line">		return new RuntimeException(&quot;Unexpected Checked Exception.&quot;, e);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Controller"><a href="#Controller" class="headerlink" title="Controller"></a>Controller</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">@PostMapping(value = &quot;/excelUpload&quot;)</span><br><span class="line">   @ResponseBody</span><br><span class="line">   public String uploadExcel(@RequestParam(&quot;file&quot;) MultipartFile file) throws Exception &#123;</span><br><span class="line">       if(file==null || file.isEmpty())&#123;</span><br><span class="line">           return JsonUtil.getInstance().putData(&quot;ret&quot;, -1).putData(&quot;msg&quot;, &quot;上传文件不能为空！&quot;).pushData();</span><br><span class="line">       &#125;</span><br><span class="line">       try&#123;</span><br><span class="line">           return restfulService.uploadSatelliteExcel(file);</span><br><span class="line">       &#125;catch(Exception e)&#123;</span><br><span class="line">           return JsonUtil.getInstance().putData(&quot;ret&quot;, -1).putData(&quot;msg&quot;, e.getMessage()).pushData();</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Service"><a href="#Service" class="headerlink" title="Service"></a>Service</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line">     * 上传卫星excel文件</span><br><span class="line">     */</span><br><span class="line">    public String uploadSatelliteExcel(MultipartFile excelFile)&#123;</span><br><span class="line">        ExcelDataFormatter edf = new ExcelDataFormatter();</span><br><span class="line">        InputStream is = null;</span><br><span class="line">        try &#123;</span><br><span class="line">            is = excelFile.getInputStream();</span><br><span class="line"></span><br><span class="line">        List&lt;Satellite&gt; list = ExcelToBean.readFromFile(edf,is, Satellite.class);</span><br><span class="line">        satelliteMapper.deleteAll();</span><br><span class="line">        for(Satellite satellite : list)&#123;</span><br><span class="line">            satelliteMapper.insert(satellite);</span><br><span class="line">        &#125;</span><br><span class="line">        &#125; catch (Exception e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">            return JsonUtil.getInstance().putData(&quot;ret&quot;, -1).putData(&quot;msg&quot;, e.getMessage()).pushData();</span><br><span class="line">        &#125;</span><br><span class="line">        return JsonUtil.getInstance().putData(&quot;ret&quot;, 1).putData(&quot;msg&quot;, &quot;上传成功！&quot;).pushData();</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Entity"><a href="#Entity" class="headerlink" title="Entity"></a>Entity</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br></pre></td><td class="code"><pre><span class="line">package com.fufu.entity;</span><br><span class="line"></span><br><span class="line">import com.fufu.config.excel.Excel;</span><br><span class="line"></span><br><span class="line">import java.util.Date;</span><br><span class="line"></span><br><span class="line">public class Satellite implements java.io.Serializable&#123;</span><br><span class="line">	private Long id;</span><br><span class="line">	@Excel(name = &quot;卫星名称&quot;)</span><br><span class="line">	private String satelliteName;</span><br><span class="line">	@Excel(name = &quot;编号&quot;)</span><br><span class="line">	private String satelliteNo;</span><br><span class="line">	@Excel(name = &quot;国别&quot;)</span><br><span class="line">	private String country;</span><br><span class="line">	@Excel(name = &quot;类别&quot;)</span><br><span class="line">	private Integer satelliteType;</span><br><span class="line">	@Excel(name = &quot;时间段开始&quot;)</span><br><span class="line">	private Date startTime;</span><br><span class="line">	@Excel(name = &quot;时间段结束&quot;)</span><br><span class="line">	private Date endTime;</span><br><span class="line">	@Excel(name = &quot;安全时长&quot;)</span><br><span class="line">	private Integer safeTime;</span><br><span class="line"></span><br><span class="line">	public Long getId() &#123;</span><br><span class="line">		return id;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	public void setId(Long id) &#123;</span><br><span class="line">		this.id = id;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	public String getSatelliteName() &#123;</span><br><span class="line">		return satelliteName;</span><br><span class="line">	&#125;</span><br><span class="line">	public void setSatelliteName(String satelliteName) &#123;</span><br><span class="line">		this.satelliteName = satelliteName;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	public String getSatelliteNo() &#123;</span><br><span class="line">		return satelliteNo;</span><br><span class="line">	&#125;</span><br><span class="line">	public void setSatelliteNo(String satelliteNo) &#123;</span><br><span class="line">		this.satelliteNo = satelliteNo;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	public String getCountry() &#123;</span><br><span class="line">		return country;</span><br><span class="line">	&#125;</span><br><span class="line">	public void setCountry(String country) &#123;</span><br><span class="line">		this.country = country;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	public Integer getSatelliteType() &#123;</span><br><span class="line">		return satelliteType;</span><br><span class="line">	&#125;</span><br><span class="line">	public void setSatelliteType(Integer satelliteType) &#123;</span><br><span class="line">		this.satelliteType = satelliteType;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	public Date getStartTime() &#123;</span><br><span class="line">		return startTime;</span><br><span class="line">	&#125;</span><br><span class="line">	public void setStartTime(Date startTime) &#123;</span><br><span class="line">		this.startTime = startTime;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	public Date getEndTime() &#123;</span><br><span class="line">		return endTime;</span><br><span class="line">	&#125;</span><br><span class="line">	public void setEndTime(Date endTime) &#123;</span><br><span class="line">		this.endTime = endTime;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	public Integer getSafeTime() &#123;</span><br><span class="line">		return safeTime;</span><br><span class="line">	&#125;</span><br><span class="line">	public void setSafeTime(Integer safeTime) &#123;</span><br><span class="line">		this.safeTime = safeTime;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这里的注解对应Excel的第一行，如图</p>
+<p><img src="/images/exceltobean效果图.jpg" alt="&quot;图片描述&quot;"></p>
+<blockquote>
+<p><code>源码：https://github.com/qq1028951741/springbootdemo or 右上角github进去，springbootdemo项目，如果对您有帮助，麻烦点下star，谢谢</code></p>
+</blockquote>
+<hr>
+<blockquote class="blockquote-center"><p>人生两苦：想要却不得，拥有却失去。  –褚禄山<br>            珍惜当下,与君共勉~</p>
+</blockquote>
+<hr>
+
+      
+    </div>
+
+    
+    
+    
+    
+	<div>
+      
+        
+<div class="my_post_copyright">
+  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+  
+  <!-- JS库 sweetalert 可修改路径 -->
+  <script type="text/javascript" src="http://jslibs.wuxubj.cn/sweetalert_mini/jquery-1.7.1.min.js"></script>
+  <script src="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.mini.css">
+
+  <p><span>本文标题:</span>SpringBoot：Excel文件解析</p>
+  <p><span>文章作者:</span>fufua</p>
+  <p><span>发布时间:</span>2018年11月27日 - 11:18:13</p>
+  <p><span>最后更新:</span>2018年11月27日 - 14:11:25</p>
+  <p><span>原始链接:</span><a href="/2018/11/27/SpringBoot：Excel文件解析/" title="SpringBoot：Excel文件解析">https://qq1028951741.github.io/2018/11/27/SpringBoot：Excel文件解析/</a>
+    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://qq1028951741.github.io/2018/11/27/SpringBoot：Excel文件解析/" aria-label="复制成功！"></i></span>
+  </p>
+  <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
+</div>
+<script> 
+    var clipboard = new Clipboard('.fa-clipboard');
+    clipboard.on('success', $(function(){
+      $(".fa-clipboard").click(function(){
+        swal({   
+          title: "",   
+          text: '复制成功',   
+          html: false,
+          timer: 500,   
+          showConfirmButton: false
+        });
+      });
+    }));  
+</script>
+
+      
+	</div>
+	<div>
+		
+			<div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">  this is end, thank you for reading  <i class="fa fa-pencil"></i></div>
+    
+</div>
+		
+    </div>
+    
+
+    
+       
+    
+    
+
+    
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/SpringBoot/" rel="tag"><i class="fa fa-bicycle"></i> SpringBoot</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/11/27/SpringBoot：开启logback默认日志组件/" rel="next" title="SpringBoot：开启logback默认日志组件">
+                <i class="fa fa-chevron-left"></i> SpringBoot：开启logback默认日志组件
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/11/27/SpringBoot：整合websocket实现消息推送/" rel="prev" title="SpringBoot：整合websocket实现消息推送">
+                SpringBoot：整合websocket实现消息推送 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/header.jpg" alt="fufua">
+            
+              <p class="site-author-name" itemprop="name">fufua</p>
+              <p class="site-description motion-element" itemprop="description">fufublog</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives">
+                
+                    <span class="site-state-item-count">21</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">4</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">11</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#SpringBoot：上传Excel文件并转换成javabean保存到数据库"><span class="nav-number">1.</span> <span class="nav-text">SpringBoot：上传Excel文件并转换成javabean保存到数据库</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#pom-xml引入"><span class="nav-number">1.1.</span> <span class="nav-text">pom.xml引入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#新增工具类"><span class="nav-number">1.2.</span> <span class="nav-text">新增工具类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Controller"><span class="nav-number">1.3.</span> <span class="nav-text">Controller</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Service"><span class="nav-number">1.4.</span> <span class="nav-text">Service</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Entity"><span class="nav-number">1.5.</span> <span class="nav-text">Entity</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script>
+function show_date_time(){
+window.setTimeout("show_date_time()", 1000);
+BirthDay=new Date("11/13/2018 20:34:00");
+today=new Date();
+timeold=(today.getTime()-BirthDay.getTime());
+sectimeold=timeold/1000
+secondsold=Math.floor(sectimeold);
+msPerDay=24*60*60*1000
+e_daysold=timeold/msPerDay
+daysold=Math.floor(e_daysold);
+e_hrsold=(e_daysold-daysold)*24;
+hrsold=setzero(Math.floor(e_hrsold));
+e_minsold=(e_hrsold-hrsold)*60;
+minsold=setzero(Math.floor((e_hrsold-hrsold)*60));
+seconds=setzero(Math.floor((e_minsold-minsold)*60));
+document.getElementById('days').innerHTML="本blog已运行"+daysold+"天"+hrsold+"小时"+minsold+"分"+seconds+"秒";
+}
+function setzero(i){
+if (i<10)
+{i="0" + i};
+return i;
+}
+show_date_time();
+</script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-star-o"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">fufua</span>
+
+  
+
+  
+</div>
+<div class="powered-by">
+<i class="fa fa-smile-o"></i><span id="busuanzi_container_site_pv">
+  欢迎光临，第 <span id="busuanzi_value_site_pv"></span> 位访客
+</span>
+</div>
+
+<div id="days"></div>
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+	
+    
+
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    
+      
+  
+  <script type="text/javascript" color="255,255,255" opacity="0.5" zindex="-1" count="500" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.5.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.5.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.5.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.5.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.5.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  
+  
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(function (item) {
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'WCI8YC78BPKShk61t0fVCQng-gzGzoHsz',
+        appKey: '2xS0DrNChYqO0nfJXL4iHUhd',
+        placeholder: '友善发言的人运气不会太差~  --小黄即',
+        avatar:'mm',
+        meta:guest,
+        pageSize:'10' || 10,
+        visitor: true
+    });
+  </script>
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"right","width":100,"height":100},"mobile":{"show":true},"log":false});</script></body>
+</html>
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/love.js"></script>

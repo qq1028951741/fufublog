@@ -120,7 +120,7 @@
 <meta property="og:image" content="https://qq1028951741.github.io/images/springbootnew2.jpg">
 <meta property="og:image" content="https://qq1028951741.github.io/images/springbootnew3.jpg">
 <meta property="og:image" content="https://qq1028951741.github.io/images/springboot%20swagger2.jpg">
-<meta property="og:updated_time" content="2018-11-26T08:06:46.319Z">
+<meta property="og:updated_time" content="2018-11-26T09:42:41.502Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SpringBoot： Restful 接口示例">
 <meta name="twitter:image" content="https://qq1028951741.github.io/images/springbootnew1.jpg">
@@ -433,7 +433,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-11-26 16:06:46" itemprop="dateModified" datetime="2018-11-26T16:06:46+08:00">2018-11-26</time>
+                <time title="修改时间：2018-11-26 17:42:41" itemprop="dateModified" datetime="2018-11-26T17:42:41+08:00">2018-11-26</time>
               
             
           </span>
@@ -520,7 +520,7 @@
 <h3 id="service"><a href="#service" class="headerlink" title="service"></a>service</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">package com.fufu.service;</span><br><span class="line"></span><br><span class="line">import com.fufu.dao.BlogVisitorMapper;</span><br><span class="line">import com.fufu.entity.BlogVisitor;</span><br><span class="line">import org.springframework.beans.factory.annotation.Autowired;</span><br><span class="line">import org.springframework.stereotype.Service;</span><br><span class="line">import org.springframework.transaction.annotation.Transactional;</span><br><span class="line"></span><br><span class="line">import java.util.List;</span><br><span class="line"></span><br><span class="line">@Service</span><br><span class="line">@Transactional</span><br><span class="line">public class RestfulService &#123;</span><br><span class="line">    @Autowired private BlogVisitorMapper blogVisitorMapper;</span><br><span class="line"></span><br><span class="line">    public void addBlogVisitor(BlogVisitor blogVisitor)throws Exception &#123;</span><br><span class="line">        blogVisitorMapper.addBlogVisitor(blogVisitor);</span><br><span class="line">        throw new RuntimeException(&quot;heiheihei&quot;);//事务测试</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void deleteBlogVisitor(Long id) &#123;</span><br><span class="line">        blogVisitorMapper.deleteBlogVisitor(id);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void updateBlogVisitor(BlogVisitor blogVisitor) &#123;</span><br><span class="line">        blogVisitorMapper.updateBlogVisitor(blogVisitor);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public List&lt;BlogVisitor&gt; qryBlogVisitorList() &#123;</span><br><span class="line">        return blogVisitorMapper.qryBlogVisitorList();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public BlogVisitorMapper getBlogVisitorMapper() &#123;</span><br><span class="line">        return blogVisitorMapper;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void setBlogVisitorMapper(BlogVisitorMapper blogVisitorMapper) &#123;</span><br><span class="line">        this.blogVisitorMapper = blogVisitorMapper;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="dao"><a href="#dao" class="headerlink" title="dao"></a>dao</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">package com.fufu.dao;</span><br><span class="line"></span><br><span class="line">import com.fufu.entity.BlogVisitor;</span><br><span class="line">import org.apache.ibatis.annotations.*;</span><br><span class="line">import java.util.List;</span><br><span class="line"></span><br><span class="line">@Mapper</span><br><span class="line">public interface BlogVisitorMapper &#123;</span><br><span class="line">    @Insert(&quot;insert into blog_visitor(visitor_name, visitor_gender, visitor_reason, visit_time) values(#&#123;visitorName&#125;, #&#123;visitorGender&#125;, #&#123;visitorReason&#125;, #&#123;visitTime&#125;)&quot;)</span><br><span class="line">    @Options(useGeneratedKeys = true, keyColumn = &quot;id&quot;, keyProperty = &quot;id&quot;)</span><br><span class="line">    void addBlogVisitor(BlogVisitor blogVisitor);</span><br><span class="line"></span><br><span class="line">    @Delete(&quot;delete from blog_visitor where id = #&#123;id&#125;&quot;)</span><br><span class="line">    void deleteBlogVisitor(@Param(&quot;id&quot;) Long id);</span><br><span class="line"></span><br><span class="line">    @Update(&quot;update blog_visitor set visitor_name = #&#123;visitorName&#125;, visitor_gender = #&#123;visitorGender&#125;, visitor_reason = #&#123;visitorReason&#125;, visit_time = #&#123;visitTime&#125; where id = #&#123;id&#125;&quot;)</span><br><span class="line">    void updateBlogVisitor(BlogVisitor blogVisitor);</span><br><span class="line"></span><br><span class="line">    @Select(&quot;select id, visitor_name as visitorName, visitor_gender as visitorGender, visitor_reason as visitorReason, visit_time as visitTime from blog_visitor&quot;)</span><br><span class="line">    List&lt;BlogVisitor&gt; qryBlogVisitorList();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <blockquote>
-<p>源码：<a href="https://github.com/qq1028951741/springbootdemo" target="_blank" rel="noopener">https://github.com/qq1028951741/springbootdemo</a> or 右上角github进去，springbootdemo项目，如果对您有帮助，麻烦点下star，谢谢</p>
+<p><code>源码：https://github.com/qq1028951741/springbootdemo or 右上角github进去，springbootdemo项目，如果对您有帮助，麻烦点下star，谢谢</code></p>
 </blockquote>
 <hr>
 <blockquote class="blockquote-center"><p>人生两苦：想要却不得，拥有却失去。  –褚禄山<br>            珍惜当下,与君共勉~</p>
@@ -548,7 +548,7 @@
   <p><span>本文标题:</span>SpringBoot： Restful 接口示例</p>
   <p><span>文章作者:</span>fufua</p>
   <p><span>发布时间:</span>2018年11月16日 - 10:18:13</p>
-  <p><span>最后更新:</span>2018年11月26日 - 16:06:46</p>
+  <p><span>最后更新:</span>2018年11月26日 - 17:42:41</p>
   <p><span>原始链接:</span><a href="/2018/11/16/SpringBoot：Restful 接口示例/" title="SpringBoot： Restful 接口示例">https://qq1028951741.github.io/2018/11/16/SpringBoot：Restful 接口示例/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://qq1028951741.github.io/2018/11/16/SpringBoot：Restful 接口示例/" aria-label="复制成功！"></i></span>
   </p>
@@ -605,8 +605,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/11/16/java 中 byte[]、File、InputStream 互相转换/" rel="next" title="java 中 byte[\]、File、InputStream 互相转换">
-                <i class="fa fa-chevron-left"></i> java 中 byte[\]、File、InputStream 互相转换
+              <a href="/2018/11/16/JsonUtil操作类/" rel="next" title="JsonUtil操作类">
+                <i class="fa fa-chevron-left"></i> JsonUtil操作类
               </a>
             
           </div>
@@ -615,8 +615,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/11/16/http请求工具类/" rel="prev" title="http请求工具类">
-                http请求工具类 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/11/17/SpringBoot：Restful 接口集成swagger2 api文档/" rel="prev" title="SpringBoot：Restful 接口集成swagger2 api文档">
+                SpringBoot：Restful 接口集成swagger2 api文档 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -692,7 +692,7 @@
                 
                   <a href="/archives">
                 
-                    <span class="site-state-item-count">17</span>
+                    <span class="site-state-item-count">21</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
