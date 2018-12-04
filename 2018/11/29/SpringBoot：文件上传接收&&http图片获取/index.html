@@ -1,0 +1,1357 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+  <meta name="baidu-site-verification" content="kr5FROQX6N">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=6.5.0" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.5.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/Caduceus_32px_578397_easyicon.net.ico?v=6.5.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.5.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.5.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '6.5.0',
+    sidebar: {"position":"right","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="keywords" content="SpringBoot">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SpringBoot：文件上传接收&amp;&amp;http图片获取">
+<meta property="og:url" content="https://qq1028951741.github.io/2018/11/29/SpringBoot：文件上传接收&&http图片获取/index.html">
+<meta property="og:site_name" content="燃情岁月">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://qq1028951741.github.io/images/springboot文件接收.jpg">
+<meta property="og:updated_time" content="2018-12-03T07:06:12.804Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="SpringBoot：文件上传接收&amp;&amp;http图片获取">
+<meta name="twitter:image" content="https://qq1028951741.github.io/images/springboot文件接收.jpg">
+
+
+
+  <link rel="alternate" href="/atom.xml" title="燃情岁月" type="application/atom+xml">
+
+
+
+
+  <link rel="canonical" href="https://qq1028951741.github.io/2018/11/29/SpringBoot：文件上传接收&&http图片获取/">
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>SpringBoot：文件上传接收&&http图片获取 | 燃情岁月</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail">
+    <div class="headband"></div>
+    <a href="https://github.com/search?utf8=%E2%9C%93&q=qq1028951741&type=Repositories" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#fff; color:#151513; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+	<header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">燃情岁月</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">嘿嘿嘿</p>
+      
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-主页">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>主页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-目录">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>目录</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-标签">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tags" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-关于">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/about" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
+        </li>
+      
+    </ul>
+  
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://qq1028951741.github.io/2018/11/29/SpringBoot：文件上传接收&&http图片获取/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="fufua">
+      <meta itemprop="description" content="fufublog">
+      <meta itemprop="image" content="/images/header.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="燃情岁月">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">SpringBoot：文件上传接收&&http图片获取
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-11-29 10:43:13" itemprop="dateCreated datePublished" datetime="2018-11-29T10:43:13+08:00">2018-11-29</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-12-03 15:06:12" itemprop="dateModified" datetime="2018-12-03T15:06:12+08:00">2018-12-03</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/SpringBoot整合系列/" itemprop="url" rel="index"><span itemprop="name">SpringBoot整合系列</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/11/29/SpringBoot：文件上传接收&&http图片获取/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018/11/29/SpringBoot：文件上传接收&&http图片获取/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2018/11/29/SpringBoot：文件上传接收&&http图片获取/" class="leancloud_visitors" data-flag-title="SpringBoot：文件上传接收&&http图片获取">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数：</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><excerpt in="" index="" |="" 首页摘要=""><a id="more"></a><the rest="" of="" contents="" |="" 余下全文=""></the></excerpt></p>
+<h2 id="SpringBoot：文件上传接收-amp-amp-http图片获取"><a href="#SpringBoot：文件上传接收-amp-amp-http图片获取" class="headerlink" title="SpringBoot：文件上传接收&amp;&amp;http图片获取"></a>SpringBoot：文件上传接收&amp;&amp;http图片获取</h2><h3 id="application-yml"><a href="#application-yml" class="headerlink" title="application.yml"></a>application.yml</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">upload:</span><br><span class="line">  filePath: D:/test/</span><br><span class="line">serviceIP: 127.0.0.1</span><br><span class="line">servicePort: 8090</span><br><span class="line">rootPath: D:\</span><br></pre></td></tr></table></figure>
+<h3 id="FileController"><a href="#FileController" class="headerlink" title="FileController"></a>FileController</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br></pre></td><td class="code"><pre><span class="line">package com.fufu.controller;</span><br><span class="line"></span><br><span class="line">import com.fufu.service.FileService;</span><br><span class="line">import com.fufu.tools.FileTypeUtil;</span><br><span class="line">import com.fufu.tools.HttpClient;</span><br><span class="line">import com.fufu.tools.UrlUtil;</span><br><span class="line">import io.swagger.annotations.ApiOperation;</span><br><span class="line">import org.slf4j.Logger;</span><br><span class="line">import org.slf4j.LoggerFactory;</span><br><span class="line">import org.springframework.beans.factory.annotation.Autowired;</span><br><span class="line">import org.springframework.beans.factory.annotation.Value;</span><br><span class="line">import org.springframework.util.Base64Utils;</span><br><span class="line">import org.springframework.util.FileCopyUtils;</span><br><span class="line">import org.springframework.web.bind.annotation.*;</span><br><span class="line">import org.springframework.web.multipart.MultipartFile;</span><br><span class="line"></span><br><span class="line">import javax.servlet.ServletException;</span><br><span class="line">import javax.servlet.http.HttpServletRequest;</span><br><span class="line">import javax.servlet.http.Part;</span><br><span class="line">import java.io.*;</span><br><span class="line">import java.net.HttpURLConnection;</span><br><span class="line">import java.net.URL;</span><br><span class="line">import java.text.SimpleDateFormat;</span><br><span class="line">import java.util.*;</span><br><span class="line"></span><br><span class="line">@RestController</span><br><span class="line">@RequestMapping(&quot;/test1&quot;)</span><br><span class="line">public class FileController &#123;</span><br><span class="line">    private static final Logger log = LoggerFactory.getLogger(FileController.class);</span><br><span class="line">    @Value(&quot;$&#123;upload.filePath&#125;&quot;)</span><br><span class="line">    private String filePath;</span><br><span class="line">    @Value(&quot;$&#123;serviceIP&#125;&quot;)</span><br><span class="line">    private String serviceIP;</span><br><span class="line">    @Value(&quot;$&#123;servicePort&#125;&quot;)</span><br><span class="line">    private String servicePort;</span><br><span class="line">    @Value(&quot;$&#123;rootPath&#125;&quot;)</span><br><span class="line">    private String rootPath;</span><br><span class="line">    @Autowired FileService fileService;</span><br><span class="line">    //接收单个file</span><br><span class="line">    @PostMapping(&quot;/test/upload1&quot;)</span><br><span class="line">    public Map&lt;String, String&gt; upload1(@RequestParam(&quot;file&quot;) MultipartFile file) throws IOException &#123;</span><br><span class="line">        log.info(&quot;[文件类型] - [&#123;&#125;]&quot;, file.getContentType());</span><br><span class="line">        log.info(&quot;[文件名称] - [&#123;&#125;]&quot;, file.getOriginalFilename());</span><br><span class="line">        log.info(&quot;[文件大小] - [&#123;&#125;]&quot;, file.getSize());</span><br><span class="line">        try &#123;</span><br><span class="line">            file.transferTo(new File(filePath + file.getOriginalFilename()));</span><br><span class="line">        &#125; catch (IOException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">        Map&lt;String, String&gt; result = new HashMap&lt;&gt;(16);</span><br><span class="line">        result.put(&quot;contentType&quot;, file.getContentType());</span><br><span class="line">        result.put(&quot;fileName&quot;, file.getOriginalFilename());</span><br><span class="line">        result.put(&quot;fileSize&quot;, file.getSize() + &quot;&quot;);</span><br><span class="line">        return result;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    //接收多个file</span><br><span class="line">    @PostMapping(&quot;/test/upload2&quot;)</span><br><span class="line">    public List&lt;Map&lt;String, String&gt;&gt; upload2(@RequestParam(&quot;file&quot;) MultipartFile[] files) throws IOException &#123;</span><br><span class="line">        if (files == null || files.length == 0) &#123;</span><br><span class="line">            return null;</span><br><span class="line">        &#125;</span><br><span class="line">        List&lt;Map&lt;String, String&gt;&gt; results = new ArrayList&lt;&gt;();</span><br><span class="line">        for (MultipartFile file : files) &#123;</span><br><span class="line">            file.transferTo(new File(filePath + file.getOriginalFilename()));</span><br><span class="line">            Map&lt;String, String&gt; map = new HashMap&lt;&gt;(16);</span><br><span class="line">            map.put(&quot;contentType&quot;, file.getContentType());</span><br><span class="line">            map.put(&quot;fileName&quot;, file.getOriginalFilename());</span><br><span class="line">            map.put(&quot;fileSize&quot;, file.getSize() + &quot;&quot;);</span><br><span class="line">            results.add(map);</span><br><span class="line">        &#125;</span><br><span class="line">        return results;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    //接收base64图片字符串</span><br><span class="line">    @RequestMapping(&quot;/test/upload3&quot;)</span><br><span class="line">    public void upload2(String base64) throws IOException &#123;</span><br><span class="line">        final File tempFile = new File(filePath+&quot;upload3.jpg&quot;);</span><br><span class="line">        //防止有的没传 data:image/jpeg;base64, 的情况</span><br><span class="line">        String[] d = base64.split(&quot;base64,&quot;);</span><br><span class="line">        final byte[] bytes = Base64Utils.decodeFromString(d.length &gt; 1 ? d[1] : d[0]);</span><br><span class="line">        FileCopyUtils.copy(bytes, tempFile);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    //根据http协议下载图片</span><br><span class="line">    @RequestMapping(&quot;/test/upload4&quot;)</span><br><span class="line">    public String downloadFileByURL(String urlStr) throws IOException &#123;</span><br><span class="line">        URL url = new URL(UrlUtil.toUtf8String(urlStr));</span><br><span class="line">        String picPath = filePath+&quot;upload4.jpg&quot;;</span><br><span class="line">        File file = new File(picPath);</span><br><span class="line">        // 打开链接</span><br><span class="line">        HttpURLConnection conn = (HttpURLConnection) url.openConnection();</span><br><span class="line">        // 设置请求方式为&quot;GET&quot;</span><br><span class="line">        conn.setRequestMethod(&quot;GET&quot;);</span><br><span class="line">        // 超时响应时间为5秒</span><br><span class="line">        conn.setConnectTimeout(5 * 1000);</span><br><span class="line">        conn.setRequestProperty(&quot;Connection&quot;, &quot;Keep-Alive&quot;);</span><br><span class="line">        conn.setRequestProperty(&quot;Content-Type&quot;, &quot;text/xml;charset=UTF-8&quot;);</span><br><span class="line"></span><br><span class="line">        // 通过输入流获取图片数据</span><br><span class="line">        InputStream inStream = conn.getInputStream();</span><br><span class="line">        ByteArrayOutputStream outStream = new ByteArrayOutputStream();</span><br><span class="line">        // 创建一个Buffer字符串</span><br><span class="line">        byte[] buffer = new byte[1024];</span><br><span class="line">        // 每次读取的字符串长度，如果为-1，代表全部读取完毕</span><br><span class="line">        int len = 0;</span><br><span class="line">        // 使用一个输入流从buffer里把数据读取出来</span><br><span class="line">        while ((len = inStream.read(buffer)) != -1) &#123;</span><br><span class="line">            // 用输出流往buffer里写入数据，中间参数代表从哪个位置开始读，len代表读取的长度</span><br><span class="line">            outStream.write(buffer, 0, len);</span><br><span class="line">        &#125;</span><br><span class="line">        // 关闭输入流</span><br><span class="line">        inStream.close();</span><br><span class="line">        // 创建输出流</span><br><span class="line">        FileOutputStream outStream2 = new FileOutputStream(file);</span><br><span class="line">        // 写入数据</span><br><span class="line">        outStream2.write(outStream.toByteArray());</span><br><span class="line">        // 关闭输出流</span><br><span class="line">        outStream2.close();</span><br><span class="line"></span><br><span class="line">        return picPath;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    //实现从本地取图片上传到对应服务器上</span><br><span class="line">    @GetMapping(value=&quot;/uploadLocalFile&quot;)</span><br><span class="line">    public void uploadLocalFile()&#123;</span><br><span class="line">        String relativePath = &quot;test/haha.jpg&quot;;</span><br><span class="line">        String picUrl = null;</span><br><span class="line">        try &#123;</span><br><span class="line">            picUrl = HttpClient.getInstance().uploadFileImpl(&quot;http://&quot;+serviceIP+&quot;:&quot;+servicePort+&quot;/test1/uploadFile&quot;, rootPath + relativePath, &quot;aTestFileName&quot;, null);</span><br><span class="line">        &#125; catch (Exception e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(&quot;-----picUrl:&quot;+picUrl+&quot;-----&quot;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * 单个文件上传</span><br><span class="line">     * @param file</span><br><span class="line">     * @param folder 文件夹根据上传文件type自动生成</span><br><span class="line">     * @param id</span><br><span class="line">     * @param request</span><br><span class="line">     * @return</span><br><span class="line">     * @throws ServletException</span><br><span class="line">     * @throws IOException</span><br><span class="line">     */</span><br><span class="line">    @ApiOperation(value = &quot;单个文件上传&quot;, notes= &quot;根据type值将所上传图片分文件夹存放，如type=我是一个莫得感情的文件夹，文件路径将为“/我是一个莫得感情的文件夹/20181111/110.jpg”&quot;)</span><br><span class="line">    @PostMapping(value=&quot;/uploadFile&quot;)</span><br><span class="line">    public @ResponseBody String uploadFile( MultipartFile file, @RequestParam(defaultValue = &quot;Common&quot;) String type, HttpServletRequest request) throws IOException, ServletException &#123;</span><br><span class="line">        SimpleDateFormat sf = new SimpleDateFormat(&quot;yyyyMMdd&quot;);</span><br><span class="line">        String relativePath = null;</span><br><span class="line">        String finalName = null;</span><br><span class="line">        if(file != null) &#123;</span><br><span class="line">            String fileName = file.getOriginalFilename();</span><br><span class="line">            //获取文件后缀名</span><br><span class="line">            String ext= FileTypeUtil.getFileSuffix(fileName);</span><br><span class="line">            if(!&quot;jpg&quot;.equalsIgnoreCase(ext)&amp;&amp; !&quot;png&quot;.equalsIgnoreCase(ext)&amp;&amp; !&quot;bmp&quot;.equalsIgnoreCase(ext) &amp;&amp; !&quot;jpeg&quot;.equalsIgnoreCase(ext))</span><br><span class="line">                return &quot;上传的图片文件格式不正确&quot;;</span><br><span class="line">            relativePath = type + &quot;/&quot; + sf.format(new Date()) +&quot;/&quot;;</span><br><span class="line">            String finalPath = filePath + relativePath;</span><br><span class="line">            try &#123;</span><br><span class="line">                finalName = new Random().nextInt(999999) + &quot;.&quot;+ ext;</span><br><span class="line">                String fullPath = fileService.uploadFile(file.getBytes(), finalPath, finalName);</span><br><span class="line">                if(fullPath.isEmpty()) &#123;</span><br><span class="line">                    return null;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;catch (Exception e) &#123;</span><br><span class="line">                e.printStackTrace();</span><br><span class="line">                return &quot;uploadimg failure: &quot; + e.getMessage();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;else &#123;</span><br><span class="line">            Collection&lt;Part&gt; parts = request.getParts();</span><br><span class="line">            for (Iterator&lt;Part&gt; iterator = parts.iterator(); iterator.hasNext();) &#123;</span><br><span class="line">                Part part = iterator.next();</span><br><span class="line">                finalName = part.getSubmittedFileName();</span><br><span class="line">                relativePath = part.getName() + &quot;/&quot; + sf.format(new Date()) + &quot;/&quot;;</span><br><span class="line">                String finalPath = filePath + relativePath;</span><br><span class="line">                fileService.uploadFile(part.getInputStream(), finalPath, finalName);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return relativePath + finalName;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="HttpClient"><a href="#HttpClient" class="headerlink" title="HttpClient"></a>HttpClient</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br><span class="line">283</span><br><span class="line">284</span><br><span class="line">285</span><br><span class="line">286</span><br><span class="line">287</span><br><span class="line">288</span><br><span class="line">289</span><br><span class="line">290</span><br><span class="line">291</span><br><span class="line">292</span><br><span class="line">293</span><br><span class="line">294</span><br><span class="line">295</span><br><span class="line">296</span><br><span class="line">297</span><br><span class="line">298</span><br><span class="line">299</span><br><span class="line">300</span><br><span class="line">301</span><br><span class="line">302</span><br><span class="line">303</span><br><span class="line">304</span><br><span class="line">305</span><br><span class="line">306</span><br><span class="line">307</span><br><span class="line">308</span><br><span class="line">309</span><br><span class="line">310</span><br><span class="line">311</span><br><span class="line">312</span><br><span class="line">313</span><br><span class="line">314</span><br><span class="line">315</span><br><span class="line">316</span><br><span class="line">317</span><br><span class="line">318</span><br><span class="line">319</span><br><span class="line">320</span><br><span class="line">321</span><br><span class="line">322</span><br><span class="line">323</span><br><span class="line">324</span><br><span class="line">325</span><br><span class="line">326</span><br><span class="line">327</span><br><span class="line">328</span><br><span class="line">329</span><br><span class="line">330</span><br><span class="line">331</span><br><span class="line">332</span><br><span class="line">333</span><br><span class="line">334</span><br><span class="line">335</span><br><span class="line">336</span><br><span class="line">337</span><br><span class="line">338</span><br><span class="line">339</span><br><span class="line">340</span><br><span class="line">341</span><br><span class="line">342</span><br><span class="line">343</span><br><span class="line">344</span><br><span class="line">345</span><br><span class="line">346</span><br><span class="line">347</span><br><span class="line">348</span><br><span class="line">349</span><br><span class="line">350</span><br><span class="line">351</span><br><span class="line">352</span><br><span class="line">353</span><br><span class="line">354</span><br><span class="line">355</span><br><span class="line">356</span><br><span class="line">357</span><br><span class="line">358</span><br><span class="line">359</span><br></pre></td><td class="code"><pre><span class="line">package com.fufu.tools;</span><br><span class="line"></span><br><span class="line">import org.apache.http.HttpEntity;</span><br><span class="line">import org.apache.http.NameValuePair;</span><br><span class="line">import org.apache.http.client.entity.UrlEncodedFormEntity;</span><br><span class="line">import org.apache.http.client.methods.CloseableHttpResponse;</span><br><span class="line">import org.apache.http.client.methods.HttpGet;</span><br><span class="line">import org.apache.http.client.methods.HttpPost;</span><br><span class="line">import org.apache.http.entity.ContentType;</span><br><span class="line">import org.apache.http.entity.mime.MultipartEntityBuilder;</span><br><span class="line">import org.apache.http.entity.mime.content.FileBody;</span><br><span class="line">import org.apache.http.entity.mime.content.StringBody;</span><br><span class="line">import org.apache.http.impl.client.CloseableHttpClient;</span><br><span class="line">import org.apache.http.impl.client.HttpClients;</span><br><span class="line">import org.apache.http.message.BasicNameValuePair;</span><br><span class="line">import org.apache.http.util.EntityUtils;</span><br><span class="line"></span><br><span class="line">import java.io.*;</span><br><span class="line">import java.util.ArrayList;</span><br><span class="line">import java.util.List;</span><br><span class="line">import java.util.Map;</span><br><span class="line">import java.util.Set;</span><br><span class="line">import java.util.concurrent.ExecutorService;</span><br><span class="line">import java.util.concurrent.Executors;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * HttpClient</span><br><span class="line"> */</span><br><span class="line">public class HttpClient &#123;</span><br><span class="line"> </span><br><span class="line">	/**</span><br><span class="line">	 * 最大线程池</span><br><span class="line">	 */</span><br><span class="line">	public static final int THREAD_POOL_SIZE = 5;</span><br><span class="line"> </span><br><span class="line">	public interface HttpClientDownLoadProgress &#123;</span><br><span class="line">		public void onProgress(int progress);</span><br><span class="line">	&#125;</span><br><span class="line"> </span><br><span class="line">	private static HttpClient httpClientDownload;</span><br><span class="line"> </span><br><span class="line">	private ExecutorService downloadExcutorService;</span><br><span class="line"> </span><br><span class="line">	private HttpClient() &#123;</span><br><span class="line">		downloadExcutorService = Executors.newFixedThreadPool(THREAD_POOL_SIZE);</span><br><span class="line">	&#125;</span><br><span class="line"> </span><br><span class="line">	public static HttpClient getInstance() &#123;</span><br><span class="line">		if (httpClientDownload == null) &#123;</span><br><span class="line">			httpClientDownload = new HttpClient();</span><br><span class="line">		&#125;</span><br><span class="line">		return httpClientDownload;</span><br><span class="line">	&#125;</span><br><span class="line"> </span><br><span class="line">	/**</span><br><span class="line">	 * 下载文件</span><br><span class="line">	 * </span><br><span class="line">	 * @param url</span><br><span class="line">	 * @param filePath</span><br><span class="line">	 */</span><br><span class="line">	public void download(final String url, final String filePath) &#123;</span><br><span class="line">		downloadExcutorService.execute(new Runnable() &#123;</span><br><span class="line"> </span><br><span class="line">			@Override</span><br><span class="line">			public void run() &#123;</span><br><span class="line">				httpDownloadFile(url, filePath, null, null);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;);</span><br><span class="line">	&#125;</span><br><span class="line"> </span><br><span class="line">	/**</span><br><span class="line">	 * 下载文件</span><br><span class="line">	 * </span><br><span class="line">	 * @param url</span><br><span class="line">	 * @param filePath</span><br><span class="line">	 * @param progress</span><br><span class="line">	 *            进度回调</span><br><span class="line">	 */</span><br><span class="line">	public void download(final String url, final String filePath,</span><br><span class="line">                         final HttpClientDownLoadProgress progress) &#123;</span><br><span class="line">		downloadExcutorService.execute(new Runnable() &#123;</span><br><span class="line"> </span><br><span class="line">			@Override</span><br><span class="line">			public void run() &#123;</span><br><span class="line">				httpDownloadFile(url, filePath, progress, null);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;);</span><br><span class="line">	&#125;</span><br><span class="line"> </span><br><span class="line">	/**</span><br><span class="line">	 * 下载文件</span><br><span class="line">	 * </span><br><span class="line">	 * @param url</span><br><span class="line">	 * @param filePath</span><br><span class="line">	 */</span><br><span class="line">	private void httpDownloadFile(String url, String filePath,</span><br><span class="line">                                  HttpClientDownLoadProgress progress, Map&lt;String, String&gt; headMap) &#123;</span><br><span class="line">		CloseableHttpClient httpclient = HttpClients.createDefault();</span><br><span class="line">		try &#123;</span><br><span class="line">			HttpGet httpGet = new HttpGet(url);</span><br><span class="line">			setGetHead(httpGet, headMap);</span><br><span class="line">			CloseableHttpResponse response1 = httpclient.execute(httpGet);</span><br><span class="line">			try &#123;</span><br><span class="line">				System.out.println(response1.getStatusLine());</span><br><span class="line">				HttpEntity httpEntity = response1.getEntity();</span><br><span class="line">				long contentLength = httpEntity.getContentLength();</span><br><span class="line">				InputStream is = httpEntity.getContent();</span><br><span class="line">				// 根据InputStream 下载文件</span><br><span class="line">				ByteArrayOutputStream output = new ByteArrayOutputStream();</span><br><span class="line">				byte[] buffer = new byte[4096];</span><br><span class="line">				int r = 0;</span><br><span class="line">				long totalRead = 0;</span><br><span class="line">				while ((r = is.read(buffer)) &gt; 0) &#123;</span><br><span class="line">					output.write(buffer, 0, r);</span><br><span class="line">					totalRead += r;</span><br><span class="line">					if (progress != null) &#123;// 回调进度</span><br><span class="line">						progress.onProgress((int) (totalRead * 100 / contentLength));</span><br><span class="line">					&#125;</span><br><span class="line">				&#125;</span><br><span class="line">				FileOutputStream fos = new FileOutputStream(filePath);</span><br><span class="line">				output.writeTo(fos);</span><br><span class="line">				output.flush();</span><br><span class="line">				output.close();</span><br><span class="line">				fos.close();</span><br><span class="line">				EntityUtils.consume(httpEntity);</span><br><span class="line">			&#125; finally &#123;</span><br><span class="line">				response1.close();</span><br><span class="line">			&#125;</span><br><span class="line">		&#125; catch (Exception e) &#123;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125; finally &#123;</span><br><span class="line">			try &#123;</span><br><span class="line">				httpclient.close();</span><br><span class="line">			&#125; catch (IOException e) &#123;</span><br><span class="line">				e.printStackTrace();</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"> </span><br><span class="line">	/**</span><br><span class="line">	 * get请求</span><br><span class="line">	 * </span><br><span class="line">	 * @param url</span><br><span class="line">	 * @return</span><br><span class="line">	 */</span><br><span class="line">	public String httpGet(String url) &#123;</span><br><span class="line">		return httpGet(url, null);</span><br><span class="line">	&#125;</span><br><span class="line"> </span><br><span class="line">	/**</span><br><span class="line">	 * http get请求</span><br><span class="line">	 * </span><br><span class="line">	 * @param url</span><br><span class="line">	 * @return</span><br><span class="line">	 */</span><br><span class="line">	public String httpGet(String url, Map&lt;String, String&gt; headMap) &#123;</span><br><span class="line">		String responseContent = null;</span><br><span class="line">		CloseableHttpClient httpclient = HttpClients.createDefault();</span><br><span class="line">		try &#123;</span><br><span class="line">			HttpGet httpGet = new HttpGet(url);</span><br><span class="line">			CloseableHttpResponse response1 = httpclient.execute(httpGet);</span><br><span class="line">			setGetHead(httpGet, headMap);</span><br><span class="line">			try &#123;</span><br><span class="line">				System.out.println(response1.getStatusLine());</span><br><span class="line">				HttpEntity entity = response1.getEntity();</span><br><span class="line">				responseContent = getRespString(entity);</span><br><span class="line">				System.out.println(&quot;debug:&quot; + responseContent);</span><br><span class="line">				EntityUtils.consume(entity);</span><br><span class="line">			&#125; finally &#123;</span><br><span class="line">				response1.close();</span><br><span class="line">			&#125;</span><br><span class="line">		&#125; catch (Exception e) &#123;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125; finally &#123;</span><br><span class="line">			try &#123;</span><br><span class="line">				httpclient.close();</span><br><span class="line">			&#125; catch (IOException e) &#123;</span><br><span class="line">				e.printStackTrace();</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		return responseContent;</span><br><span class="line">	&#125;</span><br><span class="line"> </span><br><span class="line">	public String httpPost(String url, Map&lt;String, String&gt; paramsMap) &#123;</span><br><span class="line">		return httpPost(url, paramsMap, null);</span><br><span class="line">	&#125;</span><br><span class="line"> </span><br><span class="line">	/**</span><br><span class="line">	 * http的post请求</span><br><span class="line">	 * </span><br><span class="line">	 * @param url</span><br><span class="line">	 * @param paramsMap</span><br><span class="line">	 * @return</span><br><span class="line">	 */</span><br><span class="line">	public String httpPost(String url, Map&lt;String, String&gt; paramsMap,</span><br><span class="line">                           Map&lt;String, String&gt; headMap) &#123;</span><br><span class="line">		String responseContent = null;</span><br><span class="line">		CloseableHttpClient httpclient = HttpClients.createDefault();</span><br><span class="line">		try &#123;</span><br><span class="line">			HttpPost httpPost = new HttpPost(url);</span><br><span class="line">			setPostHead(httpPost, headMap);</span><br><span class="line">			setPostParams(httpPost, paramsMap);</span><br><span class="line">			CloseableHttpResponse response = httpclient.execute(httpPost);</span><br><span class="line">			try &#123;</span><br><span class="line">				System.out.println(response.getStatusLine());</span><br><span class="line">				HttpEntity entity = response.getEntity();</span><br><span class="line">				responseContent = getRespString(entity);</span><br><span class="line">				EntityUtils.consume(entity);</span><br><span class="line">			&#125; finally &#123;</span><br><span class="line">				response.close();</span><br><span class="line">			&#125;</span><br><span class="line">		&#125; catch (Exception e) &#123;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125; finally &#123;</span><br><span class="line">			try &#123;</span><br><span class="line">				httpclient.close();</span><br><span class="line">			&#125; catch (IOException e) &#123;</span><br><span class="line">				e.printStackTrace();</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		System.out.println(&quot;responseContent = &quot; + responseContent);</span><br><span class="line">		return responseContent;</span><br><span class="line">	&#125;</span><br><span class="line"> </span><br><span class="line">	/**</span><br><span class="line">	 * 设置POST的参数</span><br><span class="line">	 * </span><br><span class="line">	 * @param httpPost</span><br><span class="line">	 * @param paramsMap</span><br><span class="line">	 * @throws Exception</span><br><span class="line">	 */</span><br><span class="line">	private void setPostParams(HttpPost httpPost, Map&lt;String, String&gt; paramsMap)</span><br><span class="line">			throws Exception &#123;</span><br><span class="line">		if (paramsMap != null &amp;&amp; paramsMap.size() &gt; 0) &#123;</span><br><span class="line">			List&lt;NameValuePair&gt; nvps = new ArrayList&lt;NameValuePair&gt;();</span><br><span class="line">			Set&lt;String&gt; keySet = paramsMap.keySet();</span><br><span class="line">			for (String key : keySet) &#123;</span><br><span class="line">				nvps.add(new BasicNameValuePair(key, paramsMap.get(key)));</span><br><span class="line">			&#125;</span><br><span class="line">			httpPost.setEntity(new UrlEncodedFormEntity(nvps));</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"> </span><br><span class="line">	/**</span><br><span class="line">	 * 设置http的HEAD</span><br><span class="line">	 * </span><br><span class="line">	 * @param httpPost</span><br><span class="line">	 * @param headMap</span><br><span class="line">	 */</span><br><span class="line">	private void setPostHead(HttpPost httpPost, Map&lt;String, String&gt; headMap) &#123;</span><br><span class="line">		if (headMap != null &amp;&amp; headMap.size() &gt; 0) &#123;</span><br><span class="line">			Set&lt;String&gt; keySet = headMap.keySet();</span><br><span class="line">			for (String key : keySet) &#123;</span><br><span class="line">				httpPost.addHeader(key, headMap.get(key));</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"> </span><br><span class="line">	/**</span><br><span class="line">	 * 设置http的HEAD</span><br><span class="line">	 * </span><br><span class="line">	 * @param httpGet</span><br><span class="line">	 * @param headMap</span><br><span class="line">	 */</span><br><span class="line">	private void setGetHead(HttpGet httpGet, Map&lt;String, String&gt; headMap) &#123;</span><br><span class="line">		if (headMap != null &amp;&amp; headMap.size() &gt; 0) &#123;</span><br><span class="line">			Set&lt;String&gt; keySet = headMap.keySet();</span><br><span class="line">			for (String key : keySet) &#123;</span><br><span class="line">				httpGet.addHeader(key, headMap.get(key));</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"> </span><br><span class="line">	/**</span><br><span class="line">	 * 上传文件</span><br><span class="line">	 * </span><br><span class="line">	 * @param serverUrl</span><br><span class="line">	 *            服务器地址</span><br><span class="line">	 * @param localFilePath</span><br><span class="line">	 *            本地文件路径</span><br><span class="line">	 * @param serverFieldName</span><br><span class="line">	 * @param params</span><br><span class="line">	 * @return</span><br><span class="line">	 * @throws Exception</span><br><span class="line">	 */</span><br><span class="line">	public String uploadFileImpl(String serverUrl, String localFilePath,</span><br><span class="line">                                 String serverFieldName, Map&lt;String, String&gt; params)</span><br><span class="line">			throws Exception &#123;</span><br><span class="line">		String respStr = null;</span><br><span class="line">		CloseableHttpClient httpclient = HttpClients.createDefault();</span><br><span class="line">		try &#123;</span><br><span class="line">			HttpPost httppost = new HttpPost(serverUrl);</span><br><span class="line">			FileBody binFileBody = new FileBody(new File(localFilePath));</span><br><span class="line"> </span><br><span class="line">			MultipartEntityBuilder multipartEntityBuilder = MultipartEntityBuilder</span><br><span class="line">					.create();</span><br><span class="line">			// add the file params</span><br><span class="line">			multipartEntityBuilder.addPart(serverFieldName, binFileBody);</span><br><span class="line">			// 设置上传的其他参数</span><br><span class="line">			setUploadParams(multipartEntityBuilder, params);</span><br><span class="line"> </span><br><span class="line">			HttpEntity reqEntity = multipartEntityBuilder.build();</span><br><span class="line">			httppost.setEntity(reqEntity);</span><br><span class="line"> </span><br><span class="line">			CloseableHttpResponse response = httpclient.execute(httppost);</span><br><span class="line">			try &#123;</span><br><span class="line">				System.out.println(response.getStatusLine());</span><br><span class="line">				HttpEntity resEntity = response.getEntity();</span><br><span class="line">				respStr = getRespString(resEntity);</span><br><span class="line">				EntityUtils.consume(resEntity);</span><br><span class="line">			&#125; finally &#123;</span><br><span class="line">				response.close();</span><br><span class="line">			&#125;</span><br><span class="line">		&#125; finally &#123;</span><br><span class="line">			httpclient.close();</span><br><span class="line">		&#125;</span><br><span class="line">		System.out.println(&quot;resp=&quot; + respStr);</span><br><span class="line">		return respStr;</span><br><span class="line">	&#125;</span><br><span class="line"> </span><br><span class="line">	/**</span><br><span class="line">	 * 设置上传文件时所附带的其他参数</span><br><span class="line">	 * </span><br><span class="line">	 * @param multipartEntityBuilder</span><br><span class="line">	 * @param params</span><br><span class="line">	 */</span><br><span class="line">	private void setUploadParams(MultipartEntityBuilder multipartEntityBuilder,</span><br><span class="line">			Map&lt;String, String&gt; params) &#123;</span><br><span class="line">		if (params != null &amp;&amp; params.size() &gt; 0) &#123;</span><br><span class="line">			Set&lt;String&gt; keys = params.keySet();</span><br><span class="line">			for (String key : keys) &#123;</span><br><span class="line">				multipartEntityBuilder</span><br><span class="line">						.addPart(key, new StringBody(params.get(key),</span><br><span class="line">								ContentType.TEXT_PLAIN));</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"> </span><br><span class="line">	/**</span><br><span class="line">	 * 将返回结果转化为String</span><br><span class="line">	 * </span><br><span class="line">	 * @param entity</span><br><span class="line">	 * @return</span><br><span class="line">	 * @throws Exception</span><br><span class="line">	 */</span><br><span class="line">	private String getRespString(HttpEntity entity) throws Exception &#123;</span><br><span class="line">		if (entity == null) &#123;</span><br><span class="line">			return null;</span><br><span class="line">		&#125;</span><br><span class="line">		InputStream is = entity.getContent();</span><br><span class="line">		StringBuffer strBuf = new StringBuffer();</span><br><span class="line">		byte[] buffer = new byte[4096];</span><br><span class="line">		int r = 0;</span><br><span class="line">		while ((r = is.read(buffer)) &gt; 0) &#123;</span><br><span class="line">			strBuf.append(new String(buffer, 0, r, &quot;UTF-8&quot;));</span><br><span class="line">		&#125;</span><br><span class="line">		return strBuf.toString();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="FileService"><a href="#FileService" class="headerlink" title="FileService"></a>FileService</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br></pre></td><td class="code"><pre><span class="line">package com.fufu.service;</span><br><span class="line"></span><br><span class="line">import com.fufu.tools.UrlUtil;</span><br><span class="line">import org.springframework.beans.factory.annotation.Value;</span><br><span class="line">import org.springframework.stereotype.Service;</span><br><span class="line">import java.io.*;</span><br><span class="line">import java.net.HttpURLConnection;</span><br><span class="line">import java.net.URL;</span><br><span class="line">import java.text.SimpleDateFormat;</span><br><span class="line">import java.util.Date;</span><br><span class="line">import java.util.UUID;</span><br><span class="line"></span><br><span class="line">@Service</span><br><span class="line">public class FileService &#123;</span><br><span class="line">	</span><br><span class="line">	@Value(&quot;$&#123;upload.filePath&#125;&quot;)</span><br><span class="line">	private String filePath;</span><br><span class="line">	</span><br><span class="line">	public String uploadFile(byte[] file, String finalPath, String finalName)&#123;</span><br><span class="line">        File targetFile = new File(finalPath);</span><br><span class="line">        if(!targetFile.exists())&#123;    </span><br><span class="line">            targetFile.mkdirs();    </span><br><span class="line">        &#125;       </span><br><span class="line">        FileOutputStream out;</span><br><span class="line">		try &#123;</span><br><span class="line">			out = new FileOutputStream(finalPath+finalName);</span><br><span class="line">			</span><br><span class="line">			out.write(file);</span><br><span class="line">	        out.flush();</span><br><span class="line">	        out.close();</span><br><span class="line">	        </span><br><span class="line">		&#125; catch (IOException e) &#123;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">			return &quot;uploadimg failure: &quot; + e.getMessage();</span><br><span class="line">		&#125;</span><br><span class="line">        </span><br><span class="line">		System.out.println(finalPath + finalName);</span><br><span class="line">		return finalPath + finalName;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">	public void uploadFile(InputStream in, String finalPath,</span><br><span class="line">                           String finalName) throws IOException &#123;</span><br><span class="line"></span><br><span class="line">		File targetFile = new File(finalPath);</span><br><span class="line">        if(!targetFile.exists())&#123;    </span><br><span class="line">            targetFile.mkdirs();    </span><br><span class="line">        &#125;  </span><br><span class="line">	    //创建一个文件输出流</span><br><span class="line">	    FileOutputStream out = new FileOutputStream(finalPath + finalName);</span><br><span class="line">	    //创建一个缓冲区</span><br><span class="line">        byte buffer[] = new byte[1024];</span><br><span class="line">        //判断输入流中的数据是否已经读完的标识</span><br><span class="line">          int len = 0;</span><br><span class="line">          //循环将输入流读入到缓冲区当中，(len=in.read(buffer))&gt;0就表示in里面还有数据</span><br><span class="line">          while((len=in.read(buffer))&gt;0)&#123;</span><br><span class="line">              //使用FileOutputStream输出流将缓冲区的数据写入到指定的目录(savePath + &quot;\\&quot; + filename)当中</span><br><span class="line">              out.write(buffer, 0, len);</span><br><span class="line">          &#125;</span><br><span class="line">        in.close();</span><br><span class="line">        //关闭输出流</span><br><span class="line">        out.close();</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	public String uploadFileByURL(String folder, String urlStr) throws IOException &#123;</span><br><span class="line">		</span><br><span class="line">		SimpleDateFormat sf = new SimpleDateFormat(&quot;yyyyMMdd&quot;);</span><br><span class="line">		String suffix = HttpURLConnection.guessContentTypeFromName(urlStr).split(&quot;/&quot;)[1];</span><br><span class="line">		String fileName = UUID.randomUUID()+&quot;.&quot;+suffix;</span><br><span class="line">		String relativePath = folder +&quot;/&quot; + sf.format(new Date()) +&quot;/&quot;;</span><br><span class="line">		String absolutePath=filePath.replace(&quot;\\&quot;, &quot;/&quot;) + relativePath;</span><br><span class="line">		</span><br><span class="line">		File targetFile = new File(absolutePath);</span><br><span class="line">		if(!targetFile.exists())&#123;    </span><br><span class="line">            targetFile.mkdirs();    </span><br><span class="line">        &#125; </span><br><span class="line">		URL url = new URL(UrlUtil.toUtf8String(urlStr));</span><br><span class="line">		</span><br><span class="line">		File file = new File(absolutePath+fileName);</span><br><span class="line">		</span><br><span class="line">		 // 打开链接</span><br><span class="line">        HttpURLConnection conn = (HttpURLConnection) url.openConnection();</span><br><span class="line">        // 设置请求方式为&quot;GET&quot;</span><br><span class="line">        conn.setRequestMethod(&quot;GET&quot;);</span><br><span class="line">        // 超时响应时间为5秒</span><br><span class="line">        conn.setConnectTimeout(5 * 1000);</span><br><span class="line">        conn.setRequestProperty(&quot;Connection&quot;, &quot;Keep-Alive&quot;);</span><br><span class="line">        conn.setRequestProperty(&quot;Content-Type&quot;, &quot;text/xml;charset=UTF-8&quot;);</span><br><span class="line">        conn.setRequestProperty(&quot;User-Agent&quot;, &quot;Mozilla/4.0 (compatible; MSIE 5.0; Windows NT; DigExt)&quot;); </span><br><span class="line">        </span><br><span class="line">        // 通过输入流获取图片数据</span><br><span class="line">        InputStream inStream = conn.getInputStream();</span><br><span class="line">        System.out.println(HttpURLConnection.guessContentTypeFromStream(inStream));</span><br><span class="line">        ByteArrayOutputStream outStream = new ByteArrayOutputStream();</span><br><span class="line">        // 创建一个Buffer字符串</span><br><span class="line">        byte[] buffer = new byte[1024];</span><br><span class="line">        // 每次读取的字符串长度，如果为-1，代表全部读取完毕</span><br><span class="line">        int len = 0;</span><br><span class="line">        // 使用一个输入流从buffer里把数据读取出来</span><br><span class="line">        while ((len = inStream.read(buffer)) != -1) &#123;</span><br><span class="line">            // 用输出流往buffer里写入数据，中间参数代表从哪个位置开始读，len代表读取的长度</span><br><span class="line">            outStream.write(buffer, 0, len);</span><br><span class="line">        &#125;</span><br><span class="line">        // 关闭输入流</span><br><span class="line">        inStream.close();</span><br><span class="line">        // 创建输出流</span><br><span class="line">        FileOutputStream outStream2 = new FileOutputStream(file);</span><br><span class="line">        // 写入数据</span><br><span class="line">        outStream2.write(outStream.toByteArray());</span><br><span class="line">        // 关闭输出流</span><br><span class="line">        outStream2.close();</span><br><span class="line">        </span><br><span class="line">        return relativePath+fileName;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><code>简单的文件上传下载示例，具体代码可以下载github下来看看</code></p>
+<h3 id="效果图"><a href="#效果图" class="headerlink" title="效果图"></a>效果图</h3><p><img src="/images/springboot文件接收.jpg" alt="&quot;图片描述&quot;"></p>
+<blockquote>
+<p><code>源码：https://github.com/qq1028951741/springbootdemo or 右上角github进去，springbootdemo项目，如果对您有帮助，麻烦点下star，谢谢</code></p>
+</blockquote>
+<hr>
+<blockquote class="blockquote-center"><p>人生两苦：想要却不得，拥有却失去。  –褚禄山<br>            珍惜当下,与君共勉~</p>
+</blockquote>
+<hr>
+
+      
+    </div>
+
+    
+    
+    
+    
+	<div>
+      
+        
+<div class="my_post_copyright">
+  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+  
+  <!-- JS库 sweetalert 可修改路径 -->
+  <script type="text/javascript" src="http://jslibs.wuxubj.cn/sweetalert_mini/jquery-1.7.1.min.js"></script>
+  <script src="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.mini.css">
+
+  <p><span>本文标题:</span>SpringBoot：文件上传接收&&http图片获取</p>
+  <p><span>文章作者:</span>fufua</p>
+  <p><span>发布时间:</span>2018年11月29日 - 10:43:13</p>
+  <p><span>最后更新:</span>2018年12月03日 - 15:06:12</p>
+  <p><span>原始链接:</span><a href="/2018/11/29/SpringBoot：文件上传接收&&http图片获取/" title="SpringBoot：文件上传接收&&http图片获取">https://qq1028951741.github.io/2018/11/29/SpringBoot：文件上传接收&&http图片获取/</a>
+    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://qq1028951741.github.io/2018/11/29/SpringBoot：文件上传接收&&http图片获取/" aria-label="复制成功！"></i></span>
+  </p>
+  <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
+</div>
+<script> 
+    var clipboard = new Clipboard('.fa-clipboard');
+    clipboard.on('success', $(function(){
+      $(".fa-clipboard").click(function(){
+        swal({   
+          title: "",   
+          text: '复制成功',   
+          html: false,
+          timer: 500,   
+          showConfirmButton: false
+        });
+      });
+    }));  
+</script>
+
+      
+	</div>
+	<div>
+		
+			<div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">  this is end, thank you for reading  <i class="fa fa-pencil"></i></div>
+    
+</div>
+		
+    </div>
+    
+
+    
+       
+    
+    
+
+    
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/SpringBoot/" rel="tag"><i class="fa fa-bicycle"></i> SpringBoot</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/11/28/Hexo-blog域名解析/" rel="next" title="Hexo-blog域名解析">
+                <i class="fa fa-chevron-left"></i> Hexo-blog域名解析
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/header.jpg" alt="fufua">
+            
+              <p class="site-author-name" itemprop="name">fufua</p>
+              <p class="site-description motion-element" itemprop="description">fufublog</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives">
+                
+                    <span class="site-state-item-count">23</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">4</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">11</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#SpringBoot：文件上传接收-amp-amp-http图片获取"><span class="nav-number">1.</span> <span class="nav-text">SpringBoot：文件上传接收&amp;&amp;http图片获取</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#application-yml"><span class="nav-number">1.1.</span> <span class="nav-text">application.yml</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#FileController"><span class="nav-number">1.2.</span> <span class="nav-text">FileController</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HttpClient"><span class="nav-number">1.3.</span> <span class="nav-text">HttpClient</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#FileService"><span class="nav-number">1.4.</span> <span class="nav-text">FileService</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#效果图"><span class="nav-number">1.5.</span> <span class="nav-text">效果图</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script>
+function show_date_time(){
+window.setTimeout("show_date_time()", 1000);
+BirthDay=new Date("11/13/2018 20:34:00");
+today=new Date();
+timeold=(today.getTime()-BirthDay.getTime());
+sectimeold=timeold/1000
+secondsold=Math.floor(sectimeold);
+msPerDay=24*60*60*1000
+e_daysold=timeold/msPerDay
+daysold=Math.floor(e_daysold);
+e_hrsold=(e_daysold-daysold)*24;
+hrsold=setzero(Math.floor(e_hrsold));
+e_minsold=(e_hrsold-hrsold)*60;
+minsold=setzero(Math.floor((e_hrsold-hrsold)*60));
+seconds=setzero(Math.floor((e_minsold-minsold)*60));
+document.getElementById('days').innerHTML="本blog已运行"+daysold+"天"+hrsold+"小时"+minsold+"分"+seconds+"秒";
+}
+function setzero(i){
+if (i<10)
+{i="0" + i};
+return i;
+}
+show_date_time();
+</script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-star-o"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">fufua</span>
+
+  
+
+  
+</div>
+<div class="powered-by">
+<i class="fa fa-smile-o"></i><span id="busuanzi_container_site_pv">
+  欢迎光临，第 <span id="busuanzi_value_site_pv"></span> 位访客
+</span>
+</div>
+
+<div id="days"></div>
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+	
+    
+
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    
+      
+  
+  <script type="text/javascript" color="255,255,255" opacity="0.5" zindex="-1" count="500" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.5.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.5.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.5.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.5.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.5.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  
+  
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(function (item) {
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'WCI8YC78BPKShk61t0fVCQng-gzGzoHsz',
+        appKey: '2xS0DrNChYqO0nfJXL4iHUhd',
+        placeholder: '友善发言的人运气不会太差~  --小黄即',
+        avatar:'mm',
+        meta:guest,
+        pageSize:'10' || 10,
+        visitor: true
+    });
+  </script>
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"right","width":100,"height":100},"mobile":{"show":true},"log":false});</script></body>
+</html>
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/love.js"></script>
