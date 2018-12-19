@@ -136,7 +136,7 @@
 <meta property="og:image" content="https://qq1028951741.github.io/images/jk-last1.jpg">
 <meta property="og:image" content="https://qq1028951741.github.io/images/jk-consoleoutput.jpg">
 <meta property="og:image" content="https://qq1028951741.github.io/images/jk-findbugsresult.jpg">
-<meta property="og:updated_time" content="2018-12-19T03:37:17.529Z">
+<meta property="og:updated_time" content="2018-12-19T07:50:56.399Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SpringBoot：Jenkins 实现持续集成">
 <meta name="twitter:image" content="https://qq1028951741.github.io/images/jenkins1.jpg">
@@ -432,7 +432,7 @@
                 
               
 
-              <time title="创建时间：2018-12-19 10:43:13 / 修改时间：11:37:17" itemprop="dateCreated datePublished" datetime="2018-12-19T10:43:13+08:00">2018-12-19</time>
+              <time title="创建时间：2018-12-19 10:43:13 / 修改时间：15:50:56" itemprop="dateCreated datePublished" datetime="2018-12-19T10:43:13+08:00">2018-12-19</time>
             
 
             
@@ -598,6 +598,13 @@
 <p><img src="/images/jk-consoleoutput.jpg" alt="&quot;图片描述&quot;"></p>
 <p><img src="/images/jk-findbugsresult.jpg" alt="&quot;图片描述&quot;"></p>
 </li>
+<li><p>杀掉相应端口进程(ANSI编码才不会乱码)</p>
+<p>@echo off<br>setlocal enabledelayedexpansion<br>::set port=9090<br>set /p port=请输入端口号：<br>for /f “tokens=1-5” %%a in (‘netstat -ano ^| find “:%port%”‘) do (<br> if “%%e%” == “” (</p>
+<pre><code>set pid=%%d
+</code></pre><p> ) else (</p>
+<pre><code>set pid=%%e
+</code></pre><p> )<br> echo !pid!<br> taskkill /f /pid !pid!<br>)<br>pause</p>
+</li>
 </ul>
 <blockquote>
 <p><code>源码：https://github.com/qq1028951741/springbootdemo or 右上角github进去，springbootdemo项目，如果对您有帮助，麻烦点下star，谢谢</code></p>
@@ -629,7 +636,7 @@
   <p><span>本文标题:</span>SpringBoot：Jenkins 实现持续集成</p>
   <p><span>文章作者:</span>fufua</p>
   <p><span>发布时间:</span>2018年12月19日 - 10:43:13</p>
-  <p><span>最后更新:</span>2018年12月19日 - 11:37:17</p>
+  <p><span>最后更新:</span>2018年12月19日 - 15:50:56</p>
   <p><span>原始链接:</span><a href="/2018/12/19/SpringBoot：Jenkins 实现持续集成/" title="SpringBoot：Jenkins 实现持续集成">https://qq1028951741.github.io/2018/12/19/SpringBoot：Jenkins 实现持续集成/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://qq1028951741.github.io/2018/12/19/SpringBoot：Jenkins 实现持续集成/" aria-label="复制成功！"></i></span>
   </p>
