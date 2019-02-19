@@ -112,13 +112,18 @@
 
   <meta name="keywords" content="SpringCloud">
 <meta property="og:type" content="article">
-<meta property="og:title" content="SpringCloud：Zuul网关">
-<meta property="og:url" content="https://qq1028951741.github.io/2018/01/04/SpringCloud：Zuul网关/index.html">
+<meta property="og:title" content="SpringCloud：基于oauth2.0统一认证授权">
+<meta property="og:url" content="https://qq1028951741.github.io/2019/02/16/SpringCloud：基于OAUTH2.0统一认证授权/index.html">
 <meta property="og:site_name" content="燃情岁月">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-01-29T09:42:35.153Z">
+<meta property="og:image" content="https://qq1028951741.github.io/images/oauth1.jpg">
+<meta property="og:image" content="https://qq1028951741.github.io/images/oauth2.png">
+<meta property="og:image" content="https://qq1028951741.github.io/images/oauth3.jpg">
+<meta property="og:image" content="https://qq1028951741.github.io/images/oauth4.jpg">
+<meta property="og:updated_time" content="2019-02-19T07:26:44.578Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="SpringCloud：Zuul网关">
+<meta name="twitter:title" content="SpringCloud：基于oauth2.0统一认证授权">
+<meta name="twitter:image" content="https://qq1028951741.github.io/images/oauth1.jpg">
 
 
 
@@ -127,7 +132,7 @@
 
 
 
-  <link rel="canonical" href="https://qq1028951741.github.io/2018/01/04/SpringCloud：Zuul网关/">
+  <link rel="canonical" href="https://qq1028951741.github.io/2019/02/16/SpringCloud：基于OAUTH2.0统一认证授权/">
 
 
 
@@ -137,7 +142,7 @@
   };
 </script>
 
-  <title>SpringCloud：Zuul网关 | 燃情岁月</title>
+  <title>SpringCloud：基于oauth2.0统一认证授权 | 燃情岁月</title>
   
 
 
@@ -369,7 +374,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://qq1028951741.github.io/2018/01/04/SpringCloud：Zuul网关/">
+    <link itemprop="mainEntityOfPage" href="https://qq1028951741.github.io/2019/02/16/SpringCloud：基于OAUTH2.0统一认证授权/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="fufua">
@@ -386,7 +391,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">SpringCloud：Zuul网关
+          <h1 class="post-title" itemprop="name headline">SpringCloud：基于oauth2.0统一认证授权
               
             
           </h1>
@@ -411,7 +416,7 @@
                 
               
 
-              <time title="创建时间：2018-01-04 16:52:34" itemprop="dateCreated datePublished" datetime="2018-01-04T16:52:34+08:00">2018-01-04</time>
+              <time title="创建时间：2019-02-16 16:52:34" itemprop="dateCreated datePublished" datetime="2019-02-16T16:52:34+08:00">2019-02-16</time>
             
 
             
@@ -428,7 +433,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-01-29 17:42:35" itemprop="dateModified" datetime="2019-01-29T17:42:35+08:00">2019-01-29</time>
+                <time title="修改时间：2019-02-19 15:26:44" itemprop="dateModified" datetime="2019-02-19T15:26:44+08:00">2019-02-19</time>
               
             
           </span>
@@ -460,8 +465,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/01/04/SpringCloud：Zuul网关/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018/01/04/SpringCloud：Zuul网关/" itemprop="commentCount"></span>
+                <a href="/2019/02/16/SpringCloud：基于OAUTH2.0统一认证授权/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2019/02/16/SpringCloud：基于OAUTH2.0统一认证授权/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -469,7 +474,7 @@
 
           
           
-             <span id="/2018/01/04/SpringCloud：Zuul网关/" class="leancloud_visitors" data-flag-title="SpringCloud：Zuul网关">
+             <span id="/2019/02/16/SpringCloud：基于OAUTH2.0统一认证授权/" class="leancloud_visitors" data-flag-title="SpringCloud：基于oauth2.0统一认证授权">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -500,34 +505,50 @@
 
       
         <p><excerpt in="" index="" |="" 首页摘要=""><a id="more"></a><the rest="" of="" contents="" |="" 余下全文=""></the></excerpt></p>
-<h2 id="SpringCloud：Zuul网关"><a href="#SpringCloud：Zuul网关" class="headerlink" title="SpringCloud：Zuul网关"></a>SpringCloud：Zuul网关</h2><blockquote>
-<p>Zuul的主要功能是路由转发和过滤器。路由功能是微服务的一部分 </p>
+<h2 id="SpringCloud：基于OAUTH2-0统一认证授权"><a href="#SpringCloud：基于OAUTH2-0统一认证授权" class="headerlink" title="SpringCloud：基于OAUTH2.0统一认证授权"></a>SpringCloud：基于OAUTH2.0统一认证授权</h2><blockquote>
+<p>OAUTH协议为用户资源的授权提供了一个安全的、开放而又简易的标准。与以往的授权方式不同之处是OAUTH的授权不会使第三方触及到用户的帐号信息（如用户名与密码），即第三方无需使用用户的用户名与密码就可以申请获得该用户资源的授权，因此OAUTH是安全的。oAuth是Open Authorization的简写。具体解释参考 <code>http://www.ruanyifeng.com/blog/2014/05/oauth_2_0.html</code> </p>
 </blockquote>
-<h3 id="新建zuul-service服务模块"><a href="#新建zuul-service服务模块" class="headerlink" title="新建zuul-service服务模块"></a>新建zuul-service服务模块</h3><ul>
-<li><p>pom.xml </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span><br><span class="line">&lt;project xmlns=&quot;http://maven.apache.org/POM/4.0.0&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span><br><span class="line">         xsi:schemaLocation=&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;&gt;</span><br><span class="line">    &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;</span><br><span class="line"></span><br><span class="line">    &lt;parent&gt;</span><br><span class="line">        &lt;groupId&gt;com.fufu&lt;/groupId&gt;</span><br><span class="line">        &lt;artifactId&gt;spring-cloud-demo&lt;/artifactId&gt;</span><br><span class="line">        &lt;version&gt;1.0-SNAPSHOT&lt;/version&gt;</span><br><span class="line">    &lt;/parent&gt;</span><br><span class="line"></span><br><span class="line">    &lt;groupId&gt;com.fufu&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;zuul-service&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;0.0.1-SNAPSHOT&lt;/version&gt;</span><br><span class="line">    &lt;name&gt;zuul-service&lt;/name&gt;</span><br><span class="line">    &lt;description&gt;Demo project for Spring Boot&lt;/description&gt;</span><br><span class="line"></span><br><span class="line">    &lt;properties&gt;</span><br><span class="line">        &lt;java.version&gt;1.8&lt;/java.version&gt;</span><br><span class="line">    &lt;/properties&gt;</span><br><span class="line"></span><br><span class="line">    &lt;dependencies&gt;</span><br><span class="line">        &lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;spring-cloud-starter-netflix-zuul&lt;/artifactId&gt;</span><br><span class="line">        &lt;/dependency&gt;</span><br><span class="line">    &lt;/dependencies&gt;</span><br><span class="line"></span><br><span class="line">    &lt;build&gt;</span><br><span class="line">        &lt;plugins&gt;</span><br><span class="line">            &lt;plugin&gt;</span><br><span class="line">                &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">                &lt;artifactId&gt;spring-boot-maven-plugin&lt;/artifactId&gt;</span><br><span class="line">            &lt;/plugin&gt;</span><br><span class="line">        &lt;/plugins&gt;</span><br><span class="line">    &lt;/build&gt;</span><br><span class="line"></span><br><span class="line">&lt;/project&gt;</span><br></pre></td></tr></table></figure>
+<pre><code>在原本的spring-cloud-demo新增oauth-server认证服务和把business-service配置成资源服务，这样我们需先通过zuul网管去oauth-server认证服务获取access_token，然后请求url带着access_token访问business-service的接口，这样就实现了business-service服务资源保护。采用的是password授权模式。
+</code></pre><ul>
+<li>存储token使用的是redis，所以需要本地启动一个redis服务</li>
+<li>使用数据库保存客户端信息，所以需要在数据库执行oauth-server中resources李的sql脚本clients.sql</li>
+<li>包含一个认证服务器，一个business-service改造的资源服务器</li>
+</ul>
+<h3 id="认证服务器"><a href="#认证服务器" class="headerlink" title="认证服务器"></a>认证服务器</h3><p><img src="/images/oauth1.jpg" alt="&quot;图片描述&quot;"></p>
+<pre><code>这里参考源码中的oauth-server配置，主要是TokenStore、UserDetailsService、WebSecurityConfigurerAdapter、AuthorizationServerConfigurerAdapter的token、user、web安全和鉴权配置。
+</code></pre><h3 id="资源服务器"><a href="#资源服务器" class="headerlink" title="资源服务器"></a>资源服务器</h3><pre><code>在business-service服务上进行修改
+</code></pre><ul>
+<li><p>新增config</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">package com.fufu.config;</span><br><span class="line"></span><br><span class="line">import org.springframework.boot.autoconfigure.security.oauth2.client.EnableOAuth2Sso;</span><br><span class="line">import org.springframework.context.annotation.Configuration;</span><br><span class="line">import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;</span><br><span class="line">import org.springframework.security.config.annotation.web.builders.HttpSecurity;</span><br><span class="line">import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;</span><br><span class="line"></span><br><span class="line">@EnableOAuth2Sso</span><br><span class="line">@Configuration</span><br><span class="line">@EnableGlobalMethodSecurity(securedEnabled = true)</span><br><span class="line">public class SecurityConfig extends WebSecurityConfigurerAdapter&#123;</span><br><span class="line">    @Override</span><br><span class="line">    protected void configure(HttpSecurity http) throws Exception &#123;</span><br><span class="line">        http.authorizeRequests()</span><br><span class="line">                .antMatchers(&quot;/index&quot;)</span><br><span class="line">                .permitAll()</span><br><span class="line">                .anyRequest()</span><br><span class="line">                .authenticated();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>application启动类</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">package com.fufu;</span><br><span class="line"></span><br><span class="line">import org.springframework.boot.SpringApplication;</span><br><span class="line">import org.springframework.boot.autoconfigure.SpringBootApplication;</span><br><span class="line">import org.springframework.cloud.client.discovery.EnableDiscoveryClient;</span><br><span class="line">import org.springframework.cloud.netflix.eureka.EnableEurekaClient;</span><br><span class="line">import org.springframework.cloud.netflix.zuul.EnableZuulProxy;</span><br><span class="line"></span><br><span class="line">@SpringBootApplication</span><br><span class="line">@EnableZuulProxy</span><br><span class="line">@EnableEurekaClient</span><br><span class="line">@EnableDiscoveryClient</span><br><span class="line">public class ZuulServiceApplication &#123;</span><br><span class="line"></span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        SpringApplication.run(ZuulServiceApplication.class, args);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<li><p>controller新增接口</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">@GetMapping(&quot;/user&quot;)</span><br><span class="line">    @Secured(&quot;ROLE_USER&quot;)</span><br><span class="line">    public Authentication getUser() &#123;</span><br><span class="line">        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();</span><br><span class="line">        return authentication;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p>@Secured(“ROLE_USER”)控制访问权限</p>
 </li>
-<li><p>bootstrap.yml配置</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">spring:</span><br><span class="line">  application:</span><br><span class="line">    name: zuul-service</span><br><span class="line"></span><br><span class="line">server:</span><br><span class="line">  port: 2001</span><br><span class="line"></span><br><span class="line">eureka:</span><br><span class="line">  client:</span><br><span class="line">    serviceUrl:</span><br><span class="line">      defaultZone: http://localhost:2000/eureka/</span><br><span class="line">  instance:</span><br><span class="line">    status-page-url: http://localhost:$&#123;server.port&#125;/swagger-ui.html  # $&#123;server.port&#125;为该服务的端口号</span><br><span class="line"></span><br><span class="line">zuul:</span><br><span class="line">  routes:</span><br><span class="line">    business-service:</span><br><span class="line">      path: /springclouddemo/business/**</span><br><span class="line">      serviceId: business-service</span><br><span class="line">    file-service:</span><br><span class="line">      path: /springclouddemo/file/**</span><br><span class="line">      serviceId: file-service</span><br></pre></td></tr></table></figure>
+<li><p>Application增加注解@EnableResourceServer</p>
 </li>
-<li><p>访问  <a href="http://localhost:2001/springclouddemo/business/*" target="_blank" rel="noopener">http://localhost:2001/springclouddemo/business/*</a>*</p>
+<li>bootstrap.yml新增配置<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">auth-server: http://localhost:2006 # 认证服务器地址</span><br><span class="line"></span><br><span class="line">security:</span><br><span class="line">  oauth2:</span><br><span class="line">    client:</span><br><span class="line">      client-id: admin # 授权服务器配置的client id</span><br><span class="line">      client-secret: admin # 授权服务器配置的client secret</span><br><span class="line">      scope: all</span><br><span class="line">      #access-token-uri: $&#123;auth-server&#125;/oauth/token # 获取access token接口</span><br><span class="line">      #user-authorization-uri: $&#123;auth-server&#125;/oauth/authorize #  获取Authorization Code接口</span><br><span class="line">    resource:</span><br><span class="line">      token-info-uri: $&#123;auth-server&#125;/oauth/check_token # 验证token的接口</span><br><span class="line">#      user-info-uri: $&#123;auth-server&#125;/user # 一个可以获取认证授权的自定义接口，可以在授权服务器，也可以在其他服务器上</span><br><span class="line">#      prefer-token-info: true # 如果同时配置了token-info-uri 和 user-info-uri，这个现象设置使用哪个取验证授权</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<h3 id="服务过滤"><a href="#服务过滤" class="headerlink" title="服务过滤"></a>服务过滤</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line">package com.fufu.filter;</span><br><span class="line"></span><br><span class="line">import com.netflix.zuul.ZuulFilter;</span><br><span class="line">import com.netflix.zuul.context.RequestContext;</span><br><span class="line">import org.slf4j.Logger;</span><br><span class="line">import org.slf4j.LoggerFactory;</span><br><span class="line">import org.springframework.stereotype.Component;</span><br><span class="line"></span><br><span class="line">import javax.servlet.http.HttpServletRequest;</span><br><span class="line"></span><br><span class="line">@Component</span><br><span class="line">public class PreFilter extends ZuulFilter &#123;</span><br><span class="line"></span><br><span class="line">    private static Logger log = LoggerFactory.getLogger(PreFilter.class);</span><br><span class="line">    @Override</span><br><span class="line">    public String filterType() &#123;</span><br><span class="line">        return &quot;pre&quot;;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public int filterOrder() &#123;</span><br><span class="line">        return 0;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public boolean shouldFilter() &#123;</span><br><span class="line">        return true;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public Object run() &#123;</span><br><span class="line">        RequestContext ctx = RequestContext.getCurrentContext();</span><br><span class="line">        HttpServletRequest request = ctx.getRequest();</span><br><span class="line">        log.info(String.format(&quot;%s &gt;&gt;&gt; %s&quot;, request.getMethod(), request.getRequestURL().toString()));</span><br><span class="line">        Object accessToken = request.getParameter(&quot;token&quot;);</span><br><span class="line">        if(accessToken == null) &#123;</span><br><span class="line">            log.warn(&quot;token is empty&quot;);</span><br><span class="line">            ctx.setSendZuulResponse(false);</span><br><span class="line">            ctx.setResponseStatusCode(401);</span><br><span class="line">            try &#123;</span><br><span class="line">                ctx.getResponse().getWriter().write(&quot;token is empty&quot;);</span><br><span class="line">            &#125;catch (Exception e)&#123;&#125;</span><br><span class="line"></span><br><span class="line">            return null;</span><br><span class="line">        &#125;</span><br><span class="line">        log.info(&quot;ok&quot;);</span><br><span class="line">        return null;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>filterType：返回一个字符串代表过滤器的类型，在zuul中定义了四种不同生命周期的过滤器类型，具体如下：<ul>
-<li>pre：路由之前</li>
-<li>routing：路由之时</li>
-<li>post： 路由之后</li>
-<li>error：发送错误调用</li>
+<h3 id="zuul网管新增sso配置"><a href="#zuul网管新增sso配置" class="headerlink" title="zuul网管新增sso配置"></a>zuul网管新增sso配置</h3><ul>
+<li>Application新增注解@EnableOAuth2Sso</li>
+<li><p>新增config</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">package com.fufu.config;</span><br><span class="line"></span><br><span class="line">import org.springframework.boot.autoconfigure.security.oauth2.client.EnableOAuth2Sso;</span><br><span class="line">import org.springframework.context.annotation.Configuration;</span><br><span class="line">import org.springframework.security.config.annotation.web.builders.HttpSecurity;</span><br><span class="line">import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;</span><br><span class="line"></span><br><span class="line">@Configuration</span><br><span class="line">@EnableOAuth2Sso</span><br><span class="line">public class SecurityConfig extends WebSecurityConfigurerAdapter</span><br><span class="line">&#123;</span><br><span class="line">    @Override</span><br><span class="line">    protected void configure(HttpSecurity http) throws Exception &#123;</span><br><span class="line"></span><br><span class="line">        http.csrf().disable();</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>bootstrap.yml新增配置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">zuul:</span><br><span class="line">  routes:</span><br><span class="line">    business-service:</span><br><span class="line">      path: /springclouddemo/business/**</span><br><span class="line">      serviceId: business-service</span><br><span class="line">    file-service:</span><br><span class="line">      path: /springclouddemo/file/**</span><br><span class="line">      serviceId: file-service</span><br><span class="line">    oauth-server:</span><br><span class="line">      path: /springclouddemo/auth/**</span><br><span class="line">      serviceId: oauth-server</span><br><span class="line">  sensitive-headers:</span><br><span class="line"></span><br><span class="line">auth-server: http://localhost:2001/springclouddemo/auth # 认证服务器地址</span><br><span class="line"></span><br><span class="line">security:</span><br><span class="line">  oauth2:</span><br><span class="line">    client:</span><br><span class="line">      client-id: admin # 授权服务器配置的client id</span><br><span class="line">      client-secret: admin # 授权服务器配置的client secret</span><br><span class="line">      scope: all</span><br><span class="line">      #access-token-uri: $&#123;auth-server&#125;/oauth/token # 获取access token接口</span><br><span class="line">      #user-authorization-uri: $&#123;auth-server&#125;/oauth/authorize #  获取Authorization Code接口</span><br><span class="line">    resource:</span><br><span class="line">      token-info-uri: $&#123;auth-server&#125;/oauth/check_token # 验证token的接口</span><br><span class="line">#      user-info-uri: $&#123;auth-server&#125;/user # 一个可以获取认证授权的自定义接口，可以在授权服务器，也可以在其他服务器上</span><br><span class="line">#      prefer-token-info: true # 如果同时配置了token-info-uri 和 user-info-uri，这个现象设置使用哪个取验证授权</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>新增转发<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">oauth-server:</span><br><span class="line">      path: /springclouddemo/auth/**</span><br><span class="line">      serviceId: oauth-server</span><br></pre></td></tr></table></figure></p>
+<p>sensitive-headers配置是为了让zuul转发时不拦截Authorization请求头</p>
+<h3 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h3><ul>
+<li>依次启动服务eureka-server、zuul-service、oauth-server、business-service</li>
+<li>通过post请求oauth-server认证服务的oauth/token进行认证，其中username、password是我们执行sql加的用户名和密码，Authorization为Basic type的且用户密码在ServerConfig类进行配置客户端id和密码，grant_type即oauth授权模式，采用的是password授权模式。<br><img src="/images/oauth2.png" alt="&quot;图片描述&quot;"></li>
+<li>带着access_token请求business-service服务 <ul>
+<li>access_token正确<br><img src="/images/oauth3.jpg" alt="&quot;图片描述&quot;"></li>
+<li>access_token错误<br><img src="/images/oauth4.jpg" alt="&quot;图片描述&quot;"></li>
 </ul>
 </li>
-<li>filterOrder：过滤的顺序</li>
-<li>shouldFilter：这里可以写逻辑判断，是否要过滤，本文true,永远过滤。</li>
-<li>run：过滤器的具体逻辑。可用很复杂，包括查sql，nosql去判断该请求到底有没有权限访问。</li>
 </ul>
 <blockquote>
 <p><code>源码：https://github.com/qq1028951741/spring-cloud-demo.git or 右上角github进去，spring-cloud-demo项目，如果对您有帮助，麻烦点下star，谢谢</code></p>
@@ -555,12 +576,12 @@
   <script src="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.min.js"></script>
   <link rel="stylesheet" type="text/css" href="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.mini.css">
 
-  <p><span>本文标题:</span>SpringCloud：Zuul网关</p>
+  <p><span>本文标题:</span>SpringCloud：基于oauth2.0统一认证授权</p>
   <p><span>文章作者:</span>fufua</p>
-  <p><span>发布时间:</span>2018年01月04日 - 16:52:34</p>
-  <p><span>最后更新:</span>2019年01月29日 - 17:42:35</p>
-  <p><span>原始链接:</span><a href="/2018/01/04/SpringCloud：Zuul网关/" title="SpringCloud：Zuul网关">https://qq1028951741.github.io/2018/01/04/SpringCloud：Zuul网关/</a>
-    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://qq1028951741.github.io/2018/01/04/SpringCloud：Zuul网关/" aria-label="复制成功！"></i></span>
+  <p><span>发布时间:</span>2019年02月16日 - 16:52:34</p>
+  <p><span>最后更新:</span>2019年02月19日 - 15:26:44</p>
+  <p><span>原始链接:</span><a href="/2019/02/16/SpringCloud：基于OAUTH2.0统一认证授权/" title="SpringCloud：基于oauth2.0统一认证授权">https://qq1028951741.github.io/2019/02/16/SpringCloud：基于OAUTH2.0统一认证授权/</a>
+    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://qq1028951741.github.io/2019/02/16/SpringCloud：基于OAUTH2.0统一认证授权/" aria-label="复制成功！"></i></span>
   </p>
   <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
 </div>
@@ -615,14 +636,18 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2019/01/13/SpringCloud：服务追踪组件zipkin/" rel="next" title="SpringCloud：服务追踪组件zipkin">
+                <i class="fa fa-chevron-left"></i> SpringCloud：服务追踪组件zipkin
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/01/08/SpringCloud：config-service配置中心/" rel="prev" title="SpringCloud：config-service配置中心">
-                SpringCloud：config-service配置中心 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/02/19/SpringCloud：服务间调用Feign整合oauth鉴权/" rel="prev" title="SpringCloud：服务间调用feign整合oauth鉴权">
+                SpringCloud：服务间调用feign整合oauth鉴权 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -801,7 +826,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#SpringCloud：Zuul网关"><span class="nav-number">1.</span> <span class="nav-text">SpringCloud：Zuul网关</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#新建zuul-service服务模块"><span class="nav-number">1.1.</span> <span class="nav-text">新建zuul-service服务模块</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#服务过滤"><span class="nav-number">1.2.</span> <span class="nav-text">服务过滤</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#SpringCloud：基于OAUTH2-0统一认证授权"><span class="nav-number">1.</span> <span class="nav-text">SpringCloud：基于OAUTH2.0统一认证授权</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#认证服务器"><span class="nav-number">1.1.</span> <span class="nav-text">认证服务器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#资源服务器"><span class="nav-number">1.2.</span> <span class="nav-text">资源服务器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#zuul网管新增sso配置"><span class="nav-number">1.3.</span> <span class="nav-text">zuul网管新增sso配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#测试"><span class="nav-number">1.4.</span> <span class="nav-text">测试</span></a></li></ol></li></ol></div>
             
 
           </div>

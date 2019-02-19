@@ -112,18 +112,13 @@
 
   <meta name="keywords" content="SpringCloud">
 <meta property="og:type" content="article">
-<meta property="og:title" content="SpringCloud：服务追踪组件zipkin">
-<meta property="og:url" content="https://qq1028951741.github.io/2018/01/13/SpringCloud：服务追踪组件zipkin/index.html">
+<meta property="og:title" content="SpringCloud：Zuul网关">
+<meta property="og:url" content="https://qq1028951741.github.io/2019/01/04/SpringCloud：Zuul网关/index.html">
 <meta property="og:site_name" content="燃情岁月">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://qq1028951741.github.io/images/服务追踪1.jpg">
-<meta property="og:image" content="https://qq1028951741.github.io/images/服务追踪2.jpg">
-<meta property="og:image" content="https://qq1028951741.github.io/images/服务追踪3.jpg">
-<meta property="og:image" content="https://qq1028951741.github.io/images/服务追踪4.jpg">
-<meta property="og:updated_time" content="2019-01-29T11:34:55.084Z">
+<meta property="og:updated_time" content="2019-02-19T07:27:20.397Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="SpringCloud：服务追踪组件zipkin">
-<meta name="twitter:image" content="https://qq1028951741.github.io/images/服务追踪1.jpg">
+<meta name="twitter:title" content="SpringCloud：Zuul网关">
 
 
 
@@ -132,7 +127,7 @@
 
 
 
-  <link rel="canonical" href="https://qq1028951741.github.io/2018/01/13/SpringCloud：服务追踪组件zipkin/">
+  <link rel="canonical" href="https://qq1028951741.github.io/2019/01/04/SpringCloud：Zuul网关/">
 
 
 
@@ -142,7 +137,7 @@
   };
 </script>
 
-  <title>SpringCloud：服务追踪组件zipkin | 燃情岁月</title>
+  <title>SpringCloud：Zuul网关 | 燃情岁月</title>
   
 
 
@@ -374,7 +369,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://qq1028951741.github.io/2018/01/13/SpringCloud：服务追踪组件zipkin/">
+    <link itemprop="mainEntityOfPage" href="https://qq1028951741.github.io/2019/01/04/SpringCloud：Zuul网关/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="fufua">
@@ -391,7 +386,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">SpringCloud：服务追踪组件zipkin
+          <h1 class="post-title" itemprop="name headline">SpringCloud：Zuul网关
               
             
           </h1>
@@ -416,7 +411,7 @@
                 
               
 
-              <time title="创建时间：2018-01-13 21:23:46" itemprop="dateCreated datePublished" datetime="2018-01-13T21:23:46+08:00">2018-01-13</time>
+              <time title="创建时间：2019-01-04 16:52:34" itemprop="dateCreated datePublished" datetime="2019-01-04T16:52:34+08:00">2019-01-04</time>
             
 
             
@@ -433,7 +428,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-01-29 19:34:55" itemprop="dateModified" datetime="2019-01-29T19:34:55+08:00">2019-01-29</time>
+                <time title="修改时间：2019-02-19 15:27:20" itemprop="dateModified" datetime="2019-02-19T15:27:20+08:00">2019-02-19</time>
               
             
           </span>
@@ -465,8 +460,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/01/13/SpringCloud：服务追踪组件zipkin/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018/01/13/SpringCloud：服务追踪组件zipkin/" itemprop="commentCount"></span>
+                <a href="/2019/01/04/SpringCloud：Zuul网关/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2019/01/04/SpringCloud：Zuul网关/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -474,7 +469,7 @@
 
           
           
-             <span id="/2018/01/13/SpringCloud：服务追踪组件zipkin/" class="leancloud_visitors" data-flag-title="SpringCloud：服务追踪组件zipkin">
+             <span id="/2019/01/04/SpringCloud：Zuul网关/" class="leancloud_visitors" data-flag-title="SpringCloud：Zuul网关">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -505,49 +500,34 @@
 
       
         <p><excerpt in="" index="" |="" 首页摘要=""><a id="more"></a><the rest="" of="" contents="" |="" 余下全文=""></the></excerpt></p>
-<h2 id="SpringCloud：服务追踪组件zipkin"><a href="#SpringCloud：服务追踪组件zipkin" class="headerlink" title="SpringCloud：服务追踪组件zipkin"></a>SpringCloud：服务追踪组件zipkin</h2><blockquote>
-<p>Spring Cloud Sleuth在分布式系统中提供追踪解决方案，并且兼容支持了 zipkin，我们只要在pom文件中引入相应的依赖即可。 </p>
+<h2 id="SpringCloud：Zuul网关"><a href="#SpringCloud：Zuul网关" class="headerlink" title="SpringCloud：Zuul网关"></a>SpringCloud：Zuul网关</h2><blockquote>
+<p>Zuul的主要功能是路由转发和过滤器。路由功能是微服务的一部分 </p>
 </blockquote>
-<h3 id="Spring-Cloud-Sleuth原理图"><a href="#Spring-Cloud-Sleuth原理图" class="headerlink" title="Spring Cloud Sleuth原理图"></a>Spring Cloud Sleuth原理图</h3><p><img src="/images/服务追踪1.jpg" alt="&quot;图片描述&quot;"></p>
-<h3 id="Zipkin组件"><a href="#Zipkin组件" class="headerlink" title="Zipkin组件"></a>Zipkin组件</h3><ul>
-<li>Zipkin 是一个开放源代码分布式的跟踪系统，由Twitter公司开源，它致力于收集服务的定时数据，以解决微服务架构中的延迟问题，包括数据的收集、存储、查找和展现。</li>
-<li>每个服务向zipkin报告计时数据，zipkin会根据调用关系通过Zipkin UI生成依赖关系图，显示了多少跟踪请求通过每个服务，该系统让开发者可通过一个 Web 前端轻松的收集和分析数据，例如用户每次请求服务的处理时间等，可方便的监测系统中存在的瓶颈。</li>
-<li>Zipkin提供了可插拔数据存储方式：In-Memory、MySql、Cassandra以及Elasticsearch。接下来的测试为方便直接采用In-Memory方式进行存储，生产推荐Elasticsearch。</li>
-</ul>
-<h3 id="新建zipkin-service模块"><a href="#新建zipkin-service模块" class="headerlink" title="新建zipkin-service模块"></a>新建zipkin-service模块</h3><ul>
-<li><p>pom依赖</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span><br><span class="line">&lt;project xmlns=&quot;http://maven.apache.org/POM/4.0.0&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span><br><span class="line">         xsi:schemaLocation=&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;&gt;</span><br><span class="line">    &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;</span><br><span class="line"></span><br><span class="line">    &lt;parent&gt;</span><br><span class="line">        &lt;groupId&gt;com.fufu&lt;/groupId&gt;</span><br><span class="line">        &lt;artifactId&gt;spring-cloud-demo&lt;/artifactId&gt;</span><br><span class="line">        &lt;version&gt;1.0-SNAPSHOT&lt;/version&gt;</span><br><span class="line">    &lt;/parent&gt;</span><br><span class="line"></span><br><span class="line">    &lt;groupId&gt;com.fufu&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;zipkin-service&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;0.0.1-SNAPSHOT&lt;/version&gt;</span><br><span class="line">    &lt;name&gt;zipkin-service&lt;/name&gt;</span><br><span class="line">    &lt;description&gt;Demo project for Spring Boot&lt;/description&gt;</span><br><span class="line"></span><br><span class="line">    &lt;properties&gt;</span><br><span class="line">        &lt;java.version&gt;1.8&lt;/java.version&gt;</span><br><span class="line">    &lt;/properties&gt;</span><br><span class="line"></span><br><span class="line">    &lt;dependencies&gt;</span><br><span class="line">        &lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;spring-boot-starter-web&lt;/artifactId&gt;</span><br><span class="line">        &lt;/dependency&gt;</span><br><span class="line">        &lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;spring-boot-starter-test&lt;/artifactId&gt;</span><br><span class="line">            &lt;scope&gt;test&lt;/scope&gt;</span><br><span class="line">        &lt;/dependency&gt;</span><br><span class="line">        &lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;io.zipkin.java&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;zipkin-server&lt;/artifactId&gt;</span><br><span class="line">            &lt;version&gt;2.9.4&lt;/version&gt;</span><br><span class="line">        &lt;/dependency&gt;</span><br><span class="line">        &lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;io.zipkin.java&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;zipkin-autoconfigure-ui&lt;/artifactId&gt;</span><br><span class="line">            &lt;version&gt;2.9.4&lt;/version&gt;</span><br><span class="line">        &lt;/dependency&gt;</span><br><span class="line">    &lt;/dependencies&gt;</span><br><span class="line"></span><br><span class="line">    &lt;build&gt;</span><br><span class="line">        &lt;plugins&gt;</span><br><span class="line">            &lt;plugin&gt;</span><br><span class="line">                &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">                &lt;artifactId&gt;spring-boot-maven-plugin&lt;/artifactId&gt;</span><br><span class="line">            &lt;/plugin&gt;</span><br><span class="line">        &lt;/plugins&gt;</span><br><span class="line">    &lt;/build&gt;</span><br><span class="line"></span><br><span class="line">&lt;/project&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="新建zuul-service服务模块"><a href="#新建zuul-service服务模块" class="headerlink" title="新建zuul-service服务模块"></a>新建zuul-service服务模块</h3><ul>
+<li><p>pom.xml </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span><br><span class="line">&lt;project xmlns=&quot;http://maven.apache.org/POM/4.0.0&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span><br><span class="line">         xsi:schemaLocation=&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;&gt;</span><br><span class="line">    &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;</span><br><span class="line"></span><br><span class="line">    &lt;parent&gt;</span><br><span class="line">        &lt;groupId&gt;com.fufu&lt;/groupId&gt;</span><br><span class="line">        &lt;artifactId&gt;spring-cloud-demo&lt;/artifactId&gt;</span><br><span class="line">        &lt;version&gt;1.0-SNAPSHOT&lt;/version&gt;</span><br><span class="line">    &lt;/parent&gt;</span><br><span class="line"></span><br><span class="line">    &lt;groupId&gt;com.fufu&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;zuul-service&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;0.0.1-SNAPSHOT&lt;/version&gt;</span><br><span class="line">    &lt;name&gt;zuul-service&lt;/name&gt;</span><br><span class="line">    &lt;description&gt;Demo project for Spring Boot&lt;/description&gt;</span><br><span class="line"></span><br><span class="line">    &lt;properties&gt;</span><br><span class="line">        &lt;java.version&gt;1.8&lt;/java.version&gt;</span><br><span class="line">    &lt;/properties&gt;</span><br><span class="line"></span><br><span class="line">    &lt;dependencies&gt;</span><br><span class="line">        &lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;spring-cloud-starter-netflix-zuul&lt;/artifactId&gt;</span><br><span class="line">        &lt;/dependency&gt;</span><br><span class="line">    &lt;/dependencies&gt;</span><br><span class="line"></span><br><span class="line">    &lt;build&gt;</span><br><span class="line">        &lt;plugins&gt;</span><br><span class="line">            &lt;plugin&gt;</span><br><span class="line">                &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">                &lt;artifactId&gt;spring-boot-maven-plugin&lt;/artifactId&gt;</span><br><span class="line">            &lt;/plugin&gt;</span><br><span class="line">        &lt;/plugins&gt;</span><br><span class="line">    &lt;/build&gt;</span><br><span class="line"></span><br><span class="line">&lt;/project&gt;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>application启动类</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">package com.fufu;</span><br><span class="line"></span><br><span class="line">import org.springframework.boot.SpringApplication;</span><br><span class="line">import org.springframework.boot.autoconfigure.SpringBootApplication;</span><br><span class="line">import zipkin.server.internal.EnableZipkinServer;</span><br><span class="line"></span><br><span class="line">@SpringBootApplication</span><br><span class="line">@EnableZipkinServer</span><br><span class="line">public class ZipkinServiceApplication &#123;</span><br><span class="line"></span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        SpringApplication.run(ZipkinServiceApplication.class, args);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">package com.fufu;</span><br><span class="line"></span><br><span class="line">import org.springframework.boot.SpringApplication;</span><br><span class="line">import org.springframework.boot.autoconfigure.SpringBootApplication;</span><br><span class="line">import org.springframework.cloud.client.discovery.EnableDiscoveryClient;</span><br><span class="line">import org.springframework.cloud.netflix.eureka.EnableEurekaClient;</span><br><span class="line">import org.springframework.cloud.netflix.zuul.EnableZuulProxy;</span><br><span class="line"></span><br><span class="line">@SpringBootApplication</span><br><span class="line">@EnableZuulProxy</span><br><span class="line">@EnableEurekaClient</span><br><span class="line">@EnableDiscoveryClient</span><br><span class="line">public class ZuulServiceApplication &#123;</span><br><span class="line"></span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        SpringApplication.run(ZuulServiceApplication.class, args);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>yml配置文件</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">spring:</span><br><span class="line">  application:</span><br><span class="line">    name: zipkin-service</span><br><span class="line"></span><br><span class="line">server:</span><br><span class="line">  port: 2005</span><br><span class="line">  </span><br><span class="line">eureka:</span><br><span class="line">  client:</span><br><span class="line">    serviceUrl:</span><br><span class="line">      defaultZone: http://localhost:2000/eureka/</span><br><span class="line">  instance:</span><br><span class="line">    status-page-url: http://localhost:$&#123;server.port&#125;/swagger-ui.html  # $&#123;server.port&#125;为该服务的端口号</span><br></pre></td></tr></table></figure>
+<li><p>bootstrap.yml配置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">spring:</span><br><span class="line">  application:</span><br><span class="line">    name: zuul-service</span><br><span class="line"></span><br><span class="line">server:</span><br><span class="line">  port: 2001</span><br><span class="line"></span><br><span class="line">eureka:</span><br><span class="line">  client:</span><br><span class="line">    serviceUrl:</span><br><span class="line">      defaultZone: http://localhost:2000/eureka/</span><br><span class="line">  instance:</span><br><span class="line">    status-page-url: http://localhost:$&#123;server.port&#125;/swagger-ui.html  # $&#123;server.port&#125;为该服务的端口号</span><br><span class="line"></span><br><span class="line">zuul:</span><br><span class="line">  routes:</span><br><span class="line">    business-service:</span><br><span class="line">      path: /springclouddemo/business/**</span><br><span class="line">      serviceId: business-service</span><br><span class="line">    file-service:</span><br><span class="line">      path: /springclouddemo/file/**</span><br><span class="line">      serviceId: file-service</span><br></pre></td></tr></table></figure>
 </li>
-</ul>
-<h3 id="目前spring-cloud-demo所有模块"><a href="#目前spring-cloud-demo所有模块" class="headerlink" title="目前spring-cloud-demo所有模块"></a>目前spring-cloud-demo所有模块</h3><p><img src="/images/服务追踪2.jpg" alt="&quot;图片描述&quot;"></p>
-<h3 id="对需要追踪的模块加上配置"><a href="#对需要追踪的模块加上配置" class="headerlink" title="对需要追踪的模块加上配置"></a>对需要追踪的模块加上配置</h3><pre><code>我这边给business-service、file-service、zuul-service三个模块加上追踪配置，每个服务会向zipkin报告计时数据。
-</code></pre><ul>
-<li><p>spring-cloud-demo的pom.xml加上</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;spring-cloud-starter-zipkin&lt;/artifactId&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>yml配置</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">spring:</span><br><span class="line">  zipkin:</span><br><span class="line">    base-url: http://localhost:2005</span><br><span class="line">  sleuth:</span><br><span class="line">    sampler:</span><br><span class="line">      percentage: 1.0</span><br></pre></td></tr></table></figure>
-<p>​    spring.zipkin.base-url指定了Zipkin服务器的地址，spring.sleuth.sampler.percentage将采样比例设置为1.0，也就是全部都需要。(percentage如果不设置为1的话，只能采集单个服务调用数据)</p>
-<p>​    Spring Cloud Sleuth有一个Sampler策略，可以通过这个实现类来控制采样算法。采样器不会阻碍span相关id的产生，但是会对导出以及附加事件标签的相关操作造成影响。 Sleuth默认采样算法的实现是Reservoir sampling，具体的实现类是PercentageBasedSampler，默认的采样比例为: 0.1(即10%)。不过我们可以通过spring.sleuth.sampler.percentage来设置，所设置的值介于0.0到1.0之间，1.0则表示全部采集。</p>
+<li><p>访问  <a href="http://localhost:2001/springclouddemo/business/*" target="_blank" rel="noopener">http://localhost:2001/springclouddemo/business/*</a>*</p>
 </li>
 </ul>
-<h3 id="服务追踪"><a href="#服务追踪" class="headerlink" title="服务追踪"></a>服务追踪</h3><ul>
-<li><p>访问<a href="http://localhost:2005/zipkin/" target="_blank" rel="noopener">http://localhost:2005/zipkin/</a></p>
+<h3 id="服务过滤"><a href="#服务过滤" class="headerlink" title="服务过滤"></a>服务过滤</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line">package com.fufu.filter;</span><br><span class="line"></span><br><span class="line">import com.netflix.zuul.ZuulFilter;</span><br><span class="line">import com.netflix.zuul.context.RequestContext;</span><br><span class="line">import org.slf4j.Logger;</span><br><span class="line">import org.slf4j.LoggerFactory;</span><br><span class="line">import org.springframework.stereotype.Component;</span><br><span class="line"></span><br><span class="line">import javax.servlet.http.HttpServletRequest;</span><br><span class="line"></span><br><span class="line">@Component</span><br><span class="line">public class PreFilter extends ZuulFilter &#123;</span><br><span class="line"></span><br><span class="line">    private static Logger log = LoggerFactory.getLogger(PreFilter.class);</span><br><span class="line">    @Override</span><br><span class="line">    public String filterType() &#123;</span><br><span class="line">        return &quot;pre&quot;;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public int filterOrder() &#123;</span><br><span class="line">        return 0;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public boolean shouldFilter() &#123;</span><br><span class="line">        return true;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public Object run() &#123;</span><br><span class="line">        RequestContext ctx = RequestContext.getCurrentContext();</span><br><span class="line">        HttpServletRequest request = ctx.getRequest();</span><br><span class="line">        log.info(String.format(&quot;%s &gt;&gt;&gt; %s&quot;, request.getMethod(), request.getRequestURL().toString()));</span><br><span class="line">        Object accessToken = request.getParameter(&quot;token&quot;);</span><br><span class="line">        if(accessToken == null) &#123;</span><br><span class="line">            log.warn(&quot;token is empty&quot;);</span><br><span class="line">            ctx.setSendZuulResponse(false);</span><br><span class="line">            ctx.setResponseStatusCode(401);</span><br><span class="line">            try &#123;</span><br><span class="line">                ctx.getResponse().getWriter().write(&quot;token is empty&quot;);</span><br><span class="line">            &#125;catch (Exception e)&#123;&#125;</span><br><span class="line"></span><br><span class="line">            return null;</span><br><span class="line">        &#125;</span><br><span class="line">        log.info(&quot;ok&quot;);</span><br><span class="line">        return null;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>filterType：返回一个字符串代表过滤器的类型，在zuul中定义了四种不同生命周期的过滤器类型，具体如下：<ul>
+<li>pre：路由之前</li>
+<li>routing：路由之时</li>
+<li>post： 路由之后</li>
+<li>error：发送错误调用</li>
+</ul>
 </li>
-<li><p>进行服务间调用</p>
-</li>
-<li><p>点击Find Traces查询服务追踪</p>
-<p><img src="/images/服务追踪3.jpg" alt="&quot;图片描述&quot;"></p>
-</li>
-<li><p>点击Dependencies查看服务间依赖</p>
-<p><img src="/images/服务追踪4.jpg" alt="&quot;图片描述&quot;"></p>
-</li>
+<li>filterOrder：过滤的顺序</li>
+<li>shouldFilter：这里可以写逻辑判断，是否要过滤，本文true,永远过滤。</li>
+<li>run：过滤器的具体逻辑。可用很复杂，包括查sql，nosql去判断该请求到底有没有权限访问。</li>
 </ul>
 <blockquote>
 <p><code>源码：https://github.com/qq1028951741/spring-cloud-demo.git or 右上角github进去，spring-cloud-demo项目，如果对您有帮助，麻烦点下star，谢谢</code></p>
@@ -575,12 +555,12 @@
   <script src="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.min.js"></script>
   <link rel="stylesheet" type="text/css" href="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.mini.css">
 
-  <p><span>本文标题:</span>SpringCloud：服务追踪组件zipkin</p>
+  <p><span>本文标题:</span>SpringCloud：Zuul网关</p>
   <p><span>文章作者:</span>fufua</p>
-  <p><span>发布时间:</span>2018年01月13日 - 21:23:46</p>
-  <p><span>最后更新:</span>2019年01月29日 - 19:34:55</p>
-  <p><span>原始链接:</span><a href="/2018/01/13/SpringCloud：服务追踪组件zipkin/" title="SpringCloud：服务追踪组件zipkin">https://qq1028951741.github.io/2018/01/13/SpringCloud：服务追踪组件zipkin/</a>
-    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://qq1028951741.github.io/2018/01/13/SpringCloud：服务追踪组件zipkin/" aria-label="复制成功！"></i></span>
+  <p><span>发布时间:</span>2019年01月04日 - 16:52:34</p>
+  <p><span>最后更新:</span>2019年02月19日 - 15:27:20</p>
+  <p><span>原始链接:</span><a href="/2019/01/04/SpringCloud：Zuul网关/" title="SpringCloud：Zuul网关">https://qq1028951741.github.io/2019/01/04/SpringCloud：Zuul网关/</a>
+    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://qq1028951741.github.io/2019/01/04/SpringCloud：Zuul网关/" aria-label="复制成功！"></i></span>
   </p>
   <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
 </div>
@@ -635,8 +615,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/01/08/SpringCloud：config-service配置中心/" rel="next" title="SpringCloud：config-service配置中心">
-                <i class="fa fa-chevron-left"></i> SpringCloud：config-service配置中心
+              <a href="/2018/12/31/SpringCloud：Feign增加Hystrix断路器/" rel="next" title="SpringCloud：Feign增加Hystrix断路器">
+                <i class="fa fa-chevron-left"></i> SpringCloud：Feign增加Hystrix断路器
               </a>
             
           </div>
@@ -645,8 +625,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/02/16/SpringCloud：基于OAUTH2.0统一认证授权/" rel="prev" title="SpringCloud：基于oauth2.0统一认证授权">
-                SpringCloud：基于oauth2.0统一认证授权 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/01/08/SpringCloud：config-service配置中心/" rel="prev" title="SpringCloud：config-service配置中心">
+                SpringCloud：config-service配置中心 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -825,7 +805,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#SpringCloud：服务追踪组件zipkin"><span class="nav-number">1.</span> <span class="nav-text">SpringCloud：服务追踪组件zipkin</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Spring-Cloud-Sleuth原理图"><span class="nav-number">1.1.</span> <span class="nav-text">Spring Cloud Sleuth原理图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Zipkin组件"><span class="nav-number">1.2.</span> <span class="nav-text">Zipkin组件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#新建zipkin-service模块"><span class="nav-number">1.3.</span> <span class="nav-text">新建zipkin-service模块</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#目前spring-cloud-demo所有模块"><span class="nav-number">1.4.</span> <span class="nav-text">目前spring-cloud-demo所有模块</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#对需要追踪的模块加上配置"><span class="nav-number">1.5.</span> <span class="nav-text">对需要追踪的模块加上配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#服务追踪"><span class="nav-number">1.6.</span> <span class="nav-text">服务追踪</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#SpringCloud：Zuul网关"><span class="nav-number">1.</span> <span class="nav-text">SpringCloud：Zuul网关</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#新建zuul-service服务模块"><span class="nav-number">1.1.</span> <span class="nav-text">新建zuul-service服务模块</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#服务过滤"><span class="nav-number">1.2.</span> <span class="nav-text">服务过滤</span></a></li></ol></li></ol></div>
             
 
           </div>
