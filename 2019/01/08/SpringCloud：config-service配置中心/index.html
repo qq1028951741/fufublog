@@ -120,7 +120,7 @@
 <meta property="og:image" content="https://qq1028951741.github.io/images/配置中心2.jpg">
 <meta property="og:image" content="https://qq1028951741.github.io/images/配置中心3.jpg">
 <meta property="og:image" content="https://qq1028951741.github.io/images/配置中心4.jpg">
-<meta property="og:updated_time" content="2019-02-19T07:27:42.570Z">
+<meta property="og:updated_time" content="2019-05-08T07:04:31.474Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SpringCloud：config-service配置中心">
 <meta name="twitter:image" content="https://qq1028951741.github.io/images/配置中心1.jpg">
@@ -433,7 +433,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-02-19 15:27:42" itemprop="dateModified" datetime="2019-02-19T15:27:42+08:00">2019-02-19</time>
+                <time title="修改时间：2019-05-08 15:04:31" itemprop="dateModified" datetime="2019-05-08T15:04:31+08:00">2019-05-08</time>
               
             
           </span>
@@ -557,6 +557,15 @@
 <blockquote>
 <p><code>源码：https://github.com/qq1028951741/spring-cloud-demo.git or 右上角github进去，spring-cloud-demo项目，如果对您有帮助，麻烦点下star，谢谢</code></p>
 </blockquote>
+<h3 id="从配置中心拉取配置"><a href="#从配置中心拉取配置" class="headerlink" title="从配置中心拉取配置"></a>从配置中心拉取配置</h3><ul>
+<li>bootstrap.yml<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">spring:</span><br><span class="line">  cloud:</span><br><span class="line">    config:</span><br><span class="line">      name: eureka-client-basic,eureka-client-report</span><br><span class="line">      profile: dev</span><br><span class="line">      label: master</span><br><span class="line">      discovery:</span><br><span class="line">        enabled: true #启用发现服务功能</span><br><span class="line">        service-id: config-server-native  #指定服务名称</span><br><span class="line"></span><br><span class="line">eureka:</span><br><span class="line">  client:</span><br><span class="line">    serviceUrl:</span><br><span class="line">      defaultZone: http://localhost:1001/eureka/</span><br><span class="line">  instance:</span><br><span class="line">    status-page-url: http://localhost:$&#123;server.port&#125;/swagger-ui.html  # $&#123;server.port&#125;为该服务的端口号</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>config-server-native为配置中心名称，eureka-client-basic,eureka-client-report为配置中心resource下的properties文件夹里的eureka-client-basic-dev.yml和eureka-client-report-dev.yml</p>
+<ul>
+<li>配置中心配置<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">spring:</span><br><span class="line">  cloud:</span><br><span class="line">    config:</span><br><span class="line">      server:</span><br><span class="line">        native:</span><br><span class="line">#          searchLocations: D:/MicroService/localServiceProperties</span><br><span class="line">          searchLocations: classpath:/properties/</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
 <hr>
 <blockquote class="blockquote-center"><p>人生两苦：想要却不得，拥有却失去。  –褚禄山<br>            珍惜当下,与君共勉~</p>
 </blockquote>
@@ -583,7 +592,7 @@
   <p><span>本文标题:</span>SpringCloud：config-service配置中心</p>
   <p><span>文章作者:</span>fufua</p>
   <p><span>发布时间:</span>2019年01月08日 - 20:41:43</p>
-  <p><span>最后更新:</span>2019年02月19日 - 15:27:42</p>
+  <p><span>最后更新:</span>2019年05月08日 - 15:04:31</p>
   <p><span>原始链接:</span><a href="/2019/01/08/SpringCloud：config-service配置中心/" title="SpringCloud：config-service配置中心">https://qq1028951741.github.io/2019/01/08/SpringCloud：config-service配置中心/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://qq1028951741.github.io/2019/01/08/SpringCloud：config-service配置中心/" aria-label="复制成功！"></i></span>
   </p>
@@ -727,7 +736,7 @@
                 
                   <a href="/archives">
                 
-                    <span class="site-state-item-count">52</span>
+                    <span class="site-state-item-count">83</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -750,7 +759,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">5</span>
+                      
+                    
+                    <span class="site-state-item-count">6</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -811,7 +822,39 @@
                     
                       
                     
-                    <span class="site-state-item-count">24</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">40</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -852,7 +895,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#SpringCloud：config-service配置中心"><span class="nav-number">1.</span> <span class="nav-text">SpringCloud：config-service配置中心</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#新增config-service模块"><span class="nav-number">1.1.</span> <span class="nav-text">新增config-service模块</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#business-service模块配置"><span class="nav-number">1.2.</span> <span class="nav-text">business-service模块配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#测试"><span class="nav-number">1.3.</span> <span class="nav-text">测试</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#SpringCloud：config-service配置中心"><span class="nav-number">1.</span> <span class="nav-text">SpringCloud：config-service配置中心</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#新增config-service模块"><span class="nav-number">1.1.</span> <span class="nav-text">新增config-service模块</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#business-service模块配置"><span class="nav-number">1.2.</span> <span class="nav-text">business-service模块配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#测试"><span class="nav-number">1.3.</span> <span class="nav-text">测试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#从配置中心拉取配置"><span class="nav-number">1.4.</span> <span class="nav-text">从配置中心拉取配置</span></a></li></ol></li></ol></div>
             
 
           </div>

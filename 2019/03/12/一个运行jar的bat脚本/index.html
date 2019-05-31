@@ -117,7 +117,7 @@
 <meta property="og:site_name" content="燃情岁月">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://qq1028951741.github.io/images/一个运行jar的bat脚本.jpg">
-<meta property="og:updated_time" content="2019-03-21T12:32:31.697Z">
+<meta property="og:updated_time" content="2019-05-06T11:11:15.791Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="一个运行jar的bat脚本">
 <meta name="twitter:image" content="https://qq1028951741.github.io/images/一个运行jar的bat脚本.jpg">
@@ -430,7 +430,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-03-21 20:32:31" itemprop="dateModified" datetime="2019-03-21T20:32:31+08:00">2019-03-21</time>
+                <time title="修改时间：2019-05-06 19:11:15" itemprop="dateModified" datetime="2019-05-06T19:11:15+08:00">2019-05-06</time>
               
             
           </span>
@@ -502,11 +502,21 @@
 
       
         <p><excerpt in="" index="" |="" 首页摘要=""><a id="more"></a><the rest="" of="" contents="" |="" 余下全文=""></the></excerpt></p>
-<h2 id="一个运行jar的bat脚本"><a href="#一个运行jar的bat脚本" class="headerlink" title="一个运行jar的bat脚本"></a>一个运行jar的bat脚本</h2><ul>
+<h2 id="一个运行多个jar的bat脚本"><a href="#一个运行多个jar的bat脚本" class="headerlink" title="一个运行多个jar的bat脚本"></a>一个运行多个jar的bat脚本</h2><ul>
 <li>文件夹目录结构<br><img src="/images/一个运行jar的bat脚本.jpg" alt="&quot;图片描述&quot;"></li>
-<li>bat脚本<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">title &quot;**-car&quot; </span><br><span class="line">java -jar **-car.jar --DASPush=false --server.port=2025 &gt; log\**-car.log 2&gt;&amp;1 &amp;</span><br><span class="line">pause</span><br><span class="line">exit</span><br></pre></td></tr></table></figure>
+<li><p>运行单个jar的bat脚本</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">title &quot;**-car&quot; </span><br><span class="line">java -jar **-car.jar --DASPush=false --server.port=2025 &gt; log\**-car.log 2&gt;&amp;1 &amp;</span><br><span class="line">pause</span><br><span class="line">exit</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>运行多个jar的bat脚本</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">@ echo off</span><br><span class="line"></span><br><span class="line">::eureka-server</span><br><span class="line">start cmd /c &quot;title eureka-server &amp;&amp; java -Xmx128m -Xss256k -XX:ParallelGCThreads=2 -Dloader.path=&quot;lib/&quot; -jar eureka-server-0.0.1-SNAPSHOT.jar --DASPush=false --server.port=1001 &gt; log\eureka-server.log 2&gt;&amp;1 &amp;&quot;</span><br><span class="line">::config-server-native</span><br><span class="line">start cmd /c &quot;title config-server-native &amp;&amp; java -Xmx128m -Xss256k -XX:ParallelGCThreads=2 -Dloader.path=&quot;lib/&quot; -jar config-server-native-0.0.1-SNAPSHOT.jar --DASPush=false --server.port=3001 &gt; log\config-server-native.log 2&gt;&amp;1 &amp;&quot;</span><br><span class="line"></span><br><span class="line">pause</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
+<p>通过设定Xmx(程序运行期间最大可占用的内存大小)、Xss(jvm启动的每个线程分配的内存大小)、XX:ParallelGCThreads(GC线程数)以及关闭了JIT功能，达成了降低内存占用的目的<br>为了确保Xmx128m这个参数值合理，可以用jvisualvm这个工具查看启动时的堆使用情况</p>
+<ul>
+<li>停止jar包运行<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">C:\Users\ZCY&gt;taskkill /f /im java.exe</span><br><span class="line">成功: 已终止进程 &quot;java.exe&quot;，其 PID 为 6816。</span><br><span class="line">成功: 已终止进程 &quot;java.exe&quot;，其 PID 为 6860。</span><br><span class="line">成功: 已终止进程 &quot;java.exe&quot;，其 PID 为 5704。</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>taskkill可以指定进程pid或者进程名称来终止指定任务。<br>  ▷ /f: 强制终止进程。<br>  ▷ /im: 指定要终止的进程名称。<br>  ▷ /pid: 指定要终止的进程pid。</p>
 <hr>
 <blockquote class="blockquote-center"><p>人生两苦：想要却不得，拥有却失去。  –褚禄山<br>            珍惜当下,与君共勉~</p>
 </blockquote>
@@ -533,7 +543,7 @@
   <p><span>本文标题:</span>一个运行jar的bat脚本</p>
   <p><span>文章作者:</span>fufua</p>
   <p><span>发布时间:</span>2019年03月12日 - 10:54:13</p>
-  <p><span>最后更新:</span>2019年03月21日 - 20:32:31</p>
+  <p><span>最后更新:</span>2019年05月06日 - 19:11:15</p>
   <p><span>原始链接:</span><a href="/2019/03/12/一个运行jar的bat脚本/" title="一个运行jar的bat脚本">https://qq1028951741.github.io/2019/03/12/一个运行jar的bat脚本/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://qq1028951741.github.io/2019/03/12/一个运行jar的bat脚本/" aria-label="复制成功！"></i></span>
   </p>
@@ -590,8 +600,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/03/12/maven依赖本地jar/" rel="next" title="maven依赖本地jar">
-                <i class="fa fa-chevron-left"></i> maven依赖本地jar
+              <a href="/2019/03/12/shell脚本格式错误导致运行不了/" rel="next" title="shell脚本格式错误导致运行不了">
+                <i class="fa fa-chevron-left"></i> shell脚本格式错误导致运行不了
               </a>
             
           </div>
@@ -677,7 +687,7 @@
                 
                   <a href="/archives">
                 
-                    <span class="site-state-item-count">52</span>
+                    <span class="site-state-item-count">83</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -700,7 +710,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">5</span>
+                      
+                    
+                    <span class="site-state-item-count">6</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -761,7 +773,39 @@
                     
                       
                     
-                    <span class="site-state-item-count">24</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">40</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -802,7 +846,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一个运行jar的bat脚本"><span class="nav-number">1.</span> <span class="nav-text">一个运行jar的bat脚本</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一个运行多个jar的bat脚本"><span class="nav-number">1.</span> <span class="nav-text">一个运行多个jar的bat脚本</span></a></li></ol></div>
             
 
           </div>
